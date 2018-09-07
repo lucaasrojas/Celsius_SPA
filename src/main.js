@@ -14,6 +14,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   routes: [
     {path: '/', component: Home},
+    {path: '', component: Home},
     {path: '/musica', component: Musica},
     {path: '/peliculas', component: Peliculas}
   ]

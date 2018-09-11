@@ -9,6 +9,8 @@
 </template>
 
 <script>
+
+
 export default {
 }
 </script>
@@ -21,23 +23,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+	background-image: "images/remix.png"
 }
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+#body {
 }
 </style>

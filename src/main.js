@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+Vue.config.productionTip = false
+
 //Import components
 import Home from './components/Home.vue'
 import Musica from './components/Musica.vue'
@@ -20,8 +22,7 @@ const router = new VueRouter({
 
 })
 
-const app = new Vue({
-  el: '#app',
+new Vue({
   router,
   render: h => h(App)
-})
+}).$mount('#app')

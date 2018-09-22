@@ -1,21 +1,20 @@
 <template>
-    <div>
-        <h1>Peliculas</h1>
+    <b-container>
 
-        <div>
-        <p>
+        <b-row>
+            <b-col class="detailMovie">
                 <img src="http://ia.media-imdb.com/images/M/MV5BMTcyMDI2NjU2Ml5BMl5BanBnXkFtZTcwNjA4MzQzNw@@._V1._SY317_.jpg" align="right" width="300" height="450">
                 <center>
                     <h3>Ficha Tecnica</h3>
                     <ul class="a">
                     <li>Titulo original: Friends With Kids</li>
-                    <li>Titulo espa�ol: Plan Perfecto</li>
+                    <li>Titulo español: Plan Perfecto</li>
                     <li>Idioma: Ingles</li>
-                    <li>A�o: 2012</li>
+                    <li>Año: 2012</li>
                     <li>Subtitulos: Espa�ol pegados al v�deo.</li>
-                    <li>G�nero: Comedia</li>
-                    <li>Tama�o: 699MB aprox.</li>
-                    <li>V�deo: AVI | 624x352 | DVDRip</li>
+                    <li>Género: Comedia</li>
+                    <li>Tamaño: 699MB aprox.</li>
+                    <li>Vídeo: AVI | 624x352 | DVDRip</li>
                     </ul>
                 </center>
                 <center><h3>Sinopsis</h3>
@@ -23,9 +22,11 @@
                 <br>
                 <a href="http://depositfiles.com/files/7zga96wbr"><img src="src/images/btndescarga.png"></a>
                 </center>
-        </p>
-        <br><center><img src="barra.png"></center><br>
-        <p>
+            </b-col>
+        </b-row>
+
+        <b-row>
+            <b-col>
                 <img src="http://ia.media-imdb.com/images/M/MV5BMjE3MjkwMzQ2M15BMl5BanBnXkFtZTcwNjIwNDY0Nw@@._V1._SY317_CR0,0,214,317_.jpg" align="left" width="275" height="400">
                 <center>
                     <h3>Ficha Tecnica</h3>
@@ -45,9 +46,11 @@
                 <br>
                 <a href="http://depositfiles.com/files/tkhdnsy5w"><img src="src/images/btndescarga.png"></a>
                 </center>
-        </p>
-        <br><center><img src="barra.png"></center><br>
-        <p>
+            </b-col>
+        </b-row>
+        
+        <b-row>
+            <b-col>
                 <img src="http://ia.media-imdb.com/images/M/MV5BMTg0MTQzMzMzOF5BMl5BanBnXkFtZTcwOTUwNjYwNw@@._V1._SY317_CR4,0,214,317_.jpg" align="right" width="330" height="500">
                 <center>
                     <h3>Ficha Tecnica</h3>
@@ -66,9 +69,11 @@
                 <br>
                 <a href="http://depositfiles.com/files/tkhdnsy5w"><img src="src/images/btndescarga.png"></a>
                 </center>
-        </p>
-        <br><center><img src="barra.png"></center><br>
-        <p>
+            </b-col>
+        </b-row>
+        
+        <b-row>
+            <b-col>
                 <img src="http://ia.media-imdb.com/images/M/MV5BMjIyOTQwODI1OV5BMl5BanBnXkFtZTcwMjU3MjA1Nw@@._V1._SY317_.jpg" align="left" width="300" height="450">
                 <center>
                     <h3>Ficha Tecnica</h3>
@@ -88,9 +93,10 @@
                 <br>
                 <a href="http://depositfiles.com/files/x0oa1vmm6"><img src="src/images/btndescarga.png"></a>
                 </center>
-        </p>
-        </div>
-    </div>
+            </b-col>
+        </b-row>
+
+    </b-container>
 </template>
 
 <script>
@@ -100,5 +106,10 @@ export default {
 </script>
 
 <style scoped>
-
+.detailMovie {
+    background-color: rgba(100, 120, 120, .5);
+    border: 10px;
+    border-color: black;
+    border-radius: 5px;
+}
 </style>

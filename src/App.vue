@@ -1,30 +1,22 @@
 <template>
-  <div id="app" class="row">
+  <b-container id="app">
      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-  <div class="col-sm">
-    <div class="row" >
-      <div class="col-sm">
-        <img src="@/assets/images/celsius.png" class="logoImg">
-      </div>
-    </div>
-    <div class="row barraMenu">
-      <div class="col-sm">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div class="col-sm">
-        <router-link to="/musica">Musica</router-link>
-      </div>
-      <div class="col-sm">
-        <router-link to="/peliculas">Peliculas</router-link>
-      </div>
-    </div>
+    <b-container style="width: 90%">
+        <b-row>
+          <b-col><img src="@/assets/images/celsius.png" class="logoImg"></b-col>
+        </b-row>
+        <b-row class="row barraMenu">
+            <b-col><router-link to="/">Home</router-link></b-col>
+            <b-col><router-link to="/musica">Musica</router-link></b-col>
+            <b-col><router-link to="/peliculas">Peliculas</router-link></b-col>
+            <b-col><router-link to="/galerias">Galerias</router-link></b-col>
+        </b-row>
+    </b-container>
 
     <router-view></router-view>
-    
-    </div>
-  </div>
+ </b-container>
 </template>
 
 <script>
@@ -49,7 +41,10 @@ export default {
 }
 
 .barraMenu {
-  text-align: center
+  background-color: #2c3e50;
+  border: 5px;
+  border-color: black;
+  border-radius: 10px;
 }
 
 .logoImg {
@@ -57,6 +52,6 @@ export default {
 }
 
 body {
-  background-image: url("http://images.unsplash.com/photo-1460602594182-8568137446ce?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9&s=420ab23d79ab3e4696fdaacfd3a77be0")
+  background-image: url("./assets/images/general-background.jpg");
 }
 </style>

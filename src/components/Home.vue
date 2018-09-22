@@ -1,25 +1,23 @@
 <template>
-    <div id="container">
-		<img src="@/assets/images/galerias.png">
-
-			<div class="row">
-				<div class="col-sm">
-					<img src="@/assets/images/mosaicopeliculas.png">
-				</div>
-				<div class="col-sm">
-					<img src="@/assets/images/peliculas.png">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm">
-					<img src="@/assets/images/musicaa.png">
-				</div>
-				<div class="col-sm">
-					<img src="@/assets/images/mosaicomusica.png">
-				</div>
-			</div>
-
-    </div>
+	<b-container>
+		<b-row>
+			<img src="@/assets/images/galerias.png">
+		</b-row>
+		<b-row>
+			<b-col>
+				<img src="@/assets/images/mosaicopeliculas.png">
+			</b-col>
+			<b-col>
+				<img src="@/assets/images/peliculas.png">
+			</b-col>
+			<b-col>
+				<img src="@/assets/images/musicaa.png">
+			</b-col>
+			<b-col>
+				<img src="@/assets/images/mosaicomusica.png">
+			</b-col>
+		</b-row>
+	</b-container>
 </template>
 <script>
 export default {

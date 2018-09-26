@@ -9,6 +9,7 @@ import Home from './components/Home.vue'
 import Musica from './components/Musica.vue'
 import Peliculas from './components/Peliculas.vue'
 import Galerias from './components/Galerias.vue'
+import Impresora3D from './components/Impresora3D.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -21,7 +22,9 @@ const router = new VueRouter({
     {path: '/', component: Home},
     {path: '/musica', component: Musica},
     {path: '/peliculas', component: Peliculas},
-    {path: '/galerias', component: Galerias}
+    {path: '/galerias', component: Galerias},
+    {path: '/impresora3d', component: Impresora3D}
+
   ]
 
 })

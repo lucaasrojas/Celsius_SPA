@@ -1,12 +1,12 @@
 <template>
     <b-container class="row">
         <b-row>
-            <b-row>
+            <b-col>
                 <img src="@/assets/images/titulogifs.png" />
-            </b-row>
-            <b-row>
+            </b-col>
+            <b-col>
                 <img src="@/assets/images/titulogtaiv.png" />
-            </b-row>
+            </b-col>
         </b-row>
     </b-container>
 </template>

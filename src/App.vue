@@ -1,9 +1,9 @@
 <template>
 <div id="app">
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-    <b-container style="width: 95%; margin: 5px; heigth: 10px">
+    <b-container class="container" style="width: 95%; margin: 5px; heigth: 10px">
         <b-row>
           <b-col><img src="@/assets/images/celsius.png" class="logoImg"></b-col>
         </b-row>
@@ -42,7 +42,7 @@ export default {
     return {
       sideNav: false,
       menuItems: [
-        {icon: '', title: "Home", url: "/"},
+        //{icon: '', title: "Home", url: "/"},
         {icon: '', title: "Musica", url: "/musica"},
         {icon: '', title: "Peliculas", url: "/peliculas"},
         {icon: '', title: "Galerias", url: "/galerias"},

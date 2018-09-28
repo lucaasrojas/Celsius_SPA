@@ -1,9 +1,6 @@
 {
   "name": "celsius",
   "version": "0.1.0",
-  "engines": {
-    "node": "8.11.4"
-  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

@@ -1,5 +1,5 @@
 {
-  "name": "celsius",
+  "name": "celsius_v2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,6 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
     "express": "^4.16.3",
-    "node": "^10.11.0",
     "serve-static": "^1.13.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"

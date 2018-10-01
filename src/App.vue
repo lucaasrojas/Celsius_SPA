@@ -1,5 +1,5 @@
 <template>
-  <b-container id="app">
+  <div id="app">
      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -29,7 +29,7 @@
     </b-container>
 
     <router-view></router-view>
- </b-container>
+ </div>
 </template>
 
 <script>

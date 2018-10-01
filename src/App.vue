@@ -5,7 +5,7 @@
   
     <div class="row" style="width: 95%; margin: 5px; heigth: 10px">
         <div class="row" >
-          <div class="col-sm">
+          <div class="col-12">
             <img src="@/assets/images/celsius.png" class="logoImg">
           </div>
         </div>
@@ -19,7 +19,7 @@
                     <v-icon> {{ item.icon }} </v-icon>
                   </v-list-tile-action> -->
                   <!--<v-list-tile-content>-->
-                  <div class="col-sm-2"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
+                  <div class="col-2"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
                   <!--</v-list-tile-content>-->
                 </v-list-tile>
           </div>

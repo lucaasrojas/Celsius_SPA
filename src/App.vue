@@ -3,22 +3,24 @@
      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-    <b-container style="width: 95%; margin: 5px; heigth: 10px">
-        <b-row>
-          <b-col><img src="@/assets/images/celsius.png" class="logoImg"></b-col>
-        </b-row>
-          <v-navigation-drawer v-model="sideNav">
+    <div class="row" style="width: 95%; margin: 5px; heigth: 10px">
+        <div class="row" >
+          <div class="col"><img src="@/assets/images/celsius.png" class="logoImg"></div>
+        </div>
+        <div>
+
+        <v-navigation-drawer v-model="sideNav">
             <v-list>
-        <b-row class="row barraMenu">
+        <div class="row barraMenu">
               <v-list-tile v-for="item in menuItems" :key="item.title">
                 <!-- <v-list-tile-action>
                   <v-icon> {{ item.icon }} </v-icon>
                 </v-list-tile-action> -->
                 <!--<v-list-tile-content>-->
-                 <b-col><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></b-col>
+                 <div class="col"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
                 <!--</v-list-tile-content>-->
               </v-list-tile>
-        </b-row>
+        </div>
             </v-list>
           </v-navigation-drawer>
           <v-toolbar dark class="primary">
@@ -26,7 +28,8 @@
             
           </v-toolbar>
 
-    </b-container>
+        </div>          
+    </div>
 
     <router-view></router-view>
  </div>

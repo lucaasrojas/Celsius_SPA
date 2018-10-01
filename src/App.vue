@@ -5,22 +5,24 @@
   
     <div class="row" style="width: 95%; margin: 5px; heigth: 10px">
         <div class="row" >
-          <div class="col"><img src="@/assets/images/celsius.png" class="logoImg"></div>
+          <div class="col-sm">
+            <img src="@/assets/images/celsius.png" class="logoImg">
+          </div>
         </div>
+        
         <div>
-
         <v-navigation-drawer v-model="sideNav">
             <v-list>
-        <div class="row barraMenu">
-              <v-list-tile v-for="item in menuItems" :key="item.title">
-                <!-- <v-list-tile-action>
-                  <v-icon> {{ item.icon }} </v-icon>
-                </v-list-tile-action> -->
-                <!--<v-list-tile-content>-->
-                 <div class="col"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
-                <!--</v-list-tile-content>-->
-              </v-list-tile>
-        </div>
+          <div class="row barraMenu">
+                <v-list-tile v-for="item in menuItems" :key="item.title">
+                  <!-- <v-list-tile-action>
+                    <v-icon> {{ item.icon }} </v-icon>
+                  </v-list-tile-action> -->
+                  <!--<v-list-tile-content>-->
+                  <div class="col-sm-2"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
+                  <!--</v-list-tile-content>-->
+                </v-list-tile>
+          </div>
             </v-list>
           </v-navigation-drawer>
           <v-toolbar dark class="primary">
@@ -30,8 +32,9 @@
 
         </div>          
     </div>
-
-    <router-view></router-view>
+    <div class="row">
+      <router-view></router-view>
+    </div>
  </div>
 </template>
 

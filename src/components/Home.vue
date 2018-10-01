@@ -1,23 +1,23 @@
 <template>
-	<b-container>
-		<b-row>
+	<div class="container">
+		<div class="row">
 			<img src="@/assets/images/galerias.png">
-		</b-row>
-		<b-row>
-			<b-col>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<img src="@/assets/images/mosaicopeliculas.png">
-			</b-col>
-			<b-col>
+			</div>
+			<div class="col-sm">
 				<img src="@/assets/images/peliculas.png">
-			</b-col>
-			<b-col>
+			</div>
+			<div class="col-sm">
 				<img src="@/assets/images/musicaa.png">
-			</b-col>
-			<b-col>
+			</div>
+			<div class="col-sm">
 				<img src="@/assets/images/mosaicomusica.png">
-			</b-col>
-		</b-row>
-	</b-container>
+			</div>
+		</div>
+	</div>
 </template>
 <script>
 export default {

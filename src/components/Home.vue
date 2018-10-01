@@ -1,6 +1,11 @@
 <template>
 	<div class="container">
 		<div class="row">
+			<div class="col-sm">
+				<p style="color: red; font-size: 42px"> HOME PAGE </p>
+			</div>
+		</div>
+		<div class="row">
 			<img src="@/assets/images/galerias.png">
 		</div>
 		<div class="row">

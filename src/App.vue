@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
   
     <div class="row" style="width: 95%; margin: 5px; heigth: 10px">
         <div class="row" >
@@ -32,9 +32,7 @@
 
         </div>          
     </div>
-    <div class="row">
       <router-view></router-view>
-    </div>
  </div>
 </template>
 

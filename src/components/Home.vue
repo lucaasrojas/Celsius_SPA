@@ -2,13 +2,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm">
-				<p style="color: red; font-size: 42px"> HOME PAGE </p>
+				<img src="@/assets/images/galerias.png">
 			</div>
-		</div>
-		<div class="row">
-			<img src="@/assets/images/galerias.png">
-		</div>
-		<div class="row">
+			<div class="col-sm">
+				<img src="@/assets/images/mosaicogalerias.png">
+			</div>
 			<div class="col-sm">
 				<img src="@/assets/images/mosaicopeliculas.png">
 			</div>
@@ -33,5 +31,9 @@ export default {
 <style scoped>
 #body {
 	background-image: "assets/logo.png";
+}
+
+.container {
+	padding: 2px;
 }
 </style>

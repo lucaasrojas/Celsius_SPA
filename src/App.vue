@@ -3,7 +3,7 @@
     <!-- <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
   
-    <div class="row" style="width: 95%; margin: 5px; heigth: 10px">
+    <div class="container">
         <div class="row" >
           <div class="col-12">
             <img src="@/assets/images/celsius.png" class="logoImg">
@@ -19,7 +19,7 @@
                     <v-icon> {{ item.icon }} </v-icon>
                   </v-list-tile-action> -->
                   <!--<v-list-tile-content>-->
-                  <div class="col-2"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
+                  <div class="col-sm"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
                   <!--</v-list-tile-content>-->
                 </v-list-tile>
           </div>
@@ -75,7 +75,12 @@ export default {
   border-color: black;
   border-radius: 10px;
   text-decoration-color: white;
+  text-align: center;
   
+}
+
+.container {
+  padding: 2px;
 }
 
 .menuLink {

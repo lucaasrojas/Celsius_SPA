@@ -2,7 +2,7 @@
     <b-container class="row">
         <b-row>
             <b-col>
-                <img src="@/assets/images/titulogifs.png" />
+                <router-link to="/galeriaGifs"><img src="@/assets/images/titulogifs.png" /></router-link>
             </b-col>
             <b-col>
                 <img src="@/assets/images/titulogtaiv.png" />

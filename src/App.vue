@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <!-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
     <div class="container">
         <div class="row" >
@@ -9,28 +9,18 @@
             <img src="@/assets/images/celsius.png" class="logoImg">
           </div>
         </div>
-        
-        <div>
-        <v-navigation-drawer v-model="sideNav">
-            <v-list>
           <div class="row barraMenu">
-                <v-list-tile v-for="item in menuItems" :key="item.title">
+                <div v-for="item in menuItems" :key="item.title" >
                   <!-- <v-list-tile-action>
                     <v-icon> {{ item.icon }} </v-icon>
                   </v-list-tile-action> -->
                   <!--<v-list-tile-content>-->
-                  <div class="col-sm"><router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link></div>
+                  <div class="col-sm">
+                    <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                  </div>
                   <!--</v-list-tile-content>-->
-                </v-list-tile>
-          </div>
-            </v-list>
-          </v-navigation-drawer>
-          <v-toolbar dark class="primary">
-            <v-toolbar-side-icon @icon.native.stop="sideNav = !sideNav"></v-toolbar-side-icon>
-            
-          </v-toolbar>
-
-        </div>          
+                </div>
+          </div>        
     </div>
       <router-view></router-view>
  </div>
@@ -76,7 +66,7 @@ export default {
   border-radius: 10px;
   text-decoration-color: white;
   text-align: center;
-  
+  display: inline-flex;
 }
 
 .container {
@@ -85,6 +75,7 @@ export default {
 
 .menuLink {
   color: white;
+  text-align: center;
 }
 
 .logoImg {

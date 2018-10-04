@@ -1,18 +1,22 @@
 <template>
 	<div class="container">
-		<div class="row">
+		<div class="row" style="text-align: center;">
 			<div class="col-sm">
 				<img src="@/assets/images/galerias.png">
 			</div>
 			<div class="col-sm">
 				<img src="@/assets/images/mosaicogalerias.png">
 			</div>
+		</div>
+		<div class="row" style="text-align: center;">
 			<div class="col-sm">
 				<img src="@/assets/images/mosaicopeliculas.png">
 			</div>
 			<div class="col-sm">
 				<img src="@/assets/images/peliculas.png">
 			</div>
+		</div>
+		<div class="row" style="text-align: center;">
 			<div class="col-sm">
 				<img src="@/assets/images/musicaa.png">
 			</div>

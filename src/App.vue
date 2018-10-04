@@ -40,7 +40,7 @@ export default {
         {icon: '', title: "Peliculas", url: "/peliculas"},
         {icon: '', title: "Galerias", url: "/galerias"},
         {icon: '', title: "Impresora 3D", url: "/impresora3d"},
-
+        {icon: '', title: "Educativo", url: "/educativo"}
       ]
     }
   }

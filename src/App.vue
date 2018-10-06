@@ -86,5 +86,6 @@ body {
   background-image: url("./assets/images/general-background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
 </style>

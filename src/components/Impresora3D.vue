@@ -24,23 +24,5 @@ export default {
 </script>
 
 <style>
-.subtitulo {
-    margin: 5px;
-    border-style: solid;
-    border-width: 5px;
-    border-color:blanchedalmond;
-    border-radius: 25px;
-    background-color: darkgray;
-    color: blanchedalmond;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-}
 
-.imgGaleria {
-    max-width: 400px;
-    padding: 5px;
-}
 </style>

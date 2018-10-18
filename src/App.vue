@@ -76,6 +76,7 @@ export default {
 .menuLink {
   color: white;
   text-align: center;
+  font-size: 20px;
 }
 
 .logoImg {

@@ -11,6 +11,7 @@ import Peliculas from './components/Peliculas.vue'
 import Galerias from './components/Galerias.vue'
 import galeriaGifs from './components/Galerias/gifs.vue'
 import educativo from './components/Educativo.vue'
+import impresora3d from './components/Impresora3D.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -25,7 +26,8 @@ const router = new VueRouter({
     {path: '/peliculas', component: Peliculas},
     {path: '/galerias', component: Galerias},
     {path: '/galeriaGifs', component: galeriaGifs},
-    {path: '/educativo', component: educativo}
+    {path: '/educativo', component: educativo},
+    {path: '/impresora3d', component: impresora3d}
   ]
 })
 

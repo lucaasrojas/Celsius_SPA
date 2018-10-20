@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false
 
@@ -15,8 +14,11 @@ import educativo from './components/Educativo.vue'
 //Import Router
 import VueRouter from 'vue-router'
 
+//Import Vuetify
+import Vuetify from 'vuetify'
+
 Vue.use(VueRouter);
-Vue.use(BootstrapVue);
+Vue.use(Vuetify);
 
 const router = new VueRouter({
   routes: [

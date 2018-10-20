@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-layout column>
+        <v-layout row>
             <v-flex>
                 <h2 class="subtitulo"> LO ULTIMO 2018 </h2>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLjVl0tE12Mzfo-mVd690KBreGz9AnT65E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

@@ -82,6 +82,20 @@ export default {
   text-align: center
 }
 
+.subtitulo {
+    margin: 5px;
+    border-style: solid;
+    border-width: 5px;
+    border-color:blanchedalmond;
+    border-radius: 25px;
+    background-color: darkgray;
+    color: blanchedalmond;
+}
+
+.imgGaleria {
+  max-width: 400px;
+}
+
 body {
   background-image: url("./assets/images/general-background.jpg");
   background-repeat: no-repeat;

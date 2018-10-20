@@ -1,14 +1,14 @@
 <template>
-    <b-container class="row">
-        <b-row>
-            <b-col>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
                 <router-link to="/galeriaGifs"><img src="@/assets/images/titulogifs.png" /></router-link>
-            </b-col>
-            <b-col>
+            </div>
+            <div class="col-sm">
                 <img src="@/assets/images/titulogtaiv.png" />
-            </b-col>
-        </b-row>
-    </b-container>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>

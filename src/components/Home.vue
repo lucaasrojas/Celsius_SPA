@@ -1,30 +1,42 @@
 <template>
-	<div class="container">
-		<div class="row" style="text-align: center;">
-			<div class="col-sm">
-				<img src="@/assets/images/galerias.png">
-			</div>
-			<div class="col-sm">
-				<img src="@/assets/images/mosaicogalerias.png">
-			</div>
-		</div>
-		<div class="row" style="text-align: center;">
-			<div class="col-sm">
-				<img src="@/assets/images/mosaicopeliculas.png">
-			</div>
-			<div class="col-sm">
-				<img src="@/assets/images/peliculas.png">
-			</div>
-		</div>
-		<div class="row" style="text-align: center;">
-			<div class="col-sm">
-				<img src="@/assets/images/musicaa.png">
-			</div>
-			<div class="col-sm">
-				<img src="@/assets/images/mosaicomusica.png">
-			</div>
-		</div>
-	</div>
+	<v-container>
+		<v-layout row>
+			<v-layout column>
+				<v-flex>
+					<img src="@/assets/images/galerias.png">
+				</v-flex>
+			</v-layout>
+			<v-layout column>
+				<v-flex>
+					<img src="@/assets/images/mosaicogalerias.png">
+				</v-flex>
+			</v-layout>
+		</v-layout>
+		<v-layout row>
+			<v-layout column>
+				<v-flex>
+					<img src="@/assets/images/mosaicopeliculas.png">
+				</v-flex>
+			</v-layout>
+			<v-layout column>
+				<v-flex>
+					<img src="@/assets/images/peliculas.png">
+				</v-flex>
+			</v-layout>
+		</v-layout>
+		<v-layout row>
+			<v-layout column>
+				<v-flex>
+					<img src="@/assets/images/musicaa.png">
+				</v-flex>
+			</v-layout>
+			<v-layout column>
+				<v-flex>
+					<img src="@/assets/images/mosaicomusica.png">
+				</v-flex>
+			</v-layout>
+		</v-layout>
+	</v-container>
 	
 </template>
 <script>

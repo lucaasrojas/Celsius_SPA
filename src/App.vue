@@ -3,32 +3,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-    <div class="container">
-        <div class="row" >
-          <div class="col-12">
-            <img src="@/assets/images/celsius.png" class="logoImg">
-          </div>
-        </div>
-          <div class="row barraMenu">
-                <div v-for="item in menuItems" :key="item.title" >
-                  <!-- <v-list-tile-action>
-                    <v-icon> {{ item.icon }} </v-icon>
-                  </v-list-tile-action> -->
-                  <!--<v-list-tile-content>-->
-                  <div class="col-sm">
-                    <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-                  </div>
-                  <!--</v-list-tile-content>-->
-                </div>
-          </div>        
-    </div>
+    <v-container>
+        <v-layout row >
+          <v-layout column>
+            <v-flex>
+              <img src="@/assets/images/celsius.png" class="logoImg">
+            </v-flex>
+          </v-layout>
+        </v-layout>
+        <v-layout row class="barraMenu">
+              
+          <v-flex v-for="item in menuItems" :key="item.title" >
+            <!-- <v-list-tile-action>
+            <v-icon> {{ item.icon }} </v-icon>
+            </v-list-tile-action> -->
+            <!--<v-list-tile-content>-->
+            <v-layout column>
+              <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+            </v-layout>
+            <!--</v-list-tile-content>-->
+              </v-flex>
+        </v-layout>        
+    </v-container>
       <router-view></router-view>
  </div>
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'vuetify/dist/vuetify.min.css'
 
 export default {
   data() {
@@ -76,6 +78,9 @@ export default {
 .menuLink {
   color: white;
   text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 5px;
 }
 
 .logoImg {

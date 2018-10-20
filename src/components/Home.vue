@@ -25,8 +25,14 @@
 			</div>
 		</div>
 	</div>
+	
 </template>
 <script>
+import titleChanger from './TitleChanger.vue';
+import Vue from 'vue';
+
+Vue.component(titleChanger);
+
 export default {
 
 }

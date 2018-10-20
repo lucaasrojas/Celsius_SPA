@@ -20,7 +20,13 @@ Vue.use(BootstrapVue);
 
 const router = new VueRouter({
   routes: [
-    {path: '/', component: Home},
+    {
+      path: '/', 
+      component: Home, 
+      meta: {
+        title: "Home Page"
+      }
+    },
     {path: '/musica', component: Musica},
     {path: '/peliculas', component: Peliculas},
     {path: '/galerias', component: Galerias},

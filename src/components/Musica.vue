@@ -23,14 +23,4 @@ iframe {
     border-color:blanchedalmond;
     border-radius: 5px;
 }
-
-.subtitulo {
-    margin: 5px;
-    border-style: solid;
-    border-width: 5px;
-    border-color:blanchedalmond;
-    border-radius: 25px;
-    background-color: darkgray;
-    color: blanchedalmond;
-}
 </style>

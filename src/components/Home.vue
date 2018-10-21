@@ -3,36 +3,36 @@
 		<v-layout row>
 			<v-layout column>
 				<v-flex>
-					<img src="@/assets/images/galerias.png">
+					<router-link to="/galerias"><img src="@/assets/images/galerias.png"></router-link>
 				</v-flex>
 			</v-layout>
 			<v-layout column>
 				<v-flex>
-					<img src="@/assets/images/mosaicogalerias.png">
-				</v-flex>
-			</v-layout>
-		</v-layout>
-		<v-layout row>
-			<v-layout column>
-				<v-flex>
-					<img src="@/assets/images/mosaicopeliculas.png">
-				</v-flex>
-			</v-layout>
-			<v-layout column>
-				<v-flex>
-					<img src="@/assets/images/peliculas.png">
+					<router-link to="/galerias"><img src="@/assets/images/mosaicogalerias.png"></router-link>
 				</v-flex>
 			</v-layout>
 		</v-layout>
 		<v-layout row>
 			<v-layout column>
 				<v-flex>
-					<img src="@/assets/images/musicaa.png">
+					<router-link to="/peliculas"><img src="@/assets/images/mosaicopeliculas.png"></router-link>
 				</v-flex>
 			</v-layout>
 			<v-layout column>
 				<v-flex>
-					<img src="@/assets/images/mosaicomusica.png">
+					<router-link to="/peliculas"><img src="@/assets/images/peliculas.png"></router-link>
+				</v-flex>
+			</v-layout>
+		</v-layout>
+		<v-layout row>
+			<v-layout column>
+				<v-flex>
+					<router-link to="/musica"><img src="@/assets/images/musicaa.png"></router-link>
+				</v-flex>
+			</v-layout>
+			<v-layout column>
+				<v-flex>
+					<router-link to="/musica"><img src="@/assets/images/mosaicomusica.png"></router-link>
 				</v-flex>
 			</v-layout>
 		</v-layout>

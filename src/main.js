@@ -9,6 +9,7 @@ import Musica from './components/Musica.vue'
 import Peliculas from './components/Peliculas.vue'
 import Galerias from './components/Galerias.vue'
 import galeriaGifs from './components/Galerias/gifs.vue'
+import galeriaGTAIV from './components/Galerias/gtaiv.vue'
 import educativo from './components/Educativo.vue'
 
 //Import Router
@@ -33,6 +34,7 @@ const router = new VueRouter({
     {path: '/peliculas', component: Peliculas},
     {path: '/galerias', component: Galerias},
     {path: '/galeriaGifs', component: galeriaGifs},
+    {path: '/galeriaGTAIV', component: galeriaGTAIV},
     {path: '/educativo', component: educativo}
   ]
 })

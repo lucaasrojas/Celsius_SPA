@@ -4,26 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <div class="container">
-        <div class="row">
-          <div class="col-sm">
-              <img src="@/assets/images/celsius.png" class="logoImg">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto" v-for="item in menuItems" :key="item.title">
+                <li class="nav-item active">
+                  <router-link  class="btn btn-secondary" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                </li>
+                
+              </ul>
+          <div class="dropdown show">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" v-for="item in subItems" :key="item.title">
+                <router-link class="btn btn-secondary" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+            </div>
           </div>
-        </div>
-        <div class="navbar barraMenu"  v-for="item in menuItems" :key="item.title">
-            <div v-if="item.subitem == false">
-              <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-            </div>
-            <div v-else>
-              <div class="dropdown">
-                <button class="dropbtn">Dropdown
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" >
-                  <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-                </div>
-              </div>
-            </div>
-        </div>     
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+
+  </div>
+        </nav>
     </div>
     <router-view></router-view>
  </div>
@@ -38,14 +49,17 @@ export default {
     return {
       sideNav: false,
       menuItems: [
-        {icon: '', subitem: false, title: "Home", url: "/"},
-        {icon: '', subitem: false, title: "Musica", url: "/musica"},
-        {icon: '', subitem: false, title: "Peliculas", url: "/peliculas"},
-        {icon: '', subitem: false, title: "Galerias", url: "/galerias"},
-        {icon: '', subitem: false, title: "Impresora 3D", url: "/impresora3d"},
-        {icon: '', subitem: false, title: "Educativo", url: "/educativo"},
-        {icon: '', subitem: true, title: "ListaFrutas", url: "/listafrutas"}
+        {icon: '', title: "Home", url: "/"},
+        {icon: '', title: "Musica", url: "/musica"},
+        {icon: '', title: "Peliculas", url: "/peliculas"},
+        {icon: '', title: "Galerias", url: "/galerias"},
+        {icon: '', title: "Impresora 3D", url: "/impresora3d"},
+        {icon: '', title: "Educativo", url: "/educativo"},
+      ],
+      subItems: [
+        {icon: '', title: "ListaFrutas", url: "/listafrutas"}
       ]
+
     }
   }
 }
@@ -111,42 +125,4 @@ body {
 }
 
 
-
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 </style>

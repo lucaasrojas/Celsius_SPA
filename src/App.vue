@@ -95,7 +95,7 @@ export default {
 }
 
 body {
-  background-image: url("./assets/images/general-background.jpg");
+  background-image: url("./assets/images/general-background.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

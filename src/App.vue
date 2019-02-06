@@ -9,13 +9,22 @@
               <img src="@/assets/images/celsius.png" class="logoImg">
           </div>
         </div>
-        <div class="row barraMenu">
-            <div  v-for="item in menuItems" :key="item.title">
+        <div class="navbar barraMenu"  v-for="item in menuItems" :key="item.title">
+            <div v-if="item.subitem == false">
               <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-            </div>     
-        </div>
+            </div>
+            <div v-else>
+              <div class="dropdown">
+                <button class="dropbtn">Dropdown
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" >
+                  <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                </div>
+              </div>
+            </div>
+        </div>     
     </div>
-    
     <router-view></router-view>
  </div>
 </template>
@@ -29,13 +38,13 @@ export default {
     return {
       sideNav: false,
       menuItems: [
-        {icon: '', title: "Home", url: "/"},
-        {icon: '', title: "Musica", url: "/musica"},
-        {icon: '', title: "Peliculas", url: "/peliculas"},
-        {icon: '', title: "Galerias", url: "/galerias"},
-        {icon: '', title: "Impresora 3D", url: "/impresora3d"},
-        {icon: '', title: "Educativo", url: "/educativo"},
-        {icon: '', title: "ListaFrutas", url: "/listafrutas"}
+        {icon: '', subitem: false, title: "Home", url: "/"},
+        {icon: '', subitem: false, title: "Musica", url: "/musica"},
+        {icon: '', subitem: false, title: "Peliculas", url: "/peliculas"},
+        {icon: '', subitem: false, title: "Galerias", url: "/galerias"},
+        {icon: '', subitem: false, title: "Impresora 3D", url: "/impresora3d"},
+        {icon: '', subitem: false, title: "Educativo", url: "/educativo"},
+        {icon: '', subitem: true, title: "ListaFrutas", url: "/listafrutas"}
       ]
     }
   }
@@ -99,5 +108,45 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 </style>

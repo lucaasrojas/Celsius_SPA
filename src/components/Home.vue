@@ -1,42 +1,21 @@
 <template>
-	<v-container>
-		<v-layout row>
-			<v-layout column>
-				<v-flex>
-					<router-link to="/galerias"><img src="@/assets/images/galerias.png"></router-link>
-				</v-flex>
-			</v-layout>
-			<v-layout column>
-				<v-flex>
-					<router-link to="/galerias"><img src="@/assets/images/mosaicogalerias.png"></router-link>
-				</v-flex>
-			</v-layout>
-		</v-layout>
-		<v-layout row>
-			<v-layout column>
-				<v-flex>
-					<router-link to="/peliculas"><img src="@/assets/images/mosaicopeliculas.png"></router-link>
-				</v-flex>
-			</v-layout>
-			<v-layout column>
-				<v-flex>
-					<router-link to="/peliculas"><img src="@/assets/images/peliculas.png"></router-link>
-				</v-flex>
-			</v-layout>
-		</v-layout>
-		<v-layout row>
-			<v-layout column>
-				<v-flex>
-					<router-link to="/musica"><img src="@/assets/images/musicaa.png"></router-link>
-				</v-flex>
-			</v-layout>
-			<v-layout column>
-				<v-flex>
-					<router-link to="/musica"><img src="@/assets/images/mosaicomusica.png"></router-link>
-				</v-flex>
-			</v-layout>
-		</v-layout>
-	</v-container>
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				<router-link to="/galerias"><img src="@/assets/images/galerias.png"><img src="@/assets/images/mosaicogalerias.png"></router-link>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<router-link to="/peliculas"><img src="@/assets/images/mosaicopeliculas.png"><img src="@/assets/images/peliculas.png"></router-link>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<router-link to="/musica"><img src="@/assets/images/musicaa.png"><img src="@/assets/images/mosaicomusica.png"></router-link>
+			</div>
+		</div>
+	</div>
 	
 </template>
 <script>

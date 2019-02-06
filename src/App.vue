@@ -3,29 +3,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <v-container>
-        <v-layout row >
-          <v-layout column>
-            <v-flex>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
               <img src="@/assets/images/celsius.png" class="logoImg">
-            </v-flex>
-          </v-layout>
-        </v-layout>
-        <v-layout row class="barraMenu">
-              
-          <v-flex v-for="item in menuItems" :key="item.title" >
-            <!-- <v-list-tile-action>
-            <v-icon> {{ item.icon }} </v-icon>
-            </v-list-tile-action> -->
-            <!--<v-list-tile-content>-->
-            <v-layout column>
+          </div>
+        </div>
+        <div class="row barraMenu">
+            <div  v-for="item in menuItems" :key="item.title">
               <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-            </v-layout>
-            <!--</v-list-tile-content>-->
-              </v-flex>
-        </v-layout>        
-    </v-container>
-      <router-view></router-view>
+            </div>     
+        </div>
+    </div>
+    
+    <router-view></router-view>
  </div>
 </template>
 

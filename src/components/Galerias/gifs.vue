@@ -1,13 +1,11 @@
 <template>
-    <v-container fluid>
-        <v-layout row>
-            <v-layout column xs>
-                <v-flex>  
-                    <img class="imgGaleria" v-for="item in pictures"  :key="item.url" :src="require(`@/${item.url}`)"/>
-                </v-flex>
-            </v-layout>
-        </v-layout>
-    </v-container>
+    <div class="container">
+            <div class="col-xs-12 col-sm-4 col-md-3" v-for="item in pictures"  :key="item.url" >
+                <div class="product-tile-inner"> 
+                    <img class="imgGaleria" :src="require(`@/${item.url}`)"/>
+                </div>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -40,5 +38,16 @@ data() {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.product-tile-inner {
+}
+
+.product-tile-inner img {
+  width: 100%;
+  height: auto;
+}
 </style>

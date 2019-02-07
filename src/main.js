@@ -16,6 +16,9 @@ import listafrutas from './components/ListaFrutas.vue'
 //Import Router
 import VueRouter from 'vue-router'
 
+//Import Bootstrap
+import 'bootstrap'
+
 //Import Vuetify
 import Vuetify from 'vuetify'
 

@@ -4,30 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-auto">
+
           <router-link  class="navbar-brand" to="/"><b>Celsius</b></router-link>
+          
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto" v-for="item in menuItems" :key="item.title">
+              <ul class="navbar-nav mr-auto">
+                <div  v-for="item in menuItems" :key="item.title">
                 <li class="nav-item active">
-                  <router-link  class="btn btn-secondary" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                  <router-link  class="btn btn-secondary nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
                 </li>
-                
+                </div>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                  </a> 
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <div v-for="item in subItems" :key="item.title">
+                      <router-link class="dropdown-item" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                    </div>
+                  </div>
+
+                </li>
               </ul>
-          <div class="dropdown show">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" v-for="item in subItems" :key="item.title">
-                <router-link class="btn btn-secondary" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-            </div>
+          
           </div>
-
-
-  </div>
         </nav>
     </div>
     <router-view></router-view>

@@ -16,22 +16,50 @@
               <ul class="navbar-nav mr-auto">
                 <div  v-for="item in menuItems" :key="item.title">
                 <li class="nav-item active">
-                  <router-link  class="btn btn-secondary nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                  <router-link  class="nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
                 </li>
                 </div>
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown"  v-for="item in dropDowns" :key="item">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown button
+                    {{item.title}}
                   </a> 
 
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                    <div v-for="item in subItems" :key="item.title">
+                    <div v-for="sItem in item.subItems" :key="sItem">
+                      <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><b>{{ sItem.title }}</b></router-link>
+                    </div>
+                  </div>
+
+                </li>
+                <!--
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Galerias
+                  </a> 
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <div v-for="item in galeriaSubItems" :key="item.title">
                       <router-link class="dropdown-item" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
                     </div>
                   </div>
 
                 </li>
+
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Aplicaciones
+                  </a> 
+
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <div v-for="item in appSubItems" :key="item.title">
+                      <router-link class="dropdown-item" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+                    </div>
+                  </div>
+
+                </li>
+                -->
               </ul>
           
           </div>
@@ -52,12 +80,24 @@ export default {
       menuItems: [
         {icon: '', title: "Musica", url: "/musica"},
         {icon: '', title: "Peliculas", url: "/peliculas"},
-        {icon: '', title: "Galerias", url: "/galerias"},
         {icon: '', title: "Impresora 3D", url: "/impresora3d"},
         {icon: '', title: "Educativo", url: "/educativo"},
       ],
-      subItems: [
-        {icon: '', title: "ListaFrutas", url: "/listafrutas"}
+      dropDowns: [
+        {
+          title: "Galerias",
+          subItems: [
+            {icon: '', title: "GIFS", url: "/galeriaGifs"},
+            {icon: '', title: "GTAIV", url: "/galeriaGTAIV"}
+          ]
+        },
+        {
+          title: "Aplicaciones",
+          subItems: [
+            {icon: '', title: "ListaFrutas", url: "/listafrutas"}
+          ]
+        }
+
       ]
 
     }

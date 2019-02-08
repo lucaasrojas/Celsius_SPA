@@ -1,15 +1,26 @@
 <template>
     <div class="container">
-                    <h2>Listado de Frutas</h2>
-                    <ul class="list-group">
-                        <li v-for="(item, index) of frutas" v-bind:key="item.id" v-on:click="aumentar(index)"
-                        class="list-group-item d-flex justify-content-between align-items-center">
-                            {{index}} -{{item.nombre}}
-                            <span class="badge badge-primary badge-pill">{{item.cantidad}}</span>
-                        </li>
-                        
-                    </ul>
-                    <button type="button" class="btn btn-danger" v-on:click="reiniciar">Reset</button>
+        <h2>Listado de Frutas</h2>
+        <div class="row">
+            <div class="col">
+                <ul class="list-group d-inline-flex">
+                    <li v-for="(item, index) of frutas" :key="item.id" @click="aumentar(index)"
+                    class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="col text-left">
+                            {{item.nombre}}
+                        </div>
+                        <div class="col">
+                            <span class="badge badge-primary badge-pill text-right">{{item.cantidad}}</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-danger" @click="reiniciar">Reset</button>
+            </div>
+        </div>
     </div>
 </template>
 <script>

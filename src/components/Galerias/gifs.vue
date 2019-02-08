@@ -1,8 +1,8 @@
 <template>
     <div class="container">
-            <div class="col-xs-12 col-sm-4 col-md-3" v-for="item in pictures"  :key="item.url" >
-                <div class="product-tile-inner"> 
-                    <img class="imgGaleria" :src="require(`@/${item.url}`)"/>
+            <div class="col" v-for="item in pictures"  :key="item.url" >
+                <div class="card alert-dark product-tile-inner rounded" style="width: 18rem; margin: 3px"> 
+                    <img class="img-fluid" :src="require(`@/${item.url}`)"/>
                 </div>
         </div>
     </div>
@@ -43,11 +43,4 @@ data() {
   flex-wrap: wrap;
 }
 
-.product-tile-inner {
-}
-
-.product-tile-inner img {
-  width: 100%;
-  height: auto;
-}
 </style>

@@ -1,35 +1,50 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="column">
-				<router-link to="/galerias"><img src="@/assets/images/galerias.png"><img src="@/assets/images/mosaicogalerias.png"></router-link>
+		<div class="col" v-for="img in imagesList" :key="img">
+			<div class="card alert-dark" style="width: 18rem;">
+				<img :src="require(`@/${img.src}`)" class="card-img-top"/>
+				<div class="card-body">
+					<h5 class="card-title">{{img.title}}</h5>
+					<p class="card-text">{{img.description}}</p>
+					<router-link :to="img.url" class="btn btn-primary">More</router-link>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="column">
-				<router-link to="/peliculas"><img src="@/assets/images/mosaicopeliculas.png"><img src="@/assets/images/peliculas.png"></router-link>
-			</div>
 		</div>
-		<div class="row">
-			<div class="column">
-				<router-link to="/musica"><img src="@/assets/images/musicaa.png"><img src="@/assets/images/mosaicomusica.png"></router-link>
-			</div>
-		</div>
+		
 	</div>
 	
 </template>
 <script>
 export default {
-
+data() {
+	return {
+		imagesList: [
+			{	
+				title: "Galerias", 
+				description: "Contiene imagenes variadas", 
+				src: "assets/images/mosaicogalerias.png", 
+				url: "/galerias"
+			},
+			{	
+				title: "Peliculas", 
+				description: "Peliculas para descargar y con review", 
+				src: "assets/images/mosaicopeliculas.png", 
+				url: "/peliculas"
+			},
+			{	
+				title: "Musica", 
+				description: "Listados de la mejor musica", 
+				src: "assets/images/mosaicomusica.png", 
+				url: "/musica"
+			},
+		]
+	}
+}
 }
 </script>
 
 <style scoped>
-#body {
-	background-image: "assets/logo.png";
-}
 
-.container {
-	padding: 2px;
-}
 </style>

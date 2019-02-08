@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-auto">
+        <nav class="d-inline-flex navbar navbar-expand-lg navbar-dark bg-dark w-auto">
 
           <router-link  class="navbar-brand" to="/"><b>Celsius</b></router-link>
           
@@ -22,7 +22,7 @@
 
                 <li class="nav-item dropdown"  v-for="item in dropDowns" :key="item">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{item.title}}
+                    <b>{{item.title}}</b>
                   </a> 
 
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
@@ -32,40 +32,15 @@
                   </div>
 
                 </li>
-                <!--
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Galerias
-                  </a> 
-
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                    <div v-for="item in galeriaSubItems" :key="item.title">
-                      <router-link class="dropdown-item" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-                    </div>
-                  </div>
-
-                </li>
-
-
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Aplicaciones
-                  </a> 
-
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                    <div v-for="item in appSubItems" :key="item.title">
-                      <router-link class="dropdown-item" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-                    </div>
-                  </div>
-
-                </li>
-                -->
+                
               </ul>
           
           </div>
         </nav>
     </div>
-    <router-view></router-view>
+    <div class="container">
+      <router-view></router-view>
+    </div>
  </div>
 </template>
 
@@ -87,14 +62,14 @@ export default {
         {
           title: "Galerias",
           subItems: [
-            {icon: '', title: "GIFS", url: "/galeriaGifs"},
-            {icon: '', title: "GTAIV", url: "/galeriaGTAIV"}
+            {title: "GIFS", url: "/galeriaGifs"},
+            {title: "GTAIV", url: "/galeriaGTAIV"}
           ]
         },
         {
           title: "Aplicaciones",
           subItems: [
-            {icon: '', title: "ListaFrutas", url: "/listafrutas"}
+            {title: "ListaFrutas", url: "/listafrutas"}
           ]
         }
 

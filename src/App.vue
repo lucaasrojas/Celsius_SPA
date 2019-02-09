@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <div class="container">
-        <nav class="d-inline-flex navbar navbar-expand-lg navbar-dark bg-dark w-auto">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
           <router-link  class="navbar-brand" to="/"><b>Celsius</b></router-link>
           

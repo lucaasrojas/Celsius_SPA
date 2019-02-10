@@ -15,7 +15,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <div  v-for="item in menuItems" :key="item.title">
-                <li class="nav-item active">
+                <li class="nav-item active" v-if="item.disponible == true">
                   <router-link  class="nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
                 </li>
                 </div>
@@ -30,11 +30,8 @@
                       <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><b>{{ sItem.title }}</b></router-link>
                     </div>
                   </div>
-
                 </li>
-                
               </ul>
-          
           </div>
         </nav>
     </div>
@@ -53,24 +50,24 @@ export default {
     return {
       sideNav: false,
       menuItems: [
-        {icon: '', title: "Musica", url: "/musica"},
-        {icon: '', title: "Peliculas", url: "/peliculas"},
-        {icon: '', title: "Impresora 3D", url: "/impresora3d"},
-        {icon: '', title: "Educativo", url: "/educativo"},
+        {icon: '', title: "Musica", url: "/musica", disponible: true},
+        {icon: '', title: "Peliculas", url: "/peliculas", disponible: false},
+        {icon: '', title: "Impresora 3D", url: "/impresora3d", disponible: false},
+        {icon: '', title: "Educativo", url: "/educativo", disponible: true},
       ],
       dropDowns: [
         {
           title: "Galerias",
           subItems: [
-            {title: "GIFS", url: "/galeriaGifs"},
-            {title: "GTAIV", url: "/galeriaGTAIV"}
+            {title: "GIFS", url: "/galeriaGifs", disponible: true},
+            {title: "GTAIV", url: "/galeriaGTAIV", disponible: true}
           ]
         },
         {
           title: "Aplicaciones",
           subItems: [
-            {title: "Lista con contador", url: "/listaContador"},
-            {title: "ToDo List", url: "/todolist"}
+            {title: "Lista con contador", url: "/listaContador", disponible: true},
+            {title: "ToDo List", url: "/todolist", disponible: true}
           ]
         }
 

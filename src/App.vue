@@ -69,7 +69,7 @@ export default {
         {
           title: "Aplicaciones",
           subItems: [
-            {title: "ListaFrutas", url: "/listafrutas"}
+            {title: "Lista con contador", url: "/listaContador"}
           ]
         }
 

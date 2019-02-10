@@ -1,12 +1,22 @@
 <template>
     <div class="container">
-        <h2 class="alert alert-light  d-inline-flex">Listado</h2>
-        <div class="row">
+        <h2 class="alert alert-light  d-inline-flex">Listado con contador</h2>
+        <div class="row bg-dark rounded" id="appContainer">
             <div class="col">
-                <input type="text" class="form-control my-3" v-model="nuevoElemento" 
-                id="inputElement" placeholder="Enter new element" v-on:keyup.enter="agregarElemento"  >
-                <button type="submit" class="btn btn-primary" @click="agregarElemento">Submit</button>
-                <button type="submit" class="btn btn-danger" @click="borrarTodo">Delete all</button>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control my-3" v-model="nuevoElemento" 
+                        id="inputElement" placeholder="Enter new element" v-on:keyup.enter="agregarElemento"  >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" @click="agregarElemento">Submit</button>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-danger" @click="borrarTodo">Delete all</button>
+                    </div>
+                </div>
 
             </div>
             <div class="col">
@@ -64,3 +74,12 @@ export default {
     }
 }
 </script>
+
+<style>
+#appContainer {
+    padding: 1rem;
+    border: 2px;
+    border-color: snow;
+    border-style: solid;
+}
+</style>

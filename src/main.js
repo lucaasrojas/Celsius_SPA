@@ -12,6 +12,7 @@ import galeriaGifs from './components/Galerias/gifs.vue'
 import galeriaGTAIV from './components/Galerias/gtaiv.vue'
 import educativo from './components/Educativo.vue'
 import listacontador from './components/Aplicaciones/ListaContador.vue'
+import todolist from './components/Aplicaciones/Todo-list.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -40,7 +41,8 @@ const router = new VueRouter({
     {path: '/galeriaGifs', component: galeriaGifs},
     {path: '/galeriaGTAIV', component: galeriaGTAIV},
     {path: '/educativo', component: educativo},
-    {path: '/listacontador', component: listacontador}
+    {path: '/listacontador', component: listacontador},
+    {path: '/todolist', component: todolist}
 
   ]
 })

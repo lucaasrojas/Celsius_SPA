@@ -71,7 +71,7 @@ export default {
           subItems: [
             {title: "Lista con contador", url: "/listaContador", disponible: true},
             {title: "ToDo List", url: "/todolist", disponible: true},
-            {title: "Usuarios", url: "/usuarios", disponible: true}
+            {title: "Usuarios", url: "/usuarios", disponible: false}
           ]
         }
 

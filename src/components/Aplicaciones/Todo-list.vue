@@ -2,7 +2,7 @@
     <div class="container">
         <h2 class="alert alert-light  d-inline-flex">Lista To-Do</h2>
         <div class="row bg-dark rounded" id="appContainer">
-            <div class="col-sm-6">
+            <div class="col-sm-4">
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control my-3" v-model="nuevaTarea" 
@@ -19,14 +19,18 @@
                 </div>
 
             </div>
-            <div class="col-sm-6">
-                <ul class="list-group d-inline-flex">
+            <div class="col-sm-8">
+                <ul class="list-group">
                     <li v-for="(item, index) of tareas" :key="item.id"
-                    class="list-group-item d-flex justify-content-between align-items-center">
-                        <div :class="['alert', item.estado ? 'alert-success' : 'alert-primary']">
-                            {{item.nombre}}
-                           <button type="button" :class="['btn btn-success', item.estado ? 'd-none' : '']" @click="completarTarea(index)">OK</button>
-                           <button type="button" class="btn btn-danger" @click="borrarTarea(index)">X</button>
+                    class="list-group-item">
+                        <div :class="['alert','row', item.estado ? 'alert-success' : 'alert-primary']">
+                            <div class="col-8">
+                                {{item.nombre}}
+                            </div>
+                            <div class="col-4">
+                            <button type="button" :class="['btn btn-success', item.estado ? 'd-none' : '']" @click="completarTarea(index)">OK</button>
+                            <button type="button" class="btn btn-danger" @click="borrarTarea(index)">X</button>
+                            </div>
                         </div>
                     </li>
                 </ul>

@@ -1,7 +1,8 @@
 <template>
     <div class="container">
-        <h2 class="alert alert-light  d-inline-flex">Lista To-Do</h2>
-        <div class="row bg-dark rounded" id="appContainer">
+        <h2 class="alert alert-light  d-inline-flex">Donaciones</h2>
+        <div class="row bg-dark rounded text-center" id="appContainer">
+                <!--
             <div class="row mt-5">
                 <div class="col">
                     <div class="card">
@@ -22,18 +23,20 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-5">
+                -->
+            
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Add new user</h3>
+                            <h3>Total: {{sumAll}}</h3>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>LastName</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Monto</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +48,7 @@
                                             {{user.lastname}}
                                         </td>
                                         <td>
-                                            <button class="btn btn-danger">X</button>
+                                            {{user.monto}}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -53,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </div>
         
     </div>
@@ -71,17 +74,19 @@ export default {
   },
     data(){
         return {
-            newUser: {
-                name: '',
-                lastname: ''
-            }
         }
     },
     methods:{
-        addUser: function(){
-            usuariosRef.push(this.newUser);
-            this.newUser.name = '';
-            this.newUser.lastname = '';
+
+    },
+    computed: {
+        sumAll: function(){
+            
+            let total = 0;
+            this.usuarios.forEach(element => {
+                total += element.monto
+            });
+            return total;
         }
     }
 }

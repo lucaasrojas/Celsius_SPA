@@ -13,6 +13,7 @@ import galeriaGTAIV from './components/Galerias/gtaiv.vue'
 import educativo from './components/Educativo.vue'
 import listacontador from './components/Aplicaciones/ListaContador.vue'
 import todolist from './components/Aplicaciones/Todo-list.vue'
+import usuarios from './components/Aplicaciones/Usuarios.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -23,8 +24,11 @@ import 'bootstrap'
 //Import Vuetify
 import Vuetify from 'vuetify'
 
+import VueFire from 'vuefire';
+
 Vue.use(VueRouter);
 Vue.use(Vuetify);
+Vue.use(VueFire);
 
 const router = new VueRouter({
   routes: [
@@ -42,7 +46,8 @@ const router = new VueRouter({
     {path: '/galeriaGTAIV', component: galeriaGTAIV},
     {path: '/educativo', component: educativo},
     {path: '/listacontador', component: listacontador},
-    {path: '/todolist', component: todolist}
+    {path: '/todolist', component: todolist},
+    {path: '/usuarios', component: usuarios}
 
   ]
 })

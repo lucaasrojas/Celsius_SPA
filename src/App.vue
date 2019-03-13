@@ -45,7 +45,10 @@
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
+
 export default {
+  name: 'App',
+
   data() {
     return {
       sideNav: false,
@@ -67,7 +70,8 @@ export default {
           title: "Aplicaciones",
           subItems: [
             {title: "Lista con contador", url: "/listaContador", disponible: true},
-            {title: "ToDo List", url: "/todolist", disponible: true}
+            {title: "ToDo List", url: "/todolist", disponible: true},
+            {title: "Usuarios", url: "/usuarios", disponible: true}
           ]
         }
 

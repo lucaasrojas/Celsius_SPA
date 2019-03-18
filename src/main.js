@@ -14,6 +14,7 @@ import educativo from './components/Educativo.vue'
 import listacontador from './components/Aplicaciones/ListaContador.vue'
 import todolist from './components/Aplicaciones/Todo-list.vue'
 import usuarios from './components/Aplicaciones/Usuarios.vue'
+import login from './components/Login.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -33,12 +34,10 @@ Vue.use(VueFire);
 const router = new VueRouter({
   routes: [
     {
-      path: '/', 
-      component: Home, 
-      meta: {
-        title: "Home Page"
-      }
+      path: '*', 
+      redirect: '/home'
     },
+    {path: '/home', component: Home},
     {path: '/musica', component: Musica},
     {path: '/peliculas', component: Peliculas},
     {path: '/galerias', component: Galerias},
@@ -47,7 +46,8 @@ const router = new VueRouter({
     {path: '/educativo', component: educativo},
     {path: '/listacontador', component: listacontador},
     {path: '/todolist', component: todolist},
-    {path: '/usuarios', component: usuarios}
+    {path: '/usuarios', component: usuarios},
+    {path: '/login', component: login}
 
   ]
 })

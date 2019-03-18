@@ -57,6 +57,7 @@ export default {
         {icon: '', title: "Peliculas", url: "/peliculas", disponible: false},
         {icon: '', title: "Impresora 3D", url: "/impresora3d", disponible: false},
         {icon: '', title: "Educativo", url: "/educativo", disponible: true},
+        {icon: '', title: "Login", url: "/login", disponible: true},
       ],
       dropDowns: [
         {

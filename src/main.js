@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import firebase from 'firebase'
 
 Vue.config.productionTip = false
 
@@ -15,6 +16,7 @@ import listacontador from './components/Aplicaciones/ListaContador.vue'
 import todolist from './components/Aplicaciones/Todo-list.vue'
 import usuarios from './components/Aplicaciones/Usuarios.vue'
 import login from './components/Login.vue'
+import administrator from './components/Admin.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -47,12 +49,19 @@ const router = new VueRouter({
     {path: '/listacontador', component: listacontador},
     {path: '/todolist', component: todolist},
     {path: '/usuarios', component: usuarios},
-    {path: '/login', component: login}
+    {path: '/login', component: login},
+    {path: '/admin', component: administrator, meta: {admin: true}}
 
   ]
 })
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+firebase.auth().onAuthStateChanged(function(){
+  new Vue({
+    data: {
+      soyAdmin: false
+    },
+    router,
+    render: h => h(App)
+  }).$mount('#app')
+})
+

@@ -31,6 +31,12 @@
                     </div>
                   </div>
                 </li>
+                <li class="nav-item active">
+                  <h5 class="nav-link">Admin: {{this.$root.$data.soyAdmin}}</h5>
+                </li>
+                <li class="nav-item active">
+                  <button class="nav-link" @click="logout">Logout</button>
+                </li>
               </ul>
           </div>
         </nav>
@@ -48,7 +54,6 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 export default {
   name: 'App',
-
   data() {
     return {
       sideNav: false,
@@ -58,6 +63,8 @@ export default {
         {icon: '', title: "Impresora 3D", url: "/impresora3d", disponible: false},
         {icon: '', title: "Educativo", url: "/educativo", disponible: true},
         {icon: '', title: "Login", url: "/login", disponible: true},
+        {icon: '', title: "Admin", url: "/admin", disponible: this.$root.$data.soyAdmin},
+
       ],
       dropDowns: [
         {
@@ -79,6 +86,12 @@ export default {
       ]
 
     }
+  },
+  methods: {
+    logout(){
+      this.$root.$data.soyAdmin = false;
+    }
+    
   }
 }
 </script>

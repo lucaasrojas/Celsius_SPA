@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import firebase from 'firebase'
 
+
 Vue.config.productionTip = false
 
 //Import components
@@ -17,6 +18,7 @@ import todolist from './components/Aplicaciones/Todo-list.vue'
 import usuarios from './components/Aplicaciones/Usuarios.vue'
 import login from './components/Login.vue'
 import administrator from './components/Admin.vue'
+import recetas from './components/Recetas.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -50,6 +52,7 @@ const router = new VueRouter({
     {path: '/todolist', component: todolist},
     {path: '/usuarios', component: usuarios},
     {path: '/login', component: login},
+    {path: '/recetas', component: recetas},
     {path: '/admin', component: administrator, meta: {admin: true}}
 
   ]

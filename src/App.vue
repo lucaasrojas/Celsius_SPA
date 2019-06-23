@@ -51,7 +51,6 @@
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-
 export default {
   name: 'App',
   data() {
@@ -59,6 +58,7 @@ export default {
       sideNav: false,
       menuItems: [
         {icon: '', title: "Musica", url: "/musica", disponible: true},
+        {icon: '', title: "Recetas", url: "/recetas", disponible: true},
         {icon: '', title: "Peliculas", url: "/peliculas", disponible: false},
         {icon: '', title: "Impresora 3D", url: "/impresora3d", disponible: false},
         {icon: '', title: "Educativo", url: "/educativo", disponible: true},

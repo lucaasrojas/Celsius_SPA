@@ -2,29 +2,6 @@
     <div class="container">
         <h2 class="alert alert-light  d-inline-flex">Donaciones</h2>
         <div class="row bg-dark rounded text-center" id="appContainer">
-                <!--
-            <div class="row mt-5">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Add new user</h3>
-                        </div>
-                        <div class="card-body">
-                            <form @submit.prevent="addUser">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" v-model="newUser.name"
-                                    placeholder="Name" >
-                                    <input type="text" class="form-control" v-model="newUser.lastname"
-                                    placeholder="Lastname" >
-                                </div>
-                                <button type="submit" class="btn btn-primary">Add</button>
-                            </form>    
-                        </div>
-                    </div>
-                </div>
-            </div>
-                -->
-            
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
@@ -62,11 +39,8 @@
     </div>
 </template>
 <script>
-import Firebase from 'firebase';
-import config from '../../config';
-let app = Firebase.initializeApp(config);
-let db = app.database();
-let usuariosRef = db.ref('usuarios');
+import firebaseDB from '../../firebaseDB'
+let usuariosRef = firebaseDB.db.ref('usuarios');
 
 export default {
   firebase: {

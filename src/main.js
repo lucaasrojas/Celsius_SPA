@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import firebase from 'firebase'
+//import firebase from 'firebase'
 
 
 Vue.config.productionTip = false
@@ -29,11 +29,11 @@ import 'bootstrap'
 //Import Vuetify
 import Vuetify from 'vuetify'
 
-import VueFire from 'vuefire';
+//import VueFire from 'vuefire';
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);
-Vue.use(VueFire);
+//Vue.use(VueFire);
 
 const router = new VueRouter({
   routes: [
@@ -58,7 +58,7 @@ const router = new VueRouter({
   ]
 })
 
-firebase.auth().onAuthStateChanged(function(){
+//firebase.auth().onAuthStateChanged(function(){
   new Vue({
     data: {
       soyAdmin: false
@@ -66,5 +66,5 @@ firebase.auth().onAuthStateChanged(function(){
     router,
     render: h => h(App)
   }).$mount('#app')
-})
+//})
 

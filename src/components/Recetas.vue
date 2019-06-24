@@ -1,14 +1,12 @@
 <template>
     <div class="container">
         
-        <h2 class="alert alert-light  d-inline-flex">Recetas</h2>
+        <h2 class="alert alert-light  d-inline-flex">{{listaRecetas}}</h2>
         <div class="row bg-dark rounded text-center" id="appContainer">
                 <div class="col">
                     <div class="card">
-                        <div class="card-header">
-                        </div>
                         <div class="card-body">
-                            <table class="table table-striped table-bordered">
+                            <table class="table table-striped table-bordered tabler-hover">
                                 <thead>
                                     <tr>
                                         <th>Nombre</th>
@@ -17,7 +15,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   
+                                    
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Dificultad</th>
+                                        <th>Ingredientes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   <!--
                                     <tr v-for="rec in recetas" :key="rec.nombre">
                                         <td>
                                             {{rec.nombre}}
@@ -31,6 +39,7 @@
                                             </ul>
                                         </td>
                                     </tr>
+                                    -->
                                 </tbody>
                             </table>  
                         </div>
@@ -45,20 +54,27 @@
 
 <script>
 import firebaseDB from '../firebaseDB'
-let recetasRef = firebaseDB.db.ref('recetas/pasteleria');
+let recetasRef = [];
+
 
 export default {
-  firebase: {
-    recetas: recetasRef.orderByKey()
-  },
     data(){
         return {
-            
+            listaRecetas: recetasRef
         }
     },
-    methods:{
+    mounted(){
+        firebaseDB.db.ref('recetas').once('value',(data)=>{
+            data.forEach(function(snapshot){
+                recetasRef.push({
+                    category: snapshot.key,
+                    items: snapshot.val()
+                })
+            })
 
-    },
+            console.log("list",recetasRef)
+        });
+    }
 
 }
 </script>

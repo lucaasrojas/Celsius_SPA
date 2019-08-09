@@ -7,40 +7,17 @@
                     <div class="card">
                         <div class="card-body">
                             <table class="table table-striped table-bordered tabler-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Dificultad</th>
-                                        <th>Ingredientes</th>
+                                    <tr v-for="(rec, index) in listaRecetas" :key="index">
+                                        <th>{{rec.category}}</th>
+                                        
+
+                                        <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
+                                            <tr >
+                                                <th>{{categoryItem.nombre}}</th>
+                                            </tr>
+                                        </tbody>
+
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    
-                                </tbody>
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Dificultad</th>
-                                        <th>Ingredientes</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                   <!--
-                                    <tr v-for="rec in recetas" :key="rec.nombre">
-                                        <td>
-                                            {{rec.nombre}}
-                                        </td>
-                                        <td>
-                                            {{rec.dificultad}}
-                                        </td>
-                                        <td>
-                                            <ul v-for="ing in rec.ingredientes" :key="ing">
-                                                <li>{{ing.nombre}} - {{ing.cantidad}}</li>
-                                            </ul>
-                                        </td>
-                                    </tr>
-                                    -->
-                                </tbody>
                             </table>  
                         </div>
                     </div>
@@ -51,6 +28,20 @@
         
     </div>
 </template>
+<!--
+<tr>
+                                                        <th v-for="ing in categoryItem.ingredientes" :key="ing.nombre">
+                                                           <tr>
+                                                               <th>Ingrediente</th>
+                                                               <th>Cantidad</th>
+                                                            </tr>
+                                                           <tr>
+                                                               <th>{{ing.nombre}}</th>
+                                                               <th>{{ing.cantidad}}</th>
+                                                           </tr>
+                                                        </th>
+                                                    </tr>
+-->
 
 <script>
 import firebaseDB from '../firebaseDB'
@@ -71,8 +62,6 @@ export default {
                     items: snapshot.val()
                 })
             })
-
-            console.log("list",recetasRef)
         });
     }
 

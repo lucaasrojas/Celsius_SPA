@@ -5,21 +5,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
-      <router-link  class="navbar-brand" to="/"><b>Celsius</b></router-link>
+      <router-link  class="navbar-brand navbar-element-padding" to="/"><b>Celsius</b></router-link>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <div  v-for="item in menuItems" :key="item.title">
-            <li class="nav-item active" v-if="item.disponible == true">
-              <router-link  class="nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+          <ul class="navbar-nav">
+            <li class="nav-item active navbar-element-padding" v-for="item in menuItems" :key="item.title" >
+              <router-link  class="nav-link" v-if="item.disponible == true" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
             </li>
-            </div>
 
-            <li class="nav-item dropdown"  v-for="item in dropDowns" :key="item">
+            <li class="nav-item dropdown navbar-element-padding active"  v-for="item in dropDowns" :key="item">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <b>{{item.title}}</b>
               </a> 
@@ -29,12 +27,6 @@
                   <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><b>{{ sItem.title }}</b></router-link>
                 </div>
               </div>
-            </li>
-            <li class="nav-item active">
-              <h5 class="nav-link">Admin: {{this.$root.$data.soyAdmin}}</h5>
-            </li>
-            <li class="nav-item active">
-              <button class="nav-link" @click="logout">Logout</button>
             </li>
           </ul>
       </div>
@@ -152,5 +144,9 @@ body {
   background-size: cover;
 }
 
+.navbar-element-padding {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
 
 </style>

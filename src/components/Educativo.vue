@@ -56,26 +56,12 @@
 </template>
 
 <script>
+import videoListJSON from '../assets/videoList.json'
+
 export default {
 data() {
     return {
-        videoList: [
-            {
-                id: 1,
-                title: "Vue JS",
-                url: "https://www.youtube.com/embed/REqu-nKek-o"
-            },
-            {
-                id: 2,
-                title: "Apache Cordova",
-                url: "https://www.youtube.com/embed/6jVOruQ2T9E"
-            },
-            {
-                id: 3,
-                title: "TEDx",
-                url: "https://www.youtube.com/embed/_DgpIDlV_CY"
-            }
-        ]
+        videoList : videoListJSON
     }
 }
 }

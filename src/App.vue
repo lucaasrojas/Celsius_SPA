@@ -3,44 +3,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
-          <router-link  class="navbar-brand" to="/"><b>Celsius</b></router-link>
-          
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <router-link  class="navbar-brand" to="/"><b>Celsius</b></router-link>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <div  v-for="item in menuItems" :key="item.title">
-                <li class="nav-item active" v-if="item.disponible == true">
-                  <router-link  class="nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-                </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <div  v-for="item in menuItems" :key="item.title">
+            <li class="nav-item active" v-if="item.disponible == true">
+              <router-link  class="nav-link" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
+            </li>
+            </div>
+
+            <li class="nav-item dropdown"  v-for="item in dropDowns" :key="item">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <b>{{item.title}}</b>
+              </a> 
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                <div v-for="sItem in item.subItems" :key="sItem">
+                  <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><b>{{ sItem.title }}</b></router-link>
                 </div>
-
-                <li class="nav-item dropdown"  v-for="item in dropDowns" :key="item">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <b>{{item.title}}</b>
-                  </a> 
-
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                    <div v-for="sItem in item.subItems" :key="sItem">
-                      <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><b>{{ sItem.title }}</b></router-link>
-                    </div>
-                  </div>
-                </li>
-                <li class="nav-item active">
-                  <h5 class="nav-link">Admin: {{this.$root.$data.soyAdmin}}</h5>
-                </li>
-                <li class="nav-item active">
-                  <button class="nav-link" @click="logout">Logout</button>
-                </li>
-              </ul>
-          </div>
-        </nav>
-    </div>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <h5 class="nav-link">Admin: {{this.$root.$data.soyAdmin}}</h5>
+            </li>
+            <li class="nav-item active">
+              <button class="nav-link" @click="logout">Logout</button>
+            </li>
+          </ul>
+      </div>
+    </nav>
     <div class="container">
       <router-view></router-view>
     </div>
@@ -103,7 +101,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   box-sizing: content-box;
 	
 }

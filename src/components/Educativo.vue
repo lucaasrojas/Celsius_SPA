@@ -2,7 +2,7 @@
     <div class="container">
         
         <div class="row my-2" v-for="video in videoList" v-bind:key="video.id">
-           <div class="card mx-auto">
+           <div class="card mx-auto text-white bg-dark">
             <h5 class="card-header">{{video.title}}</h5>
             <div class="card-body">
                 <iframe width="560" height="315" :src=video.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

@@ -1,23 +1,14 @@
 <template>
     <div class="container">
-        <div class="row">
+
+        <div class="row" v-for="video in videoList" v-bind:key="video.id">
             <div class="col-sm">
-                <h2 class="subtitulo"> Vue.js </h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/REqu-nKek-o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <h2 class="subtitulo">{{video.title}}</h2>
+                <iframe width="560" height="315" :src=video.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm">
-                <h2 class="subtitulo"> Apache Cordova </h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6jVOruQ2T9E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <h2 class="subtitulo"> TEDx </h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_DgpIDlV_CY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-        </div>
+        
+        <!--
         <div class="row">
             <div class="col-sm">
                 <h2 class="subtitulo"> Electronica </h2>
@@ -60,12 +51,33 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/EFxkYjN4670" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
         </div>
+        -->
     </div>
 </template>
 
 <script>
 export default {
-
+data() {
+    return {
+        videoList: [
+            {
+                id: 1,
+                title: "Vue JS",
+                url: "https://www.youtube.com/embed/REqu-nKek-o"
+            },
+            {
+                id: 2,
+                title: "Apache Cordova",
+                url: "https://www.youtube.com/embed/6jVOruQ2T9E"
+            },
+            {
+                id: 3,
+                title: "TEDx",
+                url: "https://www.youtube.com/embed/_DgpIDlV_CY"
+            }
+        ]
+    }
+}
 }
 </script>
 

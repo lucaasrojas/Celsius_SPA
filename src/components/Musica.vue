@@ -1,17 +1,21 @@
 <template>
-    <v-container>
-        <v-layout row>
-            <v-flex>
-                <h2 class="subtitulo"> LO ULTIMO 2018 </h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLjVl0tE12Mzfo-mVd690KBreGz9AnT65E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </v-flex>
-        </v-layout>
-    </v-container>
+    <div>
+        <videoCardComponent :itemsList="videoList"></videoCardComponent>
+    </div>
 </template>
 
 <script>
+import musicListJSON from '../assets/musicList.json'
+import videoCardComponent from './Shared/videoCard.vue'
 export default {
-
+components: {
+    videoCardComponent: videoCardComponent
+},
+data(){
+    return {
+        videoList: musicListJSON
+    }
+}
 }
 </script>
 

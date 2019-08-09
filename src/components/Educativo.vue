@@ -1,21 +1,17 @@
 <template>
-    <div class="container">
-        
-        <div class="row my-2" v-for="video in videoList" v-bind:key="video.id">
-           <div class="card mx-auto text-white bg-dark">
-            <h5 class="card-header">{{video.title}}</h5>
-            <div class="card-body">
-                <iframe width="560" height="315" :src=video.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            </div>
-        </div>
-    </div>
+<div>
+    <videoCardComponent :itemsList="videoList"></videoCardComponent>
+</div>
 </template>
 
 <script>
 import videoListJSON from '../assets/videoList.json'
+import videoCardComponent from './Shared/videoCard.vue'
 
 export default {
+    components: {
+        videoCardComponent: videoCardComponent
+    },
 data() {
     return {
         videoList : videoListJSON

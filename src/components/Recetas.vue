@@ -6,18 +6,37 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-striped table-bordered tabler-hover">
-                                    <tr v-for="(rec, index) in listaRecetas" :key="index">
-                                        <th>{{rec.category}}</th>
-                                        
-
-                                        <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
-                                            <tr >
+                            <table class="table table-striped table-bordered tabler-hover" v-for="(rec, index) in listaRecetas" :key="index">
+                                    <tr>
+                                            <th>{{rec.category}}</th>
+                                    </tr>
+                                    <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
+                                           <tr>
                                                 <th>{{categoryItem.nombre}}</th>
                                             </tr>
-                                        </tbody>
+                                            <tr>
+                                                    <td>
+                                                        
+                                                        <tr>
+                                                            <th>Ingrediente</th>
+                                                            <th>Cantidad</th>
+                                                        </tr>
+                                                        <tr v-for="ing in categoryItem.ingredientes" :key="ing.nombre">
+                                                            <th>{{ing.nombre}}</th>
+                                                            <th>{{ing.cantidad}}</th>
+                                                        </tr>
+                                                        
+                                                    
+                                                        <tr>
+                                                            <th colspan="2"> Proceso </th>
+                                                        </tr>
+                                                        <tr>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cumque possimus delectus cum distinctio ad quas, quia porro enim quo odio? Hic harum ipsa fugit amet deleniti debitis temporibus. Sed.
+                                                        </tr>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
 
-                                    </tr>
                             </table>  
                         </div>
                     </div>

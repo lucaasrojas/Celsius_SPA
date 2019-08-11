@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         
-        <h2 class="alert alert-light  d-inline-flex">{{listaRecetas}}</h2>
+        <h2 class="alert alert-light  d-inline-flex">Recetas</h2>
         <div class="row bg-dark rounded text-center" id="appContainer">
                 <div class="col">
                     <div class="card">
@@ -16,7 +16,6 @@
                                             </tr>
                                             <tr>
                                                     <td>
-                                                        
                                                         <tr>
                                                             <th>Ingrediente</th>
                                                             <th>Cantidad</th>
@@ -25,13 +24,13 @@
                                                             <th>{{ing.nombre}}</th>
                                                             <th>{{ing.cantidad}}</th>
                                                         </tr>
-                                                        
-                                                    
                                                         <tr>
                                                             <th colspan="2"> Proceso </th>
                                                         </tr>
                                                         <tr>
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cumque possimus delectus cum distinctio ad quas, quia porro enim quo odio? Hic harum ipsa fugit amet deleniti debitis temporibus. Sed.
+                                                            <td colspan="2">
+                                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa dolorum velit nesciunt modi consequatur aut sed a, unde impedit perferendis ex fugit ut facilis sapiente, consequuntur optio odio quas iste.
+                                                            </td>
                                                         </tr>
                                                     </td>
                                             </tr>

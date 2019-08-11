@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <table class="table table-striped table-bordered tabler-hover" v-for="(rec, index) in listaRecetas" :key="index">
                                     <tr>
-                                            <th>{{rec.category}}</th>
+                                            <th>{{CapitalizeFirstLetter(rec.category)}}</th>
                                     </tr>
                                     <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
                                            <tr>
@@ -81,6 +81,12 @@ export default {
                 })
             })
         });
+    },
+    methods: {
+        CapitalizeFirstLetter: function(word){
+            
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
     }
 
 }

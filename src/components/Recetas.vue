@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <table class="table table-striped table-bordered tabler-hover" v-for="(rec, index) in listaRecetas" :key="index">
                                     <tr>
-                                            <th>{{toCamelCase(rec.category)}}</th>
+                                            <th>{{CapitalizeFirstLetter(rec.category)}}</th>
                                     </tr>
                                     <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
                                            <tr>
@@ -16,7 +16,6 @@
                                             </tr>
                                             <tr>
                                                     <td>
-                                                        
                                                         <tr>
                                                             <th>Ingrediente</th>
                                                             <th>Cantidad</th>
@@ -25,14 +24,12 @@
                                                             <th>{{ing.nombre}}</th>
                                                             <th>{{ing.cantidad}}</th>
                                                         </tr>
-                                                        
-                                                    
                                                         <tr>
                                                             <th colspan="2"> Proceso </th>
                                                         </tr>
                                                         <tr>
                                                             <td colspan="2">
-                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cumque possimus delectus cum distinctio ad quas, quia porro enim quo odio? Hic harum ipsa fugit amet deleniti debitis temporibus. Sed.
+                                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa dolorum velit nesciunt modi consequatur aut sed a, unde impedit perferendis ex fugit ut facilis sapiente, consequuntur optio odio quas iste.
                                                             </td>
                                                         </tr>
                                                     </td>
@@ -86,8 +83,8 @@ export default {
         });
     },
     methods: {
-        toCamelCase(word) {
-            return word.charAt(0).toUpperCase() + word.substring(1);
+        CapitalizeFirstLetter: function(word){
+            return word.charAt(0).toUpperCase() + word.slice(1);
         }
     }
 

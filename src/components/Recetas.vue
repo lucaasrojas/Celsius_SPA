@@ -8,7 +8,7 @@
                         <div class="card-body">
                             <table class="table table-striped table-bordered tabler-hover" v-for="(rec, index) in listaRecetas" :key="index">
                                     <tr>
-                                            <th>{{rec.category}}</th>
+                                            <th>{{toCamelCase(rec.category)}}</th>
                                     </tr>
                                     <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
                                            <tr>
@@ -84,6 +84,11 @@ export default {
                 })
             })
         });
+    },
+    methods: {
+        toCamelCase(word) {
+            return word.charAt(0).toUpperCase() + word.substring(1);
+        }
     }
 
 }

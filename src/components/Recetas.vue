@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         
-        <h2 class="alert alert-light  d-inline-flex">{{listaRecetas}}</h2>
+        <h2 class="alert alert-light  d-inline-flex">Recetas</h2>
         <div class="row bg-dark rounded text-center" id="appContainer">
                 <div class="col">
                     <div class="card">
@@ -31,7 +31,9 @@
                                                             <th colspan="2"> Proceso </th>
                                                         </tr>
                                                         <tr>
+                                                            <td colspan="2">
                                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur cumque possimus delectus cum distinctio ad quas, quia porro enim quo odio? Hic harum ipsa fugit amet deleniti debitis temporibus. Sed.
+                                                            </td>
                                                         </tr>
                                                     </td>
                                             </tr>

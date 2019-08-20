@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <navbar></navbar>
+    <jumbotron></jumbotron>
     <div class="container">
       <router-view class=" position-sticky"></router-view>
     </div>
@@ -11,13 +12,16 @@
 </template>
 
 <script>
+import Jumbotron from './components/Jumbotron.vue';
+
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import navbar from './components/Navbar.vue'
 export default {
   name: 'App',
   components: {
-    navbar: navbar
+    navbar: navbar,
+    jumbotron: Jumbotron
   },
 
 }

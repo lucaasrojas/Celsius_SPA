@@ -1,8 +1,10 @@
 <template>
 	<div class="container">
+		<div class="col-md-12">
+			<jumbotron></jumbotron>
 		<div class="row">
-		<div class="col" v-for="img in imagesList" :key="img">
-			<div class="card alert-dark" style="width: 18rem;">
+		<div class="col-md-4" v-for="img in imagesList" :key="img">
+			<div class="card alert-dark">
 				<img :src="require(`@/${img.src}`)" class="card-img-top"/>
 				<div class="card-body">
 					<h5 class="card-title">{{img.title}}</h5>
@@ -12,12 +14,15 @@
 			</div>
 		</div>
 		</div>
+		</div>
 		
 	</div>
 	
 </template>
 <script>
+
 export default {
+
 data() {
 	return {
 		imagesList: [

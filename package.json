@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "core-js": "^3.2.1",
     "express": "^4.17.1",
     "firebase": "^5.11.1",
     "jquery": "^3.4.1",
@@ -31,7 +30,8 @@
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "core-js": "^3.2.1",
   },
   "eslintConfig": {
     "root": true,

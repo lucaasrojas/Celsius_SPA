@@ -4,6 +4,8 @@
 			<jumbotron></jumbotron>
 		<div class="row">
 		<div class="col-md-4" v-for="img in imagesList" :key="img">
+			<imgCard :imgData="img"></imgCard>
+			<!--
 			<div class="card alert-dark">
 				<img :src="require(`@/${img.src}`)" class="card-img-top"/>
 				<div class="card-body">
@@ -12,6 +14,7 @@
 					<router-link :to="img.url" class="btn btn-primary">More</router-link>
 				</div>
 			</div>
+			-->
 		</div>
 		</div>
 		</div>
@@ -20,9 +23,12 @@
 	
 </template>
 <script>
+import ImageCard from './ImageCard.vue';
 
 export default {
-
+components: {
+	imgCard: ImageCard
+},
 data() {
 	return {
 		imagesList: [

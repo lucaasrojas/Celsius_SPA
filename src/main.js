@@ -32,6 +32,7 @@ Vue.use(VueRouter);
 Vue.use(Vuetify);
 //Vue.use(VueFire);
 
+
 const router = new VueRouter({
   routes: [
     {

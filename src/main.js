@@ -25,7 +25,7 @@ import VueRouter from 'vue-router'
 
 //Import Bootstrap
 import 'bootstrap'
-
+import 'core-js';
 //Import Vuetify
 import Vuetify from 'vuetify'
 

@@ -1,9 +1,16 @@
 <template>
         <div class="jumbotron">
-            <h1 class="display-4">Welcome</h1>
-            <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, ad dolorum adipisci sequi aliquid repellat similique nihil eos, veritatis suscipit at eius fugit facere quod eveniet a sunt nisi placeat.</p>
-            <hr class="my-4">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quas quod totam quis voluptate ab, dolor, laboriosam, quisquam placeat commodi in inventore quidem quia. Porro voluptate laborum tenetur mollitia nam.</p>
+            <div class="jumbotron-billboard"></div>
+            <div class="container">
+                <div class="row jumbotron-content">
+                    <div class="col-lg-12">
+                    <h1>Hi Stranger!</h1>
+                        <p>
+                            Let's take a trip
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 </template>
 
@@ -14,5 +21,21 @@ export default {
 </script>
 
 <style>
-
+.jumbotron-billboard {
+    margin-bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+    position:absolute;
+    top:0;
+    left:0;
+    filter: opacity(0.5);
+    background-color: black;
+}
+.jumbotron-content {margin-top:0; color: white}
+.jumbotron {
+  position:relative;
+background-color: transparent !important;
+}
 </style>

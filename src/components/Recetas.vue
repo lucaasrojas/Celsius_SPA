@@ -46,20 +46,6 @@
         
     </div>
 </template>
-<!--
-<tr>
-                                                        <th v-for="ing in categoryItem.ingredientes" :key="ing.nombre">
-                                                           <tr>
-                                                               <th>Ingrediente</th>
-                                                               <th>Cantidad</th>
-                                                            </tr>
-                                                           <tr>
-                                                               <th>{{ing.nombre}}</th>
-                                                               <th>{{ing.cantidad}}</th>
-                                                           </tr>
-                                                        </th>
-                                                    </tr>
--->
 
 <script>
 import firebaseDB from '../firebaseDB'

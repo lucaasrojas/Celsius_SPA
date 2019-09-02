@@ -43,9 +43,14 @@ export default {
 }
 
 body {
-  background-image: url("./assets/images/general-background.png");
+  background-image: url("./assets/images/general-background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+/*
+    height: 100%;
+background-image: linear-gradient(-180deg, #cccccc 0%, #5e5e5e 25%, #363636 100%);
+background-size: cover;
+*/
 }
 </style>

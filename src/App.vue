@@ -17,6 +17,7 @@ import Jumbotron from './components/Jumbotron.vue';
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import navbar from './components/Navbar.vue'
+
 export default {
   name: 'App',
   components: {

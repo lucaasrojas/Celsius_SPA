@@ -19,6 +19,7 @@ import usuarios from './components/Aplicaciones/Usuarios.vue'
 import login from './components/Login.vue'
 import administrator from './components/Admin.vue'
 import recetas from './components/Recetas.vue'
+import store from './components/Store.vue'
 
 //Import Router
 import VueRouter from 'vue-router'
@@ -43,6 +44,7 @@ const router = new VueRouter({
     {path: '/musica', component: Musica},
     {path: '/peliculas', component: Peliculas},
     {path: '/galerias', component: Galerias},
+    {path: '/store', component: store},
     {path: '/galeriaGifs', component: galeriaGifs},
     {path: '/galeriaGTAIV', component: galeriaGTAIV},
     {path: '/educativo', component: educativo},

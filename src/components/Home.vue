@@ -24,6 +24,7 @@
 </template>
 <script>
 import ImageCard from './ImageCard.vue';
+import homeImages from '../assets/homeImagesOptions.json';
 
 export default {
 components: {
@@ -31,32 +32,7 @@ components: {
 },
 data() {
 	return {
-		imagesList: [
-			{	
-				title: "Galerias", 
-				description: "Contiene imagenes variadas", 
-				src: "assets/images/mosaicogalerias.png", 
-				url: "/galerias"
-			},
-			{	
-				title: "Peliculas", 
-				description: "Peliculas para descargar y con review", 
-				src: "assets/images/mosaicopeliculas.png", 
-				url: "/peliculas"
-			},
-			{	
-				title: "Musica", 
-				description: "Listados de la mejor musica", 
-				src: "assets/images/mosaicomusica.png", 
-				url: "/musica"
-			},
-			{	
-				title: "Store", 
-				description: "Todos los productos en un solo lugar", 
-				src: "assets/images/store-image.png", 
-				url: "/store"
-			},
-		]
+		imagesList: homeImages
 	}
 },
 methods: {

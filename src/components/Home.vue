@@ -30,19 +30,19 @@ import ImageCard from './ImageCard.vue';
 import homeImages from '../assets/homeImagesOptions.json';
 
 export default {
-components: {
-	imgCard: ImageCard
-},
-data() {
-	return {
-		imagesList: homeImages
+	components: {
+		imgCard: ImageCard
+	},
+	data() {
+		return {
+			imagesList: homeImages
+		}
+	},
+	methods: {
+		goTo(url){
+			this.$router.push(url.replace("/",""));
+		}
 	}
-},
-methods: {
-    goTo(url){
-        this.$router.push(url.replace("/",""));
-    }
-}
 }
 </script>
 

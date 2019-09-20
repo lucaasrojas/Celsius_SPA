@@ -1,38 +1,42 @@
 <template>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark" >
+        <div class="backgroun-header"></div>
 
-      <router-link  class="navbar-brand navbar-element-padding" to="/"><b>Celsius</b></router-link>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <router-link  class="navbar-brand navbar-element-padding" style="position: relative" to="/"><strong>Celsius</strong></router-link>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="position: relative; left: 100">
           <ul class="navbar-nav">
-            <li class="nav-item active navbar-element-padding" v-for="item in navbarConfig.menuItems" :key="item.title" >
-              <router-link  class="nav-link" v-if="item.disponible == true" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-            </li>
+          <li class="nav-item active navbar-element-padding" v-for="item in navbarConfig.menuItems" :key="item.title" >
+            <router-link  class="nav-link active" v-if="item.disponible == true" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
+          </li>
 
-            <li class="nav-item dropdown navbar-element-padding active"  v-for="item in navbarConfig.dropDowns" :key="item">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <b>{{item.title}}</b>
-              </a> 
+          <li class="nav-item dropdown navbar-element-padding active"  v-for="item in navbarConfig.dropDowns" :key="item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <strong>{{item.title}}</strong>
+            </a> 
 
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                <div v-for="sItem in item.subItems" :key="sItem">
-                  <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><b>{{ sItem.title }}</b></router-link>
-                </div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+              <div v-for="sItem in item.subItems" :key="sItem">
+                <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
               </div>
-            </li>
-          </ul>
-      </div>
+            </div>
+          </li>
+        </ul>
+        </div>
+
     </nav>
+  </div>
 </template>
 
 <script>
 import navbarConfig from '../assets/navbarItems.json';
 export default {
-data() {
+  data() {
     return {
       sideNav: false,
       navbarConfig: navbarConfig
@@ -79,4 +83,6 @@ data() {
   padding-top: .25rem;
   padding-bottom: .25rem;
 }
+
+
 </style>

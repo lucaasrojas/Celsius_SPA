@@ -1,15 +1,16 @@
 <template>
     <div class="container">
-            <div class="col" v-for="item in pictures"  :key="item.url" >
-                <div class="card alert-dark product-tile-inner rounded" style="width: 18rem; margin: 3px"> 
-                    <img class="img-fluid" :src="require(`@/${item.url}`)"/>
-                </div>
-        </div>
+        <gallery :pictures="pictures"></gallery>
     </div>
 </template>
 
 <script>
+import gallery from '../galleryTemplate.vue'
+
 export default {
+components: {
+    gallery: gallery
+},
 data() {
     return {
         sideNav: false,
@@ -42,5 +43,6 @@ data() {
   display: flex;
   flex-wrap: wrap;
 }
+
 
 </style>

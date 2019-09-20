@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import gallery from '../galleryTemplate.vue'
-import picturesList from '../../assets/galleryImages.json'
+import gallery from '@/components/Shared/galleryTemplate.vue'
+import picturesList from '@/assets/galleryImages.json'
 
 export default {
     components: {

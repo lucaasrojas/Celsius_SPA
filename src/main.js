@@ -6,20 +6,20 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 //Import components
-import Home from './components/Home.vue'
-import Musica from './components/Musica.vue'
-import Peliculas from './components/Peliculas.vue'
-import Galerias from './components/Galerias.vue'
+import Home from './components/pages/Home.vue'
+import Musica from './components/pages/Musica.vue'
+import Peliculas from './components/pages/Peliculas.vue'
+import Galerias from './components/pages/Galerias.vue'
 import galeriaGifs from './components/Galerias/gifs.vue'
 import galeriaGTAIV from './components/Galerias/gtaiv.vue'
-import educativo from './components/Educativo.vue'
+import educativo from './components/pages/Educativo.vue'
 import listacontador from './components/Aplicaciones/ListaContador.vue'
 import todolist from './components/Aplicaciones/Todo-list.vue'
 import usuarios from './components/Aplicaciones/Usuarios.vue'
 import login from './components/Login.vue'
 import administrator from './components/Admin.vue'
-import recetas from './components/Recetas.vue'
-import store from './components/Store.vue'
+import recetas from './components/pages/Recetas.vue'
+import store from './components/pages/Store.vue'
 
 //Import Router
 import VueRouter from 'vue-router'

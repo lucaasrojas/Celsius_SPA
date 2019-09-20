@@ -6,9 +6,9 @@
             <div class="container">
                 <div class="row jumbotron-content">
                     <div class="col-lg-12">
-                    <h1>Hi Stranger!</h1>
+                    <h1>{{mainTitle}}</h1>
                         <p>
-                            Let's take a trip
+                            {{mainDescription}}
                         </p>
                     </div>
                 </div>
@@ -18,9 +18,10 @@
 </template>
 
 <script>
-import navbar from './Navbar.vue'
+import navbar from '@/components/Shared/Navbar.vue'
 
 export default {
+    props: ['mainTitle', 'mainDescription'],
     components: {
         navbar: navbar
     }

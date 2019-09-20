@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import firebaseDB from '../firebaseDB'
+import firebaseDB from '@/firebaseDB'
 let recetasRef = [];
 
 

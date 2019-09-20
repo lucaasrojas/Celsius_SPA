@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import musicListJSON from '../assets/musicList.json'
-import videoCardComponent from './Shared/videoCard.vue'
+import musicListJSON from '@/assets/musicList.json'
+import videoCardComponent from '@/components/Shared/videoCard.vue'
 export default {
 components: {
     videoCardComponent: videoCardComponent

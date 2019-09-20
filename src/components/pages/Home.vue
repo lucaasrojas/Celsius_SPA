@@ -1,9 +1,6 @@
 <template>
-	<div class="container">
-		<div class="col-md-12">
-			<jumbotron></jumbotron>
-		<div class="row">
-		<div class="col-md-3 mx-auto sectionCard" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
+	<div class="row">
+		<div class="col-md-3 sectionCard m-1" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
 			<div class="row">
 				<div class="col">
 					<h1 class="text-light my-2"> {{img.title}} </h1>
@@ -18,30 +15,32 @@
 				</div>
 			</div>
 		</div>
-
-		</div>
-		</div>
-		
 	</div>
-	
 </template>
 <script>
-import ImageCard from './ImageCard.vue';
-import homeImages from '../assets/homeImagesOptions.json';
+import ImageCard from '@/components/Shared/ImageCard.vue';
+import homeImages from '@/assets/homeImagesOptions.json';
+import Jumbotron from '@/components/Shared/Jumbotron.vue';
 
 export default {
 	components: {
-		imgCard: ImageCard
+		imgCard: ImageCard,
+		jumbotron: Jumbotron
 	},
 	data() {
 		return {
-			imagesList: homeImages
+			imagesList: homeImages,
+			mainTitle: "Home",
+			mainDescription: "Welcome"
 		}
 	},
 	methods: {
 		goTo(url){
 			this.$router.push(url.replace("/",""));
 		}
+	},
+	mounted() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
 	}
 }
 </script>

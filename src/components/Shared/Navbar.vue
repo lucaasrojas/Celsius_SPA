@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import navbarConfig from '../assets/navbarItems.json';
+import navbarConfig from '@/assets/navbarItems.json';
 export default {
   data() {
     return {

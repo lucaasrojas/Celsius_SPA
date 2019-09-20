@@ -23,8 +23,7 @@ export default {
   components: {
     navbar: navbar,
     jumbotron: Jumbotron
-  },
-
+  }
 }
 </script>
 

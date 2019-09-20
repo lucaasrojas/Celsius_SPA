@@ -11,7 +11,10 @@
 			</div>
 			<div class="row">
 				<div class="col home-img">
-					<img :src="require(`@/${img.src}`)" class="rounded-circle my-4" style="max-width: 196px;">
+					<!-- 
+						<img :src="require(`@/${img.src}`)" class="rounded-circle my-4" style="max-width: 196px;">
+					-->
+					<font-awesome-icon fas :icon="img.icon" size="10x" style="color:white"></font-awesome-icon>
 				</div>
 			</div>
 		</div>

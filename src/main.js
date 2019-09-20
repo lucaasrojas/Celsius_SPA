@@ -33,6 +33,15 @@ Vue.use(VueRouter);
 Vue.use(Vuetify);
 //Vue.use(VueFire);
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+ 
+library.add(fas)
+ 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+ 
+Vue.config.productionTip = false
 
 const router = new VueRouter({
   routes: [
@@ -58,13 +67,11 @@ const router = new VueRouter({
   ]
 })
 
-//firebase.auth().onAuthStateChanged(function(){
-  new Vue({
-    data: {
-      soyAdmin: false
-    },
-    router,
-    render: h => h(App)
-  }).$mount('#app')
-//})
+new Vue({
+  data: {
+    soyAdmin: false
+  },
+  router,
+  render: h => h(App)
+}).$mount('#app')
 

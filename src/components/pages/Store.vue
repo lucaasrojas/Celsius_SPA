@@ -5,31 +5,17 @@
   <div class="col-md-12 d-flex justify-content-center mb-5">
 
     <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="all">All</button>
-    <button type="button" id="btnMountains" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="1">Mountains</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="2">Sea</button>
+    <button type="button" id="btnMountains" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="mountain">Mountains</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="nature">Sea</button>
 
   </div>
 
 </div>
 <div class="gallery" id="gallery">
-
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap">
-  </div>
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap">
-  </div>
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap">
-  </div>
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-  </div>
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-  </div>
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
+  <div v-for="img in imgList" :key="img.id">
+    <div :class="`mb-3 pics animation all ${img.category}`">
+      <img class="img-fluid" :id="img.id" :src="img.src" @click="productSelected($event)">
+    </div>
   </div>
 </div>
 </div>
@@ -38,17 +24,26 @@
 
 <script>
 import $ from 'jquery'
+import imgList from '@/assets/store.json'
 
 export default {
+  data() {
+    return {
+      imgList: imgList
+    }
+  },
   methods: {
     btnClicked: (btn) => {
       let selectedClass = btn.srcElement.dataset.rel;
       $("#gallery").fadeTo(100, 0.1);
-      $("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
+      $("#gallery div div").not("."+selectedClass).fadeOut().removeClass('animation');
       setTimeout(function() {
         $("."+selectedClass).fadeIn().addClass('animation');
         $("#gallery").fadeTo(300, 1);
       }, 300);
+    },
+    productSelected: (product) => {
+      console.log("Product", product.toElement.id)
     }
   }
 }

@@ -2,7 +2,7 @@
 <div>
         <navbar></navbar>
         <div class="jumbotron">
-            <div class="jumbotron-billboard backgroun-header"></div>
+            <div class="jumbotron-billboard"></div>
             <div class="container">
                 <div class="row jumbotron-content">
                     <div class="col-lg-12">

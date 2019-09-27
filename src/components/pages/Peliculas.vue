@@ -6,7 +6,15 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            mainTitle: "Peliculas",
+			mainDescription: "Una seleccion para esos dias de flojera"
+        }
+    },
+    mounted() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+	}
 }
 </script>
 

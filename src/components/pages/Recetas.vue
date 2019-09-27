@@ -55,7 +55,9 @@ let recetasRef = [];
 export default {
     data(){
         return {
-            listaRecetas: recetasRef
+            listaRecetas: recetasRef,
+            mainTitle: "Recetas",
+			mainDescription: "Concinar es facil!"
         }
     },
     mounted(){
@@ -67,6 +69,9 @@ export default {
                 })
             })
         });
+
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+
     },
     methods: {
         CapitalizeFirstLetter: function(word){

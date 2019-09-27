@@ -11,7 +11,15 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            mainTitle: "Galerias",
+			mainDescription: "La vida en imagenes"
+        }
+    },
+    mounted() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+	}
 }
 </script>
 

@@ -12,11 +12,16 @@ export default {
     components: {
         videoCardComponent: videoCardComponent
     },
-data() {
-    return {
-        videoList : videoListJSON
-    }
-}
+    data() {
+        return {
+            videoList : videoListJSON,
+            mainTitle: "Educativo",
+			mainDescription: "Videos educativos"
+        }
+    },
+    mounted() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+	}
 }
 </script>
 

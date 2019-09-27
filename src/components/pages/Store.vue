@@ -30,7 +30,9 @@ import router from '@/router.js'
 export default {
   data() {
     return {
-      imgList: imgList
+      imgList: imgList,
+      mainTitle: "Store",
+			mainDescription: "La tienda donde vas a encontrar lo que estas buscando"
     }
   },
   methods: {
@@ -52,7 +54,10 @@ export default {
       console.log("Product: ", product)
       router.push({name: "product", params: {img: product[0]}});
     }
-  }
+  },
+  mounted() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+	}
 }
 </script>
 

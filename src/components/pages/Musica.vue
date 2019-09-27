@@ -7,15 +7,21 @@
 <script>
 import musicListJSON from '@/assets/musicList.json'
 import videoCardComponent from '@/components/Shared/videoCard.vue'
+
 export default {
-components: {
-    videoCardComponent: videoCardComponent
-},
-data(){
-    return {
-        videoList: musicListJSON
-    }
-}
+    components: {
+        videoCardComponent: videoCardComponent
+    },
+    data(){
+        return {
+            videoList: musicListJSON,
+            mainTitle: "Musica",
+			mainDescription: "Las mejores canciones para tus oidos"
+        }
+    },
+    mounted() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+	}
 }
 </script>
 

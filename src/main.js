@@ -1,28 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-//import firebase from 'firebase'
-
+import VueRouter from 'vue-router'
+import router from '@/router.js'
 
 Vue.config.productionTip = false
 
-//Import components
-import Home from './components/pages/Home.vue'
-import Musica from './components/pages/Musica.vue'
-import Peliculas from './components/pages/Peliculas.vue'
-import Galerias from './components/pages/Galerias.vue'
-import galeriaGifs from './components/Galerias/gifs.vue'
-import galeriaGTAIV from './components/Galerias/gtaiv.vue'
-import educativo from './components/pages/Educativo.vue'
-import listacontador from './components/Aplicaciones/ListaContador.vue'
-import todolist from './components/Aplicaciones/Todo-list.vue'
-import usuarios from './components/Aplicaciones/Usuarios.vue'
-import login from './components/Login.vue'
-import administrator from './components/Admin.vue'
-import recetas from './components/pages/Recetas.vue'
-import store from './components/pages/Store.vue'
-
-//Import Router
-import VueRouter from 'vue-router'
 
 //Import Bootstrap
 import 'bootstrap'
@@ -42,29 +24,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
  
 Vue.config.productionTip = false
 
-const router = new VueRouter({
-  routes: [
-    {
-      path: '*', 
-      redirect: '/home'
-    },
-    {path: '/home', component: Home},
-    {path: '/musica', component: Musica},
-    {path: '/peliculas', component: Peliculas},
-    {path: '/galerias', component: Galerias},
-    {path: '/store', component: store},
-    {path: '/galeriaGifs', component: galeriaGifs},
-    {path: '/galeriaGTAIV', component: galeriaGTAIV},
-    {path: '/educativo', component: educativo},
-    {path: '/listacontador', component: listacontador},
-    {path: '/todolist', component: todolist},
-    {path: '/usuarios', component: usuarios},
-    {path: '/login', component: login},
-    {path: '/recetas', component: recetas},
-    {path: '/admin', component: administrator, meta: {admin: true}}
-
-  ]
-})
 
 new Vue({
   data: {

@@ -25,6 +25,7 @@
 <script>
 import $ from 'jquery'
 import imgList from '@/assets/store.json'
+import router from '@/router.js'
 
 export default {
   data() {
@@ -42,8 +43,14 @@ export default {
         $("#gallery").fadeTo(300, 1);
       }, 300);
     },
-    productSelected: (product) => {
-      console.log("Product", product.toElement.id)
+    productSelected: (prod) => {
+      const elementID = prod.toElement.id;
+
+      const product = imgList.filter(img => {
+        return img.id === elementID
+      });
+      console.log("Product: ", product)
+      router.push({name: "product", params: {img: product[0]}});
     }
   }
 }

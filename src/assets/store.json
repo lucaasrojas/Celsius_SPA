@@ -2,32 +2,44 @@
     {
         "id": "nature1", 
         "src": "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg", 
-        "category": "nature"
+        "category": "nature",
+        "title": "A long trip in the nature",
+        "description": "Includes horse and car"
     },
     {
         "id": "mountain1", 
         "src": "https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg", 
-        "category": "mountain"
+        "category": "mountain",
+        "title": "A long trip in the nature",
+        "description": "Includes horse and car"
     },
     {
         "id": "mountain2", 
         "src": "https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg", 
-        "category": "mountain"
+        "category": "mountain",
+        "title": "A long trip in the nature",
+        "description": "Includes horse and car"
     },
     {
         "id": "nature2", 
         "src": "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg", 
-        "category": "nature"
+        "category": "nature",
+        "title": "A long trip in the nature",
+        "description": "Includes horse and car"
     },
     {
         "id": "nature3", 
         "src": "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg", 
-        "category": "nature"
+        "category": "nature",
+        "title": "A long trip in the nature",
+        "description": "Includes horse and car"
     },
     {
         "id": "mountain3", 
         "src": "https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg", 
-        "category": "mountain"
+        "category": "mountain",
+        "title": "A long trip in the nature",
+        "description": "Includes horse and car"
     }
     ]
 

@@ -1,6 +1,7 @@
 <template>
     <div class="card bg-dark text-white">
-        <img :src="require(`@/${imgData.src}`)" class="card-img imgOverlay" alt="...">
+        <!--<img :src="require(`@/${imgData.src}`)" class="card-img imgOverlay" alt="...">-->
+        <img :src="imgData.src" class="card-img imgOverlay" alt="...">
         <div class="card-img-overlay ">
             <h5 class="card-title">{{imgData.title}}</h5>
             <p class="card-text">{{imgData.description}}</p>

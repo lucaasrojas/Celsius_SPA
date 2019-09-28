@@ -2,15 +2,12 @@
 <div>
         <navbar></navbar>
         <div class="jumbotron">
-            <div class="jumbotron-billboard"></div>
-            <div class="container">
-                <div class="row jumbotron-content">
-                    <div class="col-lg-12">
-                    <h1>{{mainTitle}}</h1>
-                        <p>
-                            {{mainDescription}}
-                        </p>
-                    </div>
+            <div class="row jumbotron-content">
+                <div class="col-lg-12">
+                <p class="mainTitle">{{mainTitle}}</p>
+                    <p class="mainSubtitle">
+                        {{mainDescription}}
+                    </p>
                 </div>
             </div>
         </div>
@@ -30,11 +27,23 @@ export default {
 
 <style>
 
-.jumbotron-content {margin-top:0; color: white}
+.jumbotron-content {
+    color: white;
+}
 .jumbotron {
-  position:relative;
-background-color: transparent !important;
+    position:relative;
+    background-color: transparent !important;
+    margin: 0;
+    padding: 1rem !important;
+    
 }
 
+.mainTitle {
+    font-size: 3em;
+}
+
+.mainSubtitle {
+    font-size: 1.5em;
+}
 
 </style>

@@ -1,9 +1,9 @@
 <template>
 	<div class="row">
-		<div class="col-md-3 sectionCard m-1" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
+		<div class="col-md-2 sectionCard m-1" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
 			<div class="row">
 				<div class="col">
-					<h1 class="text-light my-2"> {{img.title}} </h1>
+					<p class="text-light my-2 sectionCard-title"> {{img.title}} </p>
 				</div>
 			</div>
 			<div class="row">
@@ -11,7 +11,7 @@
 					<!-- 
 						<img :src="require(`@/${img.src}`)" class="rounded-circle my-4" style="max-width: 196px;">
 					-->
-					<font-awesome-icon fas :icon="img.icon" size="10x" style="color:white"></font-awesome-icon>
+					<font-awesome-icon fas :icon="img.icon" style="color:white; font-size: 5em;"></font-awesome-icon>
 				</div>
 			</div>
 		</div>
@@ -51,7 +51,12 @@ export default {
 	border-radius: 25px;
 }
 
+.sectionCard-title {
+	font-size: 1.5em
+}
+
+
 .home-image {
-	max-width: 14rem;
+	max-width: 100vw;
 }
 </style>

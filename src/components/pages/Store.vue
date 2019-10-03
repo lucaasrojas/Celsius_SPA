@@ -5,8 +5,8 @@
   <div class="col-md-12 d-flex justify-content-center mb-5">
 
     <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="all">All</button>
-    <button type="button" id="btnMountains" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="mountain">Mountains</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="nature">Sea</button>
+    <button type="button" id="btnMountains" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="deco">Deco</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="geek">Geek</button>
 
   </div>
 

@@ -44,24 +44,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
-	
 }
 
+.body {
+  background-color: rgb(158, 158, 158);
+  height: 100vh;
+}
 .container {
   padding: 2px;
 }
 
-body {
-  background-image: url("./assets/images/general-background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-/*
-    height: 100%;
-background-image: linear-gradient(-180deg, #cccccc 0%, #5e5e5e 25%, #363636 100%);
-background-size: cover;
-*/
-}
 
 .header {
   background-color: rgba(0 , 0, 0, 0.6);

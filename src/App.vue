@@ -47,7 +47,7 @@ export default {
 }
 
 .body {
-  background-color: rgb(158, 158, 158);
+  background-color: rgb(80, 80, 80);
   height: 100vh;
 }
 .container {

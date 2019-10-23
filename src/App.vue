@@ -44,14 +44,18 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
+  background-color:#4ABDAC;
+
 }
 
 .body {
-  background-color: rgb(80, 80, 80);
   height: 100vh;
+
 }
 .container {
   padding: 2px;
+  height: 100vh;
+
 }
 
 

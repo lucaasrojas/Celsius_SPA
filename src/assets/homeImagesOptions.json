@@ -4,28 +4,32 @@
         "description": "Contiene imagenes variadas", 
         "src": "assets/images/mosaicogalerias.png", 
         "url": "/galerias",
-        "icon": "images"
+        "icon": "images",
+        "card_background_color": "#34A0FF"
     },
     {	
         "title": "Peliculas", 
         "description": "Peliculas para descargar y con review", 
         "src": "assets/images/mosaicopeliculas.png", 
         "url": "/peliculas",
-        "icon": "film"
+        "icon": "film",
+        "card_background_color": "#FF9334"
     },
     {	
         "title": "Musica", 
         "description": "Listados de la mejor musica", 
         "src": "assets/images/mosaicomusica.png", 
         "url": "/musica",
-        "icon": "play-circle"
+        "icon": "play-circle",
+        "card_background_color": "#E1008B"
     },
     {	
         "title": "Store", 
         "description": "Todos los productos en un solo lugar", 
         "src": "assets/images/store-image.png", 
         "url": "/store",
-        "icon": "store"
+        "icon": "store",
+        "card_background_color": "#00E107"
     }
 	
 ]

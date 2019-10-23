@@ -6,7 +6,7 @@
                 <div class="card mx-auto text-white bg-dark">
             <h5 class="card-header">{{video.title}}</h5>
             <div class="card-body">
-                <iframe width="100%" height="" :src=video.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe width="100%" :src=video.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
            </div>
             

@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<div class="row justify-content-center">
-			<div class="col-md-2 sectionCard m-1" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
-				<sectionCard :img="img" />
+			<div class="col-md-2 sectionCard m-1" v-for="section in sectionsList" :key="section" @click="goTo(section.url)">
+				<sectionCard :section="section" />
 			</div>
 		</div>
 	</div>
@@ -21,7 +21,7 @@ export default {
 	},
 	data() {
 		return {
-			imagesList: homeImages,
+			sectionsList: homeImages,
 			mainTitle: "Home",
 			mainDescription: "Welcome"
 		}

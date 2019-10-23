@@ -1,11 +1,11 @@
 <template>
-    <div class="shape">
+    <div class="shape" :style="'background-color:' + section.card_background_color">
         <div class="row">
             <div class="col-md-12">
                 <!-- 
                     <img :src="require(`@/${img.src}`)" class="rounded-circle my-4" style="max-width: 196px;">
                 -->
-                <font-awesome-icon fas :icon="img.icon" class="icon"></font-awesome-icon>
+                <font-awesome-icon fas :icon="section.icon" class="icon"></font-awesome-icon>
             </div>
 	    </div>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-props: ['img']
+props: ['section']
 }
 </script>
 

@@ -34,8 +34,7 @@ export default {
     position:relative;
     background-color: transparent !important;
     margin: 0;
-    padding: 1rem !important;
-    
+    padding: 1rem !important;    
 }
 
 .mainTitle {

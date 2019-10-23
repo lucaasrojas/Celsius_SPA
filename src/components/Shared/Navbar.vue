@@ -20,7 +20,7 @@
 
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
               <div v-for="sItem in item.subItems" :key="sItem">
-                <router-link class="dropdown-item" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
+                <router-link class="dropdown-item text-center" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
               </div>
             </div>
           </li>
@@ -80,6 +80,10 @@ export default {
 .navbar-element-padding {
   padding-top: .25rem;
   padding-bottom: .25rem;
+}
+
+.navbar {
+  background-color: rgb(78, 78, 78);
 }
 
 

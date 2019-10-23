@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="row justify-content-center">
+		<div class="row justify-content-center sectionGrid">
 			<div class="col-md-2 sectionCard m-1" v-for="section in sectionsList" :key="section" @click="goTo(section.url)">
 				<sectionCard :section="section" />
 			</div>
@@ -38,5 +38,12 @@ export default {
 </script>
 
 <style scoped>
-
+.sectionGrid {
+	-webkit-column-count: 4;
+	-moz-column-count: 4;
+	column-count: 4;
+	-webkit-column-width: 25%;
+	-moz-column-width: 25%;
+	column-width: 25%; 
+}
 </style>

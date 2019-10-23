@@ -29,7 +29,15 @@
         "src": "assets/images/store-image.png", 
         "url": "/store",
         "icon": "store",
-        "card_background_color": "#00E107"
+        "card_background_color": "#007849"
+    },
+    {	
+        "title": "Recetas", 
+        "description": "Te gusta cocinar? Este es tu lugar", 
+        "src": "assets/images/store-image.png", 
+        "url": "/recetas",
+        "icon": "hamburger",
+        "card_background_color": "#DCD0C0"
     }
 	
 ]

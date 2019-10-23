@@ -1,12 +1,7 @@
 <template>
-    <div>
+    <div class="shape">
         <div class="row">
             <div class="col-md-12">
-                <p class="my-2 sectionCard-title"> {{img.title}} </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 home-img">
                 <!-- 
                     <img :src="require(`@/${img.src}`)" class="rounded-circle my-4" style="max-width: 196px;">
                 -->
@@ -24,16 +19,23 @@ props: ['img']
 
 <style>
 .sectionCard-title {
-	font-size: 1.5em
+	font-size: 1.2em
 }
 
 
 .home-image {
-	max-width: 100vw;
+	max-width: 90%;
 }
 
 .icon {
-	font-size: 8vw;
-	margin-bottom: 10px;
+	font-size: 4vw;
+	margin: 2vw;
+    color:white;
+}
+
+.shape{
+    background-color: black;
+    border-radius: 50%;
+    width: 80%;
 }
 </style>

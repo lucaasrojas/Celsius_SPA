@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="row justify-content-center">
-			<div class="col-md-4 sectionCard m-1" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
+			<div class="col-md-2 sectionCard m-1" v-for="img in imagesList" :key="img" @click="goTo(img.url)">
 				<sectionCard :img="img" />
 			</div>
 		</div>
@@ -38,10 +38,5 @@ export default {
 </script>
 
 <style scoped>
-.sectionCard {
-	background: rgba(192, 192, 192, 0.3);
-	border-radius: 25px;
-}
-
 
 </style>

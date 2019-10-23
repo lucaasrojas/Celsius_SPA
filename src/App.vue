@@ -45,6 +45,7 @@ export default {
   color: #2c3e50;
   box-sizing: content-box;
   background-color:#4ABDAC;
+  height: 100%;
 
 }
 
@@ -54,7 +55,7 @@ export default {
 }
 .container {
   padding: 2px;
-  height: 100vh;
+  height: 100%;
 
 }
 

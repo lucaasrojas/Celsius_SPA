@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<div class="row justify-content-center sectionGrid">
-			<div class="col-md-2 sectionCard m-1" v-for="section in sectionsList" :key="section" @click="goTo(section.url)">
-				<sectionCard :section="section" />
+			<div class="col-md-4 col-sm-6 sectionCard my-auto" v-for="section in sectionsList" :key="section" @click="goTo(section.url)">
+				<sectionCard class="mx-auto" :section="section" />
 			</div>
 		</div>
 	</div>

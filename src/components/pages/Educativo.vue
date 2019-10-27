@@ -6,11 +6,11 @@
 
 <script>
 import videoListJSON from '@/assets/videoList.json'
-import videoCardComponent from '@/components/Shared/videoCard.vue'
+import videoCard from '@/components/Shared/videoCardPreview.vue'
 
 export default {
     components: {
-        videoCardComponent: videoCardComponent
+        videoCardComponent: videoCard
     },
     data() {
         return {

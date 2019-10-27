@@ -1,16 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
-            <v-flex>
-                 <v-carousel>
-                        <v-carousel-item
-                        v-for="(item,i) in pictures"
-                            :key="i"
-                            :src="require(`@/${item.url}`)"
-                        ></v-carousel-item>
-                    </v-carousel>
-            </v-flex>
-        </div>
+        <carousel class="carousel" :pictures="pictures"></carousel>
         <gallery :pictures="pictures"></gallery>
     </div>
 </template>
@@ -18,19 +8,27 @@
 <script>
 import gallery from '@/components/Shared/galleryTemplate.vue'
 import picturesList from '@/assets/gallery.json'
+import carousel from '@/components/Shared/carousel.vue'
 
 export default {
-    components: {
-      gallery: gallery
-    },
-    data () {
-      return {
-        pictures: picturesList.images.gtaiv
-      }
+  components: {
+    gallery: gallery,
+    carousel: carousel
+  },
+  data () {
+    return {
+      pictures: picturesList.images.gtaiv,
+      mainTitle: "GTA IV",
+      mainDescription: "",
     }
+  },
+  mounted() {
+    this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+  }
 }
 </script>
 
 <style>
-
+.carousel {
+  margin-bottom: 10px;}
 </style>

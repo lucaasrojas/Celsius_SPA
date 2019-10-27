@@ -1,20 +1,24 @@
 <template>
     <div class="container">
-        <div class="row">
-            <router-link to="/galeriaGifs"><img src="@/assets/images/titulogifs.png" /></router-link>
-        </div>
-        <div class="row">
-            <router-link to="/galeriaGTAIV"><img src="@/assets/images/titulogtaiv.png" /></router-link>
-        </div>
+        <router-link v-for="gallery in galleries.sections" :key="gallery" :to="'/'+gallery.path">
+            <div class="card text-white bg-primary mb-3" style="border-radius:30px">
+                <div class="card-body">
+                    <h1 class="card-title">{{gallery.title}}</h1>
+                </div>
+            </div>
+        </router-link>
     </div>
 </template>
 
 <script>
+import galleries from '@/assets/gallery.json'
+
 export default {
     data() {
         return {
             mainTitle: "Galerias",
-			mainDescription: "La vida en imagenes"
+            mainDescription: "La vida en imagenes",
+            galleries: galleries
         }
     },
     mounted() {

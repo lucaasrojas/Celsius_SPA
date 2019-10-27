@@ -6,7 +6,7 @@
 
 <script>
 import gallery from '@/components/Shared/galleryTemplate.vue'
-import picturesList from '@/assets/galleryImages.json'
+import picturesList from '@/assets/gallery.json'
 
 export default {
     components: {
@@ -15,7 +15,7 @@ export default {
     data() {
         return {
             sideNav: false,
-            pictures: picturesList.gifs
+            pictures: picturesList.images.gifs
         }
     }
 }

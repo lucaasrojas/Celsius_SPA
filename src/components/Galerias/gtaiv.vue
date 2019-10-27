@@ -17,7 +17,7 @@
 
 <script>
 import gallery from '@/components/Shared/galleryTemplate.vue'
-import picturesList from '@/assets/galleryImages.json'
+import picturesList from '@/assets/gallery.json'
 
 export default {
     components: {
@@ -25,7 +25,7 @@ export default {
     },
     data () {
       return {
-        pictures: picturesList.gtaiv
+        pictures: picturesList.images.gtaiv
       }
     }
 }

@@ -44,19 +44,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
-  background-color:#4ABDAC;
-  height: 100%;
-
+  background-color:rgb(168, 240, 229);
+  min-height: 100vh;
 }
 
-.body {
-  height: 100vh;
-
-}
 .container {
-  padding: 2px;
   height: 100%;
-
 }
 
 

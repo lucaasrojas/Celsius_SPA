@@ -1,6 +1,8 @@
 <template>
     <div>
-        <videoCardComponent :itemsList="videoList"></videoCardComponent>
+        <div v-for="video in videoList" :key="video">
+            <videoCardComponent :video="video"></videoCardComponent>
+        </div>
     </div>
 </template>
 

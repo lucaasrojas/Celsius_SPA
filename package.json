@@ -2,6 +2,9 @@
   "name": "celsius_v2",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.16.3"
+  },
   "scripts": {
     "start": "node ./index.js",
     "serve": "vue-cli-service serve",

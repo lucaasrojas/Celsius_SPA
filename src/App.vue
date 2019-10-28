@@ -44,7 +44,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
-  background-color:#A7A7A7;
+  background-color:rgb(255, 255, 255);
   min-height: 100vh;
 }
 

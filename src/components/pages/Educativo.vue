@@ -2,7 +2,7 @@
 <div>
     <div class="row" >
         <div class="col-md-4" v-for="video in videoList" v-bind:key="video.id">
-            <videoCardPreview style="margin-bottom: 10px" :video="video"></videoCardPreview>
+            <videoCardPreview class="videoCard" :video="video"></videoCardPreview>
         </div>
     </div>
 </div>
@@ -46,5 +46,9 @@ iframe {
     border-radius: 25px;
     background-color: darkgray;
     color: blanchedalmond;
+}
+
+.videoCard {
+    margin-bottom: 10px;
 }
 </style>

@@ -2,51 +2,64 @@
     {
         "id": 1,
         "title": "Vue JS",
-        "url": "https://www.youtube.com/embed/REqu-nKek-o"
+        "url": "https://www.youtube.com/embed/REqu-nKek-o",
+        "thumbnail": "https://img.youtube.com/vi/REqu-nKek-o/maxresdefault.jpg"
     },
     {
         "id": 2,
         "title": "Apache Cordova",
-        "url": "https://www.youtube.com/embed/6jVOruQ2T9E"
+        "url": "https://www.youtube.com/embed/6jVOruQ2T9E",
+        "thumbnail": "https://img.youtube.com/vi/6jVOruQ2T9E/maxresdefault.jpg"
+
     },
     {
         "id": 3,
         "title": "TEDx",
-        "url": "https://www.youtube.com/embed/_DgpIDlV_CY"
+        "url": "https://www.youtube.com/embed/_DgpIDlV_CY",
+        "thumbnail": "https://img.youtube.com/vi/_DgpIDlV_CY/maxresdefault.jpg"
+
     },
     {
         "id": 4,
         "title": " Electronica ",
-        "url": "https://www.youtube.com/embed/8n1RHhw1cRM"
+        "url": "https://www.youtube.com/embed/8n1RHhw1cRM",
+        "thumbnail": "https://img.youtube.com/vi/8n1RHhw1cRM/maxresdefault.jpg"
+
     },
     {
         "id": 5,
         "title": "JavaScript",
-        "url": "https://www.youtube.com/embed/9me1HvKs_1U"
+        "url": "https://www.youtube.com/embed/9me1HvKs_1U",
+        "thumbnail": "https://img.youtube.com/vi/9me1HvKs_1U/maxresdefault.jpg"
     },
     {
         "id": 6,
         "title": "Kendo UI",
-        "url": "https://www.youtube.com/embed/gVu79Sh6Lpg"
+        "url": "https://www.youtube.com/embed/gVu79Sh6Lpg",
+        "thumbnail": "https://img.youtube.com/vi/gVu79Sh6Lpg/maxresdefault.jpg"
     },
     {
         "id": 7,
         "title": "Azure",
-        "url": "https://www.youtube.com/embed/raDPpcRKAGQ"
+        "url": "https://www.youtube.com/embed/raDPpcRKAGQ",
+        "thumbnail": "https://img.youtube.com/vi/raDPpcRKAGQ/maxresdefault.jpg"
     },
     {
         "id": 8,
         "title": "Dispositivos Moviles",
-        "url": "https://www.youtube.com/embed/hLuDoT05QPQ"
+        "url": "https://www.youtube.com/embed/hLuDoT05QPQ",
+        "thumbnail": "https://img.youtube.com/vi/hLuDoT05QPQ/maxresdefault.jpg"
     },
     {
         "id": 9,
         "title": "DMX",
-        "url": "https://www.youtube.com/embed/fU0d4IStcWw"
+        "url": "https://www.youtube.com/embed/fU0d4IStcWw",
+        "thumbnail": "https://img.youtube.com/vi/fU0d4IStcWw/maxresdefault.jpg"
     },
     {
         "id": 10,
         "title": "ASP.NET MVC",
-        "url": "https://www.youtube.com/embed/EFxkYjN4670"
+        "url": "https://www.youtube.com/embed/EFxkYjN4670",
+        "thumbnail": "https://img.youtube.com/vi/EFxkYjN4670/maxresdefault.jpg"
     }
 ]

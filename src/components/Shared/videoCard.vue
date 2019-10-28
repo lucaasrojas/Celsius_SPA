@@ -3,14 +3,12 @@
         <div class="row my-2">
             <div class="col-md-12">
                 <div class="card mx-auto text-white bg-dark">
-            <h5 class="card-header">{{video.title}}</h5>
-            <div class="card-body">
-                <iframe width="100%" :src=video.url frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <h5 class="card-header">{{video.title}}</h5>
+                    <div class="card-body">
+                        <iframe width="100%" :src="video.url" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-           </div>
-            
-            </div>
-           
         </div>
     </div>
 </template>

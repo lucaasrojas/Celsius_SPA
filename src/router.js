@@ -13,6 +13,7 @@ import login from './components/Login.vue'
 import administrator from './components/Admin.vue'
 import recetas from './components/pages/Recetas.vue'
 import store from './components/pages/Store.vue'
+import videoCard from './components/Shared/videoCard.vue'
 
 // SHARED
 
@@ -41,7 +42,9 @@ export default new VueRouter({
       {path: '/login', component: login},
       {path: '/recetas', component: recetas},
       {path: '/admin', component: administrator, meta: {admin: true}},
-      {path: '/product', name:'product', component: product, props: true}
+      {path: '/product', name:'product', component: product, props: true},
+      {path: '/videoCard', name:'videoCard', component: videoCard, props: true}
+
   
     ]
   })

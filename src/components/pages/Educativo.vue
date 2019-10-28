@@ -1,6 +1,10 @@
 <template>
 <div>
-    <videoCardComponent :itemsList="videoList"></videoCardComponent>
+    <div class="row" >
+        <div class="col-md-4" v-for="video in videoList" v-bind:key="video.id">
+            <videoCardPreview style="margin-bottom: 10px" :video="video"></videoCardPreview>
+        </div>
+    </div>
 </div>
 </template>
 
@@ -10,7 +14,7 @@ import videoCard from '@/components/Shared/videoCardPreview.vue'
 
 export default {
     components: {
-        videoCardComponent: videoCard
+        videoCardPreview: videoCard
     },
     data() {
         return {
@@ -21,7 +25,7 @@ export default {
     },
     mounted() {
 		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
-	}
+    }
 }
 </script>
 

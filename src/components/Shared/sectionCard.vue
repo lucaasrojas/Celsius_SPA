@@ -1,5 +1,5 @@
 <template>
-    <div class="shape" :style="'background-color:' + section.card_background_color">
+    <div class="rounded-circle sectionCircle" :style="'background-color:' + section.card_background_color">
         <font-awesome-icon fas :icon="section.icon" class="icon"></font-awesome-icon>
     </div>
 </template>
@@ -21,15 +21,15 @@ props: ['section']
 }
 
 .icon {
-	font-size: 10vw;
-	margin: 3vw;
+	font-size: 7rem;
+	margin: 2rem;
     color:white;
 }
 
-.shape{
-    background-color: black;
-    border-radius: 50%;
-    width: 80%;
-    margin: 5px;
+.sectionCircle {
+	margin: 10px;
+    max-width: 200px;
+    border: 1px solid;
+    border-color: rgba(133, 133, 133, 0.459);
 }
 </style>

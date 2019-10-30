@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="row justify-content-center sectionGrid">
-			<sectionCard class="" :section="section" v-for="section in sectionsList" :key="section" @click="goTo(section.url)" />
+			<sectionCard class="" :section="section" v-for="section in sectionsList" :key="section"/>
 		</div>
 	</div>
 </template>
@@ -22,11 +22,6 @@ export default {
 			sectionsList: homeImages,
 			mainTitle: "Home",
 			mainDescription: "Welcome"
-		}
-	},
-	methods: {
-		goTo(url){
-			this.$router.push(url.replace("/",""));
 		}
 	},
 	mounted() {

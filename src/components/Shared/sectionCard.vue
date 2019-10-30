@@ -1,12 +1,17 @@
 <template>
-    <div class="rounded-circle sectionCircle" :style="'background-color:' + section.card_background_color">
+    <div class="rounded-circle sectionCircle" :style="'background-color:' + section.card_background_color" @click="goTo(section.url)">
         <font-awesome-icon fas :icon="section.icon" class="icon"></font-awesome-icon>
     </div>
 </template>
 
 <script>
 export default {
-props: ['section']
+props: ['section'],
+	methods: {
+		goTo(url){
+			this.$router.push(url.replace("/",""));
+		}
+	},
 }
 </script>
 

@@ -19,7 +19,7 @@
                                 <tbody>
                                     <tr v-for="user in usuarios" :key="user.id">
                                         <td>
-                                            {{user.name}}
+                                            {{user}}
                                         </td>
                                         <td>
                                             {{user.lastname}}
@@ -39,15 +39,11 @@
     </div>
 </template>
 <script>
-import firebaseDB from '../../firebaseDB'
-let usuariosRef = firebaseDB.db.ref('usuarios');
 
 export default {
-  firebase: {
-    usuarios: usuariosRef
-  },
     data(){
         return {
+            usuarios: null
         }
     },
     methods:{
@@ -56,12 +52,13 @@ export default {
     computed: {
         sumAll: function(){
             
-            let total = 0;
-            this.usuarios.forEach(element => {
-                total += element.monto
-            });
-            return total;
+          
         }
+    },
+    created() {
+        console.log("USUARIOS", this.$root.usuariosDB)
+
+        this.usuarios = this.$root.usuariosDB;
     }
 }
 </script>

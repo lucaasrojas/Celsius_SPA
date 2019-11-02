@@ -35,7 +35,6 @@ new Vue({
     recetasDB: firebase.database().ref('recetas'),
   },
   created() {
-    console.log("VUE CREATED", )
   },
   router,
   render: h => h(App)

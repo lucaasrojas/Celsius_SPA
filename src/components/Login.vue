@@ -40,7 +40,7 @@ export default {
         .then(
           () => {
             this.loginMessage = "Conectado"
-            this.$root.$data.soyAdmin = true;
+            this.$root.soyAdmin = true;
             },
           (error) => alert(error)
         );

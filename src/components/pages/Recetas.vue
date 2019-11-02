@@ -4,9 +4,9 @@
         <h2 class="alert alert-light  d-inline-flex">Recetas</h2>
         <div class="row bg-dark rounded text-center" id="appContainer">
                 <div class="col">
-                    <div class="card">
+                    <div class="card mb-4" v-for="(rec, index) in listaRecetas" :key="index">
                         <div class="card-body">
-                            <table class="table table-striped table-bordered tabler-hover" v-for="(rec, index) in listaRecetas" :key="index">
+                            <table class="table table-striped table-bordered tabler-hover" >
                                     <tr>
                                             <th>{{CapitalizeFirstLetter(rec.category)}}</th>
                                     </tr>
@@ -56,7 +56,7 @@ export default {
         return {
             listaRecetas: recetasRef,
             mainTitle: "Recetas",
-			mainDescription: "Concinar es facil!"
+			mainDescription: "Cocinar es facil!"
         }
     },
     mounted(){

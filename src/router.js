@@ -39,7 +39,7 @@ export default new VueRouter({
       {path: '/listacontador', component: listacontador},
       {path: '/todolist', component: todolist},
       {path: '/usuarios', component: usuarios},
-      {path: '/login', component: login},
+      {path: '/login', name: "Login" ,component: login},
       {path: '/recetas', component: recetas},
       {path: '/admin', component: administrator, meta: {admin: true}},
       {path: '/product', name:'product', component: product, props: true},

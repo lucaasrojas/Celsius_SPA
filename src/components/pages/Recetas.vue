@@ -48,7 +48,6 @@
 </template>
 
 <script>
-import firebaseDB from '@/firebaseDB'
 let recetasRef = [];
 
 
@@ -61,7 +60,7 @@ export default {
         }
     },
     mounted(){
-        firebaseDB.db.ref('recetas').once('value',(data)=>{
+        this.$root.recetasDB.once('value',(data)=>{
             data.forEach(function(snapshot){
                 recetasRef.push({
                     category: snapshot.key,

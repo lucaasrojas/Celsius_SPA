@@ -44,14 +44,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
-  background-color:rgb(255, 255, 255);
+  background-color:white;
   min-height: 100vh;
 }
 
 .container {
   height: 100%;
 }
-
 
 .header {
   background-color: rgba(0 , 0, 0, 0.5);

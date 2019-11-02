@@ -1,9 +1,7 @@
 <template>
 	<div>
 		<div class="row justify-content-center sectionGrid">
-			<div class="col-md-4 col-sm-6 sectionCard my-auto" v-for="section in sectionsList" :key="section" @click="goTo(section.url)">
-				<sectionCard class="mx-auto" :section="section" />
-			</div>
+			<sectionCard class="" :section="section" v-for="section in sectionsList" :key="section"/>
 		</div>
 	</div>
 </template>
@@ -26,11 +24,6 @@ export default {
 			mainDescription: "Welcome"
 		}
 	},
-	methods: {
-		goTo(url){
-			this.$router.push(url.replace("/",""));
-		}
-	},
 	mounted() {
 		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
 	}
@@ -38,12 +31,5 @@ export default {
 </script>
 
 <style scoped>
-.sectionGrid {
-	-webkit-column-count: 4;
-	-moz-column-count: 4;
-	column-count: 4;
-	-webkit-column-width: 25%;
-	-moz-column-width: 25%;
-	column-width: 25%; 
-}
+
 </style>

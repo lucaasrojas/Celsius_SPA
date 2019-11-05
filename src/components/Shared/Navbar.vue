@@ -9,21 +9,27 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="position: relative; left: 100">
           <ul class="navbar-nav">
-          <li class="nav-item active navbar-element-padding" v-for="item in navbarConfig.menuItems" :key="item.title" >
-            <router-link  class="nav-link active" v-if="item.disponible == true" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
-          </li>
-
-          <li class="nav-item dropdown navbar-element-padding active"  v-for="item in navbarConfig.dropDowns" :key="item">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <strong>{{item.title}}</strong>
-            </a> 
-
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-              <div v-for="sItem in item.subItems" :key="sItem">
-                <router-link class="dropdown-item text-center" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
-              </div>
+          <div v-for="item in navbarConfig.menuItems" :key="item.title" >
+            <div v-if="!item.subItems">
+              <li class="nav-item active navbar-element-padding">
+                <router-link  class="nav-link active" v-if="item.disponible == true" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
+              </li>
             </div>
-          </li>
+            <div v-if="item.subItems">
+              <li class="nav-item dropdown navbar-element-padding active">  
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <strong>{{item.title}}</strong>
+                </a> 
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                  <div v-for="sItem in item.subItems" :key="sItem">
+                    <router-link class="dropdown-item text-center" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
+                  </div>
+                </div>
+              </li>
+            </div>
+          </div>
+
         </ul>
         </div>
 

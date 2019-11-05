@@ -1,17 +1,85 @@
 {
     "menuItems": [
-        {"icon": "", "title": "Musica", "url": "/musica", "disponible": true},
-        {"icon": "", "title": "Recetas", "url": "/recetas", "disponible": true},
-        {"icon": "", "title": "Store", "url": "/store", "disponible": true},
-        {"icon": "", "title": "Peliculas", "url": "/peliculas", "disponible": false},
-        {"icon": "", "title": "Impresora 3D", "url": "/impresora3d", "disponible": false},
-        {"icon": "", "title": "Educativo", "url": "/educativo", "disponible": true},
-        {"icon": "", "title": "Login", "url": "/login", "disponible": true},
-        {"icon": "", "title": "Admin", "url": "/admin", "disponible": false}
-    ],
-      "dropDowns": [
         {
-          "title": "Galerias",
+          "title": "Musica", 
+          "url": "/musica", 
+          "disponible": true,
+          "description": "Listados de la mejor musica", 
+          "src": "assets/images/mosaicomusica.png", 
+          "icon": "play-circle",
+          "card_background_color": "#E1008B"
+        },
+        {
+          "title": "Recetas", 
+          "url": "/recetas", 
+          "disponible": true,
+          "description": "Te gusta cocinar? Este es tu lugar", 
+          "src": "assets/images/store-image.png", 
+          "icon": "hamburger",
+          "card_background_color": "#DCD0C0"
+        },
+        {
+          "title": "Peliculas", 
+          "url": "/peliculas", 
+          "disponible": false,
+          "description": "Peliculas para descargar y con review", 
+          "src": "assets/images/mosaicopeliculas.png", 
+          "icon": "film",
+          "card_background_color": "#FF9334"
+        },
+        {
+          "title": "Impresora 3D", 
+          "url": "/impresora3d", 
+          "description": "",
+          "src": "", 
+          "icon": "",
+          "card_background_color": "",
+          "disponible": false
+        },
+        {
+          "title": "Educativo", 
+          "url": "/educativo", 
+          "description": "",
+          "src": "", 
+          "icon": "book",
+          "card_background_color": "#409D17",
+          "disponible": true
+        },
+        {
+          "title": "Login", 
+          "url": "/login", 
+          "description": "",
+          "src": "", 
+          "icon": "",
+          "card_background_color": "",
+          "disponible": false
+        },
+        {
+          "title": "Admin", 
+          "url": "/admin", 
+          "description": "",
+          "src": "", 
+          "icon": "",
+          "card_background_color": "",
+          "disponible": false
+        },
+        {
+          "title": "Store", 
+          "description": "Todos los productos en un solo lugar", 
+          "src": "assets/images/store-image.png", 
+          "url": "/store",
+          "icon": "store",
+          "card_background_color": "#007849",
+          "disponible": false
+        },
+        {	
+          "title": "Galerias", 
+          "description": "Contiene imagenes variadas", 
+          "src": "assets/images/mosaicogalerias.png", 
+          "url": "/galerias",
+          "icon": "images",
+          "card_background_color": "#34A0FF",
+          "disponible": true,
           "subItems": [
             {"title": "GIFS", "url": "/galeriaGifs", "disponible": true},
             {"title": "GTAIV", "url": "/galeriaGTAIV", "disponible": true}
@@ -25,5 +93,5 @@
             {"title": "Usuarios", "url": "/usuarios", "disponible": false}
           ]
         }
-      ]
+    ]
 }

@@ -1,13 +1,15 @@
 <template>
 	<div>
 		<div class="row justify-content-center sectionGrid">
-			<sectionCard class="" :section="section" v-for="section in sectionsList" :key="section"/>
+			<div :section="section" v-for="section in sectionsList" :key="section">
+				<sectionCard class="" v-if="section.disponible" :section="section" />
+			</div>
 		</div>
 	</div>
 </template>
 <script>
 import ImageCard from '@/components/Shared/ImageCard.vue';
-import homeImages from '@/assets/homeImagesOptions.json';
+import homeImages from '@/assets/navbarItems.json';
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
 import SectionCard from '@/components/Shared/sectionCard.vue';
 
@@ -19,7 +21,7 @@ export default {
 	},
 	data() {
 		return {
-			sectionsList: homeImages,
+			sectionsList: homeImages.menuItems,
 			mainTitle: "Home",
 			mainDescription: "Welcome"
 		}

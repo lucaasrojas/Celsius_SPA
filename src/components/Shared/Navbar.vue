@@ -12,7 +12,7 @@
           <div v-for="item in navbarConfig.menuItems" :key="item.title" >
             <div v-if="!item.subItems">
               <li class="nav-item active navbar-element-padding">
-                <router-link  class="nav-link active" v-if="item.disponible == true" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
+                <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
               </li>
             </div>
             <div v-if="item.subItems">
@@ -23,7 +23,7 @@
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
                   <div v-for="sItem in item.subItems" :key="sItem">
-                    <router-link class="dropdown-item text-center" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
+                    <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
                   </div>
                 </div>
               </li>

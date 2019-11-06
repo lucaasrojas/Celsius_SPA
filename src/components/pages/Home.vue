@@ -2,7 +2,7 @@
 	<div>
 		<div class="row justify-content-center sectionGrid">
 			<div :section="section" v-for="section in sectionsList" :key="section">
-				<sectionCard class="" v-if="section.disponible" :section="section" />
+				<sectionCard class="" v-if="section.visible" :section="section" />
 			</div>
 		</div>
 	</div>

@@ -6,12 +6,14 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <table class="table table-striped table-bordered tabler-hover" v-for="(rec, index) in listaRecetas" :key="index">
+                            <table class="table table-striped table-bordered tabler-hover" v-for="(category, index) in listaRecetas" :key="index">
                                     <tr>
-                                            <th>{{CapitalizeFirstLetter(rec.category)}}</th>
+
+                                        <th>{{CapitalizeFirstLetter(index)}}</th>
                                     </tr>
-                                    <tbody v-for="categoryItem in rec.items" :key="categoryItem.nombre">
+                                    <tbody v-for="categoryItem in category" :key="categoryItem.nombre">
                                            <tr>
+                                        
                                                 <th>{{categoryItem.nombre}}</th>
                                             </tr>
                                             <tr>
@@ -48,27 +50,19 @@
 </template>
 
 <script>
-let recetasRef = [];
-
 
 export default {
     data(){
         return {
-            listaRecetas: recetasRef,
+            listaRecetas: this.$root.dbPages.recetas,
             mainTitle: "Recetas",
-			mainDescription: "Concinar es facil!"
+			mainDescription: "Cocinar es facil!"
         }
     },
+    created() {
+        console.log("Recetas", this.$root.dbPages)
+    },
     mounted(){
-        this.$root.recetasDB.once('value',(data)=>{
-            data.forEach(function(snapshot){
-                recetasRef.push({
-                    category: snapshot.key,
-                    items: snapshot.val()
-                })
-            })
-        });
-
 		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
 
     },

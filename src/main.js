@@ -26,18 +26,29 @@ library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
  
 Vue.config.productionTip = false
-
-
 new Vue({
   data: {
     soyAdmin: false,
-    usuariosDB: firebase.database().ref('usuarios'),
-    recetasDB: firebase.database().ref('recetas'),
+    dbPages: null,
+    dbConfig: null,
   },
   created() {
-    console.log("VUE CREATED", )
+    this.dbPages = getDBTables('pages');
+    this.dbConfig = getDBTables('config');
+
+    console.log("VUE CREATED")
   },
   router,
   render: h => h(App)
 }).$mount('#app')
 
+function getDBTables(table) {
+  let values = {};
+  firebase.database().ref(table).once('value',(data)=>{
+    data.forEach(item => {
+      values[item.key] = item.val();
+    })
+  });
+
+  return values;
+}

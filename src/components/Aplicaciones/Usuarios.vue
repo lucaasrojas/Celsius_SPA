@@ -17,15 +17,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="user in usuarios" :key="user.id">
+                                    <tr v-for="user in usuarios" :key="user">
                                         <td>
-                                            {{user.items.name}}
+                                            {{user.name}}
                                         </td>
                                         <td>
-                                            {{user.items.lastname}}
+                                            {{user.lastname}}
                                         </td>
                                         <td>
-                                            {{user.items.monto}}
+                                            {{user.monto}}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -39,11 +39,10 @@
     </div>
 </template>
 <script>
-const usuariosRef = []
 export default {
     data(){
         return {
-            usuarios: usuariosRef
+            usuarios: null
         }
     },
     methods:{
@@ -56,16 +55,7 @@ export default {
         }
     },
     created() {
-        this.$root.usuariosDB.once('value',(data)=>{
-            data.forEach(function(snapshot){
-                usuariosRef.push({
-                    category: snapshot.key,
-                    items: snapshot.val()
-                })
-            })
-        });
-
-        console.log("USUARIOS", this.usuarios)
+        this.usuarios = this.$root.dbPages.usuarios
     }
 }
 </script>

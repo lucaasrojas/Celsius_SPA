@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h3 class="alert alert-light d-inline-flex">Login {{$soyAdmin}} - {{loginMessage}}</h3>
+    <h3 class="alert alert-light d-inline-flex">Login</h3>
     <div class="row bg-dark rounded">
      
 
@@ -39,8 +39,7 @@ export default {
         .signInWithEmailAndPassword(this.user, this.pass)
         .then(
           () => {
-            this.loginMessage = "Conectado"
-            this.$root.$data.soyAdmin = true;
+            this.$root.loginStatus = true
             },
           (error) => alert(error)
         );

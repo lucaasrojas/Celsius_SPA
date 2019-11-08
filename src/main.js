@@ -29,9 +29,9 @@ Vue.config.productionTip = false
 
 new Vue({
   data: {
-    soyAdmin: false,
     dbPages: null,
     dbConfig: null,
+    loginStatus: false
   },
   created() {
     this.dbPages = getDBTables('pages');

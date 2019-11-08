@@ -9,51 +9,59 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="position: relative; left: 100">
           <ul class="navbar-nav">
-          <div v-for="(item, index) in navbarConfig" :key="index" >
-            <div v-if="!item.subItems">
-              <li class="nav-item active navbar-element-padding">
-                <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
-              </li>
-            </div>
-            <div v-if="item.subItems">
-              <li class="nav-item dropdown navbar-element-padding active">  
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <strong>{{item.title}}</strong>
-                </a> 
-
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                  <div v-for="(sItem, index) in item.subItems" :key="index">
-                    <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
+            <div v-for="(item, index) in navbarConfig" :key="index" >
+              <div v-if="!item.subItems">
+                <li class="nav-item active navbar-element-padding">
+                  <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
+                </li>
+              </div>
+              <div v-if="item.subItems">
+                <li class="nav-item dropdown navbar-element-padding active">  
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <strong>{{item.title}}</strong>
+                  </a> 
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                    <div v-for="(sItem, index) in item.subItems" :key="index">
+                      <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
+                    </div>
                   </div>
-                </div>
-              </li>
+                </li>
+              </div>
             </div>
-          </div>
-
-        </ul>
+              
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item active navbar-element-padding ">
+                <span class="nav-link active"><strong>Logged: {{this.$root.loginStatus}}</strong></span>
+              </li>
+              <li v-if="this.$root.loginStatus" class="nav-item active navbar-element-padding ">
+                <span class="nav-link active" style="cursor: pointer" @click="logout()"><strong>Logout</strong></span>
+              </li>
+          </ul>
         </div>
-
     </nav>
   </div>
 </template>
 
 <script>
-import navbarConfig from '@/assets/navbarItems.json';
+import router from '@/router.js'
+
 export default {
   data() {
     return {
       sideNav: false,
       navbarConfig: null
     }
-},
-created() {
-  this.navbarConfig = this.$root.dbConfig.menuItems;
-},
+  },
+  created() {
+    this.navbarConfig = this.$root.dbConfig.menuItems;
+  },
   methods: {
     logout(){
-      this.$root.soyAdmin = false;
+      console.log("Logout");
+      this.$root.loginStatus = false;
+      router.push({name: "home"});
     }
-    
   }
 }
 </script>

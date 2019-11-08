@@ -28,7 +28,7 @@ export default new VueRouter({
         path: '*', 
         redirect: '/home'
       },
-      {path: '/home', component: Home},
+      {path: '/home', name: 'home', component: Home},
       {path: '/musica', component: Musica},
       {path: '/peliculas', component: Peliculas},
       {path: '/galerias', component: Galerias},

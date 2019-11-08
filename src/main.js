@@ -26,6 +26,7 @@ library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
  
 Vue.config.productionTip = false
+
 new Vue({
   data: {
     soyAdmin: false,
@@ -36,7 +37,7 @@ new Vue({
     this.dbPages = getDBTables('pages');
     this.dbConfig = getDBTables('config');
 
-    console.log("VUE CREATED")
+    console.log("VUE CREATED", this.dbConfig)
   },
   router,
   render: h => h(App)

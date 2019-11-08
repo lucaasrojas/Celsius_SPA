@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="position: relative; left: 100">
           <ul class="navbar-nav">
-          <div v-for="item in navbarConfig.menuItems" :key="item.title" >
+          <div v-for="(item, index) in navbarConfig" :key="index" >
             <div v-if="!item.subItems">
               <li class="nav-item active navbar-element-padding">
                 <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
@@ -22,7 +22,7 @@
                 </a> 
 
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-                  <div v-for="sItem in item.subItems" :key="sItem">
+                  <div v-for="(sItem, index) in item.subItems" :key="index">
                     <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
                   </div>
                 </div>
@@ -43,12 +43,15 @@ export default {
   data() {
     return {
       sideNav: false,
-      navbarConfig: navbarConfig
+      navbarConfig: null
     }
+},
+created() {
+  this.navbarConfig = this.$root.dbConfig.menuItems;
 },
   methods: {
     logout(){
-      this.$root.$data.soyAdmin = false;
+      this.$root.soyAdmin = false;
     }
     
   }

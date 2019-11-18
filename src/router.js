@@ -15,6 +15,7 @@ import recetas from './components/pages/Recetas.vue'
 import store from './components/pages/Store.vue'
 import videoCard from './components/Shared/videoCard.vue'
 import adminPanel from './components/pages/adminPanel.vue'
+import spotifylist from './components/Aplicaciones/SpotifyList.vue'
 
 // SHARED
 
@@ -24,6 +25,7 @@ import product from './components/Shared/product.vue'
 import VueRouter from 'vue-router'
 
 export default new VueRouter({
+  mode: 'history',
     routes: [
       {
         path: '*', 
@@ -41,6 +43,7 @@ export default new VueRouter({
       {path: '/todolist', component: todolist},
       {path: '/usuarios', component: usuarios},
       {path: '/login', name: "Login" ,component: login},
+      {path: '/spotifyList', name: "spotifyList" ,component: spotifylist},
       {path: '/recetas', component: recetas},
       {path: '/admin', component: administrator, meta: {admin: true}},
       {path: '/product', name:'product', component: product, props: true},

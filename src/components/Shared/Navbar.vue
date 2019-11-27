@@ -53,9 +53,6 @@ export default {
       navbarConfig: null
     }
   },
-  created() {
-    this.navbarConfig = this.$root.dbConfig.menuItems;
-  },
   methods: {
     logout(){
       console.log("Logout");

@@ -33,23 +33,6 @@ new Vue({
     dbConfig: null,
     loginStatus: false
   },
-  created() {
-    this.dbPages = getDBTables('pages');
-    this.dbConfig = getDBTables('config');
-
-    console.log("VUE CREATED", this.dbConfig)
-  },
   router,
   render: h => h(App)
 }).$mount('#app')
-
-function getDBTables(table) {
-  let values = {};
-  firebase.database().ref(table).once('value',(data)=>{
-    data.forEach(item => {
-      values[item.key] = item.val();
-    })
-  });
-
-  return values;
-}

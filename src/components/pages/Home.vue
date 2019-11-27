@@ -26,7 +26,6 @@ export default {
 		}
 	},
 	created() {
-		this.sectionsList = this.$root.dbConfig.menuItems;
 	},
 	mounted() {
 		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});

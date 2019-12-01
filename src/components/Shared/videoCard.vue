@@ -18,7 +18,6 @@ export default {
 props: ['video'],
 data() {
     return {
-        video: video
     }
 }
 }

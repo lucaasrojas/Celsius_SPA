@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <router-link v-for="gallery in galleries.sections" :key="gallery" :to="'/'+gallery.path">
+        <router-link v-for="(gallery, index) in galleries.sections" :key="index" :to="'/'+gallery.path">
             <div class="card text-white bg-primary mb-3" style="border-radius:30px">
                 <div class="card-body">
                     <h1 class="card-title">{{gallery.title}}</h1>

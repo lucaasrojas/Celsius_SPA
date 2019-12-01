@@ -21,7 +21,7 @@
             </div>
             <div class="col-sm-8">
                 <ul class="list-group">
-                    <li v-for="(item, index) of tareas" :key="item.id"
+                    <li v-for="(item, index) of tareas" :key="index"
                     class="list-group-item">
                         <div :class="['alert','row', item.estado ? 'alert-success' : 'alert-primary']">
                             <div class="col-8">
@@ -41,10 +41,10 @@
 </template>
 <script>
 export default {
-    nuevaTarea: '',
     data(){
         return {
             tareas: [],
+            nuevaTarea: '',
         }
     },
     methods:{

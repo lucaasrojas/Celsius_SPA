@@ -20,7 +20,7 @@ export default {
 	},
 	data() {
 		return {
-			sectionsList: null,
+			sectionsList: this.$root.dbConfig.menuItems,
 			mainTitle: "Home",
 			mainDescription: "Welcome"
 		}

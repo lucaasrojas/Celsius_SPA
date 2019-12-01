@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import router from '@/router.js'
 import firebase from 'firebase';
 import config from '../config/firebase_config';
+import navbarConfig from '@/assets/navbarItems.json'
 Vue.config.productionTip = false
 
 // Init firebase
@@ -29,10 +30,22 @@ Vue.config.productionTip = false
 
 new Vue({
   data: {
+    dbConfig: navbarConfig,
     dbPages: null,
-    dbConfig: null,
     loginStatus: false
+  },
+  async created(){
+    this.dbPages = await getDBTables('pages');
   },
   router,
   render: h => h(App)
 }).$mount('#app')
+
+async function getDBTables(table) {
+  let values = [];
+  await firebase.database().ref(table).once('value',(data)=>{
+    values = data.val()
+  });
+
+  return values;
+}

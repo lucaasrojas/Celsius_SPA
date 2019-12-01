@@ -43,10 +43,10 @@
 </template>
 <script>
 export default {
-    nuevoElemento: '',
     data(){
         return {
             elementos: [],
+            nuevoElemento: '',
         }
     },
     methods:{

@@ -22,14 +22,7 @@ export default {
     jumbotron: Jumbotron
   },
   methods: {
-    async getDBTables(table) {
-      let values = [];
-      await firebase.database().ref(table).once('value',(data)=>{
-        values = data.val()
-      });
-
-      return values;
-    },
+    
     receiveData(data) {
       this.mainTitle = data.mainTitle;
       this.mainDescription = data.mainDescription;

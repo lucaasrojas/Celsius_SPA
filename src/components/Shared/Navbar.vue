@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       sideNav: false,
-      navbarConfig: null
+      navbarConfig: this.$root.dbConfig.menuItems
     }
   },
   methods: {

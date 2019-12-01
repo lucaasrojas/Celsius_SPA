@@ -22,6 +22,8 @@ export default {
       mainDescription: "",
     }
   },
+  created(){
+  },
   mounted() {
     this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
   }

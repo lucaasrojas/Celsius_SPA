@@ -4,7 +4,7 @@
             <div class="carousel-item active">
               <img :src="require(`@/${pictures[0].url}`)" class="d-block w-100">
             </div>
-            <div class="carousel-item" v-for="item in pictures.slice(1,pictures.length)" :key="item">
+            <div class="carousel-item" v-for="(item, index) in pictures.slice(1,pictures.length)" :key="index">
               <img :src="require(`@/${item.url}`)" class="d-block w-100">
             </div>
           </div>
@@ -24,7 +24,7 @@ export default {
     props: ['pictures'],
     data() {
         return {
-            pictures: pictures
+            
         }
     }
 

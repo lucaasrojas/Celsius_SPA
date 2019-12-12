@@ -25,7 +25,6 @@ import product from './components/Shared/product.vue'
 import VueRouter from 'vue-router'
 
 export default new VueRouter({
-  mode: 'history',
     routes: [
       {
         path: '*', 

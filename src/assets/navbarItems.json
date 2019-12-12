@@ -70,7 +70,7 @@
       "url": "/store",
       "icon": "store",
       "card_background_color": "#007849",
-      "visible": false
+      "visible": true
     },
     {
       "title": "Galerias",

@@ -1,6 +1,5 @@
 <template>
 <div>
-        <navbar></navbar>
         <div class="jumbotron">
             <div class="row jumbotron-content">
                 <div class="col-lg-12 mx-auto my-auto">
@@ -15,13 +14,9 @@
 </template>
 
 <script>
-import navbar from '@/components/Shared/Navbar.vue'
 
 export default {
-    props: ['mainTitle', 'mainDescription'],
-    components: {
-        navbar: navbar
-    }
+    props: ['mainTitle', 'mainDescription']
 }
 </script>
 
@@ -38,7 +33,6 @@ export default {
     background-image: linear-gradient(to bottom, rgba(148, 148, 148, 0.6) 0%,rgba(148,148,148,0.9) 100%), url('https://images.unsplash.com/photo-1523457938575-6e66e08ff567?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1457&q=80');
     background-size: fill;
     background-position: center;
-    position:relative;
     margin: 0;
     padding: 1rem !important;   
    

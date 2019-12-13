@@ -3,15 +3,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <jumbotron :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
-    <div class="container">
-      <router-view v-on:receiveData="receiveData"></router-view>
-    </div>
- </div>
+    <navbar class="navbarFixed"></navbar>
+    <jumbotron style="margin-top: 55px" :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
+      <router-view class="container" v-on:receiveData="receiveData"></router-view>
+  </div>
 </template>
 
 <script>
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
+import navbar from '@/components/Shared/Navbar.vue'
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
@@ -19,7 +19,8 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 export default {
   name: 'App',
   components: {
-    jumbotron: Jumbotron
+    jumbotron: Jumbotron,
+    navbar: navbar
   },
   methods: {
     
@@ -55,5 +56,13 @@ export default {
 
 .header {
   background-color: rgba(0 , 0, 0, 0.5);
+}
+
+.navbarFixed{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9989;
 }
 </style>

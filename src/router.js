@@ -25,11 +25,9 @@ import product from './components/Shared/product.vue'
 import VueRouter from 'vue-router'
 
 export default new VueRouter({
+    mode: 'history',
     routes: [
-      {
-        path: '*', 
-        redirect: '/home'
-      },
+      {path: '/', component: Home},
       {path: '/home', name: 'home', component: Home},
       {path: '/musica', component: Musica},
       {path: '/peliculas', component: Peliculas},

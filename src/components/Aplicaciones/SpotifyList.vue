@@ -1,89 +1,108 @@
 <template>
-    <div>
-        <h1>spotify list</h1>
-        <button @click="login()">Login</button>
-        <span id="text"></span>
+    <div class="col-md-12">
+        <h1>Get tracks from Spotify's list</h1>
+        <div class="row my-4 ">
+            <div class="col-md-4 ml-auto">
+                <input class="form-control" placeholder="Tracklist ID" ref="tracklistId" />
+            </div>
+            <div class="col-md-2 mr-auto">
+                <button class="btn btn-primary" @click="login()">Get Tracklist</button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Artist</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(track, index) in trackList" :key="index">
+                    <th scope="row">{{index+1}}</th>
+                    <td>{{track.title}}</td>
+                    <td>{{track.artist}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+            
     </div>
 </template>
 
 <script>
-import { stringify } from 'querystring';
+const params = require('../../../config/spotifyList_config')
 var request = require('request-promise');
-const playlist = "1dvHEa2vHChUzosaaA9X1w";
-const url =`https://api.spotify.com/v1/playlists/${playlist}/tracks`
-      const my_client_id = "9801d7351ba047ba97d6d216baaacf59";
-      var redirect_uri = "http://localhost:8080/spotifyList";
-const secret = process.env.VUE_APP_SPOTIFY_SECRET;
-      var scopes = "playlist-read-private";
+console.log("my_client_id",params)
 
 export default {
 data () {
     return  {
-        listResult:""
+        listResult:"",
+        trackList: [],
     }
 },
   methods: {
     login() {
-      var redirectTo =
-        "https://accounts.spotify.com/authorize" +
-        "?response_type=code" +
-        "&client_id=" +
-        my_client_id +
-        (scopes ? "&scope=" + encodeURIComponent(scopes) : "") +
-        "&redirect_uri=" + encodeURIComponent(redirect_uri);
-        console.log("Redirect", redirectTo)
+      var redirectTo = 'https://accounts.spotify.com/authorize' +
+      '?response_type=token' +
+      '&client_id=' + my_client_id +
+      (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
+      '&redirect_uri=' + encodeURIComponent(redirect_uri)
+      console.log("Redirect", redirectTo)
       window.location.replace(redirectTo)
     },
-    getList(token) {
+    getList(token, tokenType) {
+        const playlist = "1dvHEa2vHChUzosaaA9X1w";
+        const url =`https://api.spotify.com/v1/playlists/${playlist}/tracks`
+        console.log("this", this.$refs.tracklistId)
         request({
-            "method":"GET", 
-            "uri": url,
-            "json": true,
-            "headers": {
-                "User-Agent": "My little demo app",
-                "Authorization": "Bearer " + token,
-            }
-            }).then(r => {
-                r.items.forEach(element => {
-                    let artists = ""; 
-                    element.track.artists.forEach(ar => {
-                        artists += ar.name+" ";
-                    })
-                    console.log(`${element.track.name} - ${artists}`)
-                });
-            })
-            .catch(err => {
-                console.log("ERROR GETLIST", err.message)
+        "method":"GET", 
+        "uri": url,
+        "json": true,
+        "headers": {
+            "User-Agent": "My little demo app",
+            "Authorization": `${tokenType} ${token}`,
+        }
+        }).then(r => {
+            const trackList = [];
+            r.items.forEach(element => {
+                let artists = ""; 
+                element.track.artists.forEach(ar => {
+                    artists += ar.name+" ";
+                })
+                trackList.push({artist: artists, title:element.track.name})
             });
+            this.trackList = trackList;
+        })
+        .catch(err => {
+            console.log("ERROR", err.message)
+        });
+
     }
   },
 created() {
-    if (this.$route.query.code) {
+    if (window.location.href) {
 
-       var options = {
-           method: 'post',
-           url: 'https://accounts.spotify.com/api/token',
-           form: {
-               code: this.$route.query.code,
-                redirect_uri: redirect_uri,
-               grant_type: "authorization_code",
-           },
-           headers: {
-               "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": `Basic ${new Buffer(`${my_client_id}:${secret}`).toString("base64")}`,
-            },
-            json: true
-       }
-        request(options)
-            .then(token => {
-                console.log("Access", token)
-            })
-            .catch(err => {
-                console.log("ERROR GET TOKEN", err)
-            });
+        const parameters = createObjectFromURL(window.location.href);
+    
+    if(parameters.access_token && parameters.token_type) {
+        this.getList(parameters.access_token, parameters.token_type);
+    }
     }
 }
 };
+
+function createObjectFromURL(url){
+    let urlParameters = url.split('#')[1];
+    urlParameters = urlParameters.split('&');
+    let parameters = {};
+    urlParameters.forEach(par => {
+        let param = par.split('=')
+        parameters[param[0]] = param[1];
+    })
+    return parameters;
+}
 </script>
 
 <style>

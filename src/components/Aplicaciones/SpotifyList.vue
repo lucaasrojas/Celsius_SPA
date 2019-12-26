@@ -3,10 +3,10 @@
         <h1>Get tracks from Spotify's list</h1>
         <div class="row my-4 ">
             <div class="col-md-4 ml-auto">
-                <input class="form-control" placeholder="Tracklist ID" ref="tracklistId" />
+                <input class="form-control" v-model="playlistID" placeholder="Tracklist ID" ref="tracklistId" />
             </div>
             <div class="col-md-2 mr-auto">
-                <button class="btn btn-primary" @click="login()">Get Tracklist</button>
+                <button class="btn btn-primary" @click="alreadyToken()">Get Tracklist</button>
             </div>
         </div>
         <table class="table">
@@ -33,29 +33,26 @@
 <script>
 const params = require('../../../config/spotifyList_config')
 var request = require('request-promise');
-console.log("my_client_id",params)
 
 export default {
 data () {
     return  {
         listResult:"",
         trackList: [],
+        playlistID: '',
     }
 },
   methods: {
     login() {
       var redirectTo = 'https://accounts.spotify.com/authorize' +
       '?response_type=token' +
-      '&client_id=' + my_client_id +
-      (scopes ? '&scope=' + encodeURIComponent(scopes) : '') +
-      '&redirect_uri=' + encodeURIComponent(redirect_uri)
-      console.log("Redirect", redirectTo)
+      '&client_id=' + params.my_client_id +
+      (params.scopes ? '&scope=' + encodeURIComponent(params.scopes) : '') +
+      '&redirect_uri=' + encodeURIComponent(params.redirect)
       window.location.replace(redirectTo)
     },
     getList(token, tokenType) {
-        const playlist = "1dvHEa2vHChUzosaaA9X1w";
-        const url =`https://api.spotify.com/v1/playlists/${playlist}/tracks`
-        console.log("this", this.$refs.tracklistId)
+        const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/tracks`
         request({
         "method":"GET", 
         "uri": url,
@@ -79,17 +76,23 @@ data () {
             console.log("ERROR", err.message)
         });
 
-    }
-  },
-created() {
-    if (window.location.href) {
+    },
+    alreadyToken() {
+        if (window.location.href) {
 
-        const parameters = createObjectFromURL(window.location.href);
-    
-    if(parameters.access_token && parameters.token_type) {
-        this.getList(parameters.access_token, parameters.token_type);
+            const parameters = createObjectFromURL(window.location.href);
+        
+            if(parameters.access_token && parameters.token_type) {
+                this.getList(parameters.access_token, parameters.token_type);
+            } else {
+                this.login();
+            }
+        }
     }
-    }
+
+  },
+mounted() {
+    alreadyToken();
 }
 };
 
@@ -103,6 +106,7 @@ function createObjectFromURL(url){
     })
     return parameters;
 }
+
 </script>
 
 <style>

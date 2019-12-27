@@ -1,6 +1,7 @@
 <template>
     <div class="col-md-12">
         <h1>Get tracks from Spotify's list</h1>
+        <span>{{error}} </span>
         <div class="row my-4 ">
             <div class="col-md-4 ml-auto">
                 <input class="form-control" v-model="playlistID" placeholder="Tracklist ID" ref="tracklistId" />
@@ -40,6 +41,7 @@ data () {
         listResult:"",
         trackList: [],
         playlistID: '',
+        error: '',
     }
 },
   methods: {
@@ -73,26 +75,25 @@ data () {
             this.trackList = trackList;
         })
         .catch(err => {
-            console.log("ERROR", err.message)
+            
         });
 
     },
     alreadyToken() {
-        if (window.location.href) {
+        this.error = '';
+        if (window.location.href.includes('access_token') && window.location.href.includes('token_type')) {
 
             const parameters = createObjectFromURL(window.location.href);
-        
-            if(parameters.access_token && parameters.token_type) {
-                this.getList(parameters.access_token, parameters.token_type);
-            } else {
-                this.login();
-            }
+            this.getList(parameters.access_token, parameters.token_type);
+            
+        } else {
+            this.login();
         }
     }
 
   },
 mounted() {
-    alreadyToken();
+    this.alreadyToken();
 }
 };
 

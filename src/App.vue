@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <navbar class="navbarFixed"></navbar>
     <jumbotron style="margin-top: 55px" :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
-      <router-view class="container" v-on:receiveData="receiveData"></router-view>
+      <router-view v-on:receiveData="receiveData"></router-view>
   </div>
 </template>
 

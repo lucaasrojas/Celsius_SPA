@@ -110,6 +110,11 @@
           "title": "Usuarios",
           "url": "/usuarios",
           "visible": false
+        },
+        {
+          "title": "Get Spotify Playlist",
+          "url": "/spotifyList",
+          "visible": true
         }
       ]
     }

@@ -24,7 +24,7 @@
                     <th scope="row">{{index+1}}</th>
                     <td>{{track.title}}</td>
                     <td>{{track.artist}}</td>
-                    <td><font-awesome-icon fas :icon="'search'" style="font-size: 1rem"></font-awesome-icon></td>
+                    <td><font-awesome-icon fas :icon="'search'" style="font-size: 1rem" @click="searchTrack(track)"></font-awesome-icon></td>
                 </tr>
                 
             </tbody>
@@ -91,6 +91,17 @@ data () {
         } else {
             this.login();
         }
+    },
+    searchTrack(track) {
+        let queryOptions = `${track.title} ${track.artist}`
+        console.log("queryOptions", queryOptions)
+        queryOptions = queryOptions.replace(/ /g,'+');
+        console.log("queryOptions 2", queryOptions)
+
+        window.open(
+        `https://www.youtube.com/results?search_query=${queryOptions}`,
+        '_blank' // <- This is what makes it open in a new window.
+        );
     }
 
   },

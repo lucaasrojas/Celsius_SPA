@@ -16,6 +16,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Artist</th>
+                <th scope="col">Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                     <th scope="row">{{index+1}}</th>
                     <td>{{track.title}}</td>
                     <td>{{track.artist}}</td>
+                    <td><font-awesome-icon fas :icon="'search'" style="font-size: 1rem"></font-awesome-icon></td>
                 </tr>
                 
             </tbody>

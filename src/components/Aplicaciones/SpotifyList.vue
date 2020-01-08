@@ -1,5 +1,8 @@
 <template>
     <div class="col-md-12">
+        <loading :active.sync="isLoading" 
+        :can-cancel="false"
+        :is-full-page="true"></loading>
         <h1>Get tracks from Spotify's list</h1>
         <span>{{error}}</span>
         <div class="row my-4 ">
@@ -38,6 +41,10 @@
 const params = require('../../../config/spotifyList_config')
 var request = require('request-promise');
 var FileSaver = require('file-saver');
+// Import component
+import Loading from 'vue-loading-overlay';
+// Import stylesheet
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 export default {
 data () {
@@ -46,7 +53,11 @@ data () {
         trackList: [],
         playlistID: '',
         error: '',
+        isLoading: false
     }
+},
+components: {
+    Loading
 },
   methods: {
     login() {
@@ -58,6 +69,7 @@ data () {
       window.location.replace(redirectTo)
     },
     getList(token, tokenType, urlNext = undefined) {
+        this.isLoading =true;
         const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/tracks?offset=0`
         request({
         "method":"GET", 
@@ -78,10 +90,12 @@ data () {
 
             if (r.next) {
                 this.getList(token, tokenType, r.next)
+                return;
             }
+            this.isLoading = false;
         })
         .catch(err => {
-            
+            this.isLoading = false;
         });
 
     },
@@ -112,9 +126,9 @@ data () {
         this.trackList.forEach(track => {
              content += `${track.title} - ${track.artist} \n`;
         })
-
+        var date = new Date();
         var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-        FileSaver.saveAs(blob, "tracklist.txt");
+        FileSaver.saveAs(blob, `tracklist-${this.playlistID}-${date.toDateString()}.txt`);
     
     }
 

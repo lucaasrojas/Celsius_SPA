@@ -8,6 +8,7 @@
             </div>
             <div class="col-md-2 mr-auto">
                 <button class="btn btn-primary" @click="alreadyToken()">Get Tracklist</button>
+                <button class="btn btn-primary" @click="exportList()">Download List</button>
             </div>
         </div>
         <table class="table">
@@ -36,7 +37,7 @@
 <script>
 const params = require('../../../config/spotifyList_config')
 var request = require('request-promise');
-
+var FileSaver = require('file-saver');
 export default {
 data () {
     return  {
@@ -55,25 +56,36 @@ data () {
       '&redirect_uri=' + encodeURIComponent(params.redirect)
       window.location.replace(redirectTo)
     },
-    getList(token, tokenType) {
-        const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/tracks`
+    getList(token, tokenType, urlNext = undefined) {
+        console.log("GET LIST",urlNext)
+        const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/tracks?offset=0`
         request({
         "method":"GET", 
-        "uri": url,
+        "uri": urlNext || url,
         "json": true,
         "headers": {
             "User-Agent": "My little demo app",
             "Authorization": `${tokenType} ${token}`,
         }
         }).then(r => {
-            const trackList = [];
+            console.log("R ITEMS", r)
+            
             r.items.forEach(element => {
                 let artists = ""; 
                 element.track.artists.forEach(ar => {
                     artists += ar.name+" ";
                 })
-                trackList.push({artist: artists, title:element.track.name})
+                this.trackList.push({artist: artists, title:element.track.name})
             });
+                console.log("Tracklist length", this.trackList.length)
+
+            if (r.next) {
+                console.log("ENTER", r.next)
+                this.getList(token, tokenType, r.next)
+                console.log("NEXT Tracklist length", this.trackList.length)
+
+            }
+            
             this.trackList = trackList;
         })
         .catch(err => {
@@ -102,6 +114,16 @@ data () {
         `https://www.youtube.com/results?search_query=${queryOptions}`,
         '_blank' // <- This is what makes it open in a new window.
         );
+    },
+    exportList(){
+        let content;
+        this.trackList.forEach(track => {
+             content += `${track.title} - ${track.artist} \n`;
+        })
+
+        var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+        FileSaver.saveAs(blob, "tracklist.txt");
+    
     }
 
   },

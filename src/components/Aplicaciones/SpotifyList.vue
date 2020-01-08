@@ -1,14 +1,14 @@
 <template>
     <div class="col-md-12">
         <h1>Get tracks from Spotify's list</h1>
-        <span>{{error}} </span>
+        <span>{{error}}</span>
         <div class="row my-4 ">
-            <div class="col-md-4 ml-auto">
+            <div class="col-md-6 ml-auto">
                 <input class="form-control" v-model="playlistID" placeholder="Tracklist ID" ref="tracklistId" />
             </div>
-            <div class="col-md-2 mr-auto">
-                <button class="btn btn-primary" @click="alreadyToken()">Get Tracklist</button>
-                <button class="btn btn-primary" @click="exportList()">Download List</button>
+            <div class="col-md-5 mr-auto">
+                <button class="btn btn-primary col-sm-5" @click="alreadyToken()">Get Tracklist</button>
+                <button v-if="this.trackList.length > 0" class="btn btn-primary col-sm-5 ml-1" @click="exportList()">Download List</button>
             </div>
         </div>
         <table class="table">
@@ -38,6 +38,7 @@
 const params = require('../../../config/spotifyList_config')
 var request = require('request-promise');
 var FileSaver = require('file-saver');
+
 export default {
 data () {
     return  {
@@ -57,7 +58,6 @@ data () {
       window.location.replace(redirectTo)
     },
     getList(token, tokenType, urlNext = undefined) {
-        console.log("GET LIST",urlNext)
         const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/tracks?offset=0`
         request({
         "method":"GET", 
@@ -68,8 +68,6 @@ data () {
             "Authorization": `${tokenType} ${token}`,
         }
         }).then(r => {
-            console.log("R ITEMS", r)
-            
             r.items.forEach(element => {
                 let artists = ""; 
                 element.track.artists.forEach(ar => {
@@ -77,16 +75,10 @@ data () {
                 })
                 this.trackList.push({artist: artists, title:element.track.name})
             });
-                console.log("Tracklist length", this.trackList.length)
 
             if (r.next) {
-                console.log("ENTER", r.next)
                 this.getList(token, tokenType, r.next)
-                console.log("NEXT Tracklist length", this.trackList.length)
-
             }
-            
-            this.trackList = trackList;
         })
         .catch(err => {
             

@@ -1,37 +1,51 @@
 import Vue from 'vue'
 import App from './App.vue'
-import BootstrapVue from 'bootstrap-vue'
-
+import VueRouter from 'vue-router'
+import router from '@/router.js'
+import firebase from 'firebase';
+import config from '../config/firebase_config';
+import navbarConfig from '@/assets/navbarItems.json'
 Vue.config.productionTip = false
 
-//Import components
-import Home from './components/Home.vue'
-import Musica from './components/Musica.vue'
-import Peliculas from './components/Peliculas.vue'
-import Galerias from './components/Galerias.vue'
-import galeriaGifs from './components/Galerias/gifs.vue'
-import educativo from './components/Educativo.vue'
-import impresora3d from './components/Impresora3D.vue'
+// Init firebase
+firebase.initializeApp(config.MainDB);
 
-//Import Router
-import VueRouter from 'vue-router'
+//Import Bootstrap
+import 'bootstrap'
+//Import Vuetify
+import Vuetify from 'vuetify'
 
 Vue.use(VueRouter);
-Vue.use(BootstrapVue);
+Vue.use(Vuetify);
 
-const router = new VueRouter({
-  routes: [
-    {path: '/', component: Home},
-    {path: '/musica', component: Musica},
-    {path: '/peliculas', component: Peliculas},
-    {path: '/galerias', component: Galerias},
-    {path: '/galeriaGifs', component: galeriaGifs},
-    {path: '/educativo', component: educativo},
-    {path: '/impresora3d', component: impresora3d}
-  ]
-})
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+// El fas agrega todos los iconos solid
+library.add(fas)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+ 
+Vue.config.productionTip = false
 
 new Vue({
+  data: {
+    dbConfig: navbarConfig,
+    dbPages: null,
+    loginStatus: false
+  },
+  async created(){
+    this.dbPages = await getDBTables('pages');
+  },
   router,
   render: h => h(App)
 }).$mount('#app')
+
+async function getDBTables(table) {
+  let values = [];
+  await firebase.database().ref(table).once('value',(data)=>{
+    values = data.val()
+  });
+
+  return values;
+}

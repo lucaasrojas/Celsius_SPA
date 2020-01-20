@@ -2,46 +2,37 @@
   <div id="app">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-    <div class="container">
-        <div class="row" >
-          <div class="col-12">
-            <img src="@/assets/images/celsius.png" class="logoImg">
-          </div>
-        </div>
-          <div class="row barraMenu">
-                <div v-for="item in menuItems" :key="item.title" >
-                  <!-- <v-list-tile-action>
-                    <v-icon> {{ item.icon }} </v-icon>
-                  </v-list-tile-action> -->
-                  <!--<v-list-tile-content>-->
-                  <div class="col-sm">
-                    <router-link class="menuLink" v-bind="{ to: item.url}"><b>{{ item.title }}</b></router-link>
-                  </div>
-                  <!--</v-list-tile-content>-->
-                </div>
-          </div>        
-    </div>
-      <router-view></router-view>
- </div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <navbar class="navbarFixed"></navbar>
+    <jumbotron style="margin-top: 55px" :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
+      <router-view v-on:receiveData="receiveData"></router-view>
+  </div>
 </template>
 
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Jumbotron from '@/components/Shared/Jumbotron.vue';
+import navbar from '@/components/Shared/Navbar.vue'
+
+import 'vuetify/dist/vuetify.min.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 export default {
+  name: 'App',
+  components: {
+    jumbotron: Jumbotron,
+    navbar: navbar
+  },
+  methods: {
+    
+    receiveData(data) {
+      this.mainTitle = data.mainTitle;
+      this.mainDescription = data.mainDescription;
+    }
+  },
   data() {
     return {
-      sideNav: false,
-      menuItems: [
-        {icon: '', title: "Home", url: "/"},
-        {icon: '', title: "Musica", url: "/musica"},
-        {icon: '', title: "Peliculas", url: "/peliculas"},
-        {icon: '', title: "Galerias", url: "/galerias"},
-        {icon: '', title: "Impresora 3D", url: "/impresora3d"},
-        {icon: '', title: "Educativo", url: "/educativo"}
-      ]
+      mainTitle: '',
+      mainDescription: ''
     }
   }
 }
@@ -54,59 +45,24 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   box-sizing: content-box;
-	
-}
-
-.barraMenu {
-  background-color: #2c3e50;
-  border: 5px;
-  border-color: black;
-  border-radius: 10px;
-  text-decoration-color: white;
-  text-align: center;
-  display: inline-flex;
+  background-color:white;
+  min-height: 100vh;
 }
 
 .container {
-  padding: 2px;
+  height: 100%;
 }
 
-.menuLink {
-  color: white;
-  text-align: center;
-  font-size: 20px;
+.header {
+  background-color: rgba(0 , 0, 0, 0.5);
 }
 
-.logoImg {
-  text-align: center
-}
-
-.subtitulo {
-    margin: 5px;
-    border-style: solid;
-    border-width: 5px;
-    border-color:blanchedalmond;
-    border-radius: 25px;
-    background-color: darkgray;
-    color: blanchedalmond;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-}
-
-.imgGaleria {
-    max-width: 400px;
-    padding: 5px;
-}
-
-body {
-  background-image: url("./assets/images/general-background.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+.navbarFixed{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:9989;
 }
 </style>

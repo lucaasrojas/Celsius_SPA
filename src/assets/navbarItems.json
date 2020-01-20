@@ -1,0 +1,110 @@
+{
+  "menuItems": [
+    {
+      "title": "Musica",
+      "url": "/musica",
+      "visible": false,
+      "description": "Listados de la mejor musica",
+      "src": "assets/images/mosaicomusica.png",
+      "icon": "play-circle",
+      "card_background_color": "#E1008B"
+    },
+    {
+      "title": "Recetas",
+      "url": "/recetas",
+      "visible": true,
+      "description": "Te gusta cocinar? Este es tu lugar",
+      "src": "assets/images/store-image.png",
+      "icon": "hamburger",
+      "card_background_color": "#DCD0C0"
+    },
+    {
+      "title": "Peliculas",
+      "url": "/peliculas",
+      "visible": false,
+      "description": "Peliculas para descargar y con review",
+      "src": "assets/images/mosaicopeliculas.png",
+      "icon": "film",
+      "card_background_color": "#FF9334"
+    },
+    {
+      "title": "Impresora 3D",
+      "url": "/impresora3d",
+      "description": "",
+      "src": "",
+      "icon": "",
+      "card_background_color": "",
+      "visible": false
+    },
+    {
+      "title": "Educativo",
+      "url": "/educativo",
+      "description": "",
+      "src": "",
+      "icon": "book",
+      "card_background_color": "#409D17",
+      "visible": true
+    },
+    {
+      "title": "Login",
+      "url": "/login",
+      "description": "",
+      "src": "",
+      "icon": "",
+      "card_background_color": "",
+      "visible": false
+    },
+    {
+      "title": "Admin",
+      "url": "/admin",
+      "description": "",
+      "src": "",
+      "icon": "",
+      "card_background_color": "",
+      "visible": false
+    },
+    {
+      "title": "Store",
+      "description": "Todos los productos en un solo lugar",
+      "src": "assets/images/store-image.png",
+      "url": "/store",
+      "icon": "store",
+      "card_background_color": "#007849",
+      "visible": true
+    },
+    {
+      "title": "Galerias",
+      "description": "Contiene imagenes variadas",
+      "src": "assets/images/mosaicogalerias.png",
+      "url": "/galerias",
+      "icon": "images",
+      "card_background_color": "#34A0FF",
+      "visible": false
+    },
+    {
+      "title": "Aplicaciones",
+      "subItems": [
+        {
+          "title": "Lista con contador",
+          "url": "/listaContador",
+          "visible": false
+        },
+        {
+          "title": "ToDo List",
+          "url": "/todolist",
+          "visible": false
+        },
+        {
+          "title": "Usuarios",
+          "url": "/usuarios",
+          "visible": false
+        },
+        {
+          "title": "Get Spotify Playlist",
+          "url": "/spotifyList",
+          "visible": false
+        }
+      ]
+    }
+  ]
+}

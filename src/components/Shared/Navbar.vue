@@ -30,6 +30,7 @@
             </div>
               
           </ul>
+          <!--
           <ul class="navbar-nav">
             <li class="nav-item active navbar-element-padding ">
                 <span class="nav-link active"><strong>Logged: {{this.$root.loginStatus}}</strong></span>
@@ -38,6 +39,7 @@
                 <span class="nav-link active" style="cursor: pointer" @click="logout()"><strong>Logout</strong></span>
               </li>
           </ul>
+          -->
         </div>
     </nav>
   </div>

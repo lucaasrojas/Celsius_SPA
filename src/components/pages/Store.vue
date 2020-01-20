@@ -2,11 +2,18 @@
 <div>
 <div class="row">
 
-  <div class="col-md-12 d-flex justify-content-center mb-5">
-
-    <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="all">All</button>
-    <button type="button" id="btnMountains" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="deco">Deco</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter text-white" @click="btnClicked($event)" data-rel="geek">Geek</button>
+  <div class="col-md-6 d-flex justify-content-center mx-auto mb-5">
+    <div class="row">
+      <div class="col-md">
+        <button type="button" class="btn btn-secondary waves-effect filter text-white" @click="btnClicked($event)" data-rel="all">All</button>
+      </div>
+      <div class="col-md">
+        <button type="button" id="btnMountains" class="btn btn-secondary waves-effect filter text-white" @click="btnClicked($event)" data-rel="deco">Deco</button>
+      </div>
+      <div class="col-md">
+        <button type="button" class="btn btn-secondary waves-effect filter text-white" @click="btnClicked($event)" data-rel="geek">Geek</button>
+      </div>
+    </div>
 
   </div>
 
@@ -51,7 +58,6 @@ export default {
       const product = imgList.filter(img => {
         return img.id === elementID
       });
-      console.log("Product: ", product)
       router.push({name: "product", params: {img: product[0]}});
     }
   },

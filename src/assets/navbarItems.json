@@ -3,7 +3,7 @@
     {
       "title": "Musica",
       "url": "/musica",
-      "visible": true,
+      "visible": false,
       "description": "Listados de la mejor musica",
       "src": "assets/images/mosaicomusica.png",
       "icon": "play-circle",
@@ -79,7 +79,7 @@
       "url": "/galerias",
       "icon": "images",
       "card_background_color": "#34A0FF",
-      "visible": true
+      "visible": false
     },
     {
       "title": "Aplicaciones",
@@ -87,12 +87,12 @@
         {
           "title": "Lista con contador",
           "url": "/listaContador",
-          "visible": true
+          "visible": false
         },
         {
           "title": "ToDo List",
           "url": "/todolist",
-          "visible": true
+          "visible": false
         },
         {
           "title": "Usuarios",
@@ -102,7 +102,7 @@
         {
           "title": "Get Spotify Playlist",
           "url": "/spotifyList",
-          "visible": true
+          "visible": false
         }
       ]
     }

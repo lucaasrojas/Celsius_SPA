@@ -1,6 +1,6 @@
 <template>
     <div class="rounded-circle sectionCircle" :style="'background-color:' + section.card_background_color" @click="goTo(section.url)">
-        <font-awesome-icon fas :icon="section.icon" class="icon"></font-awesome-icon>
+        <font-awesome-icon :icon="['fas', section.icon]" class="icon"></font-awesome-icon>
     </div>
 </template>
 

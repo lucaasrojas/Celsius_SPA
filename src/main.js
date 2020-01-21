@@ -4,7 +4,6 @@ import VueRouter from 'vue-router'
 import router from '@/router.js'
 import firebase from 'firebase';
 import config from '../config/firebase_config';
-import navbarConfig from '@/assets/navbarItems.json'
 Vue.config.productionTip = false
 
 // Init firebase
@@ -29,18 +28,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
  
 Vue.config.productionTip = false
 
-new Vue({
-  data: {
-    dbConfig: navbarConfig,
-    dbPages: null,
-    loginStatus: false
-  },
-  async created(){
-    this.dbPages = await getDBTables('pages');
-  },
-  router,
-  render: h => h(App)
-}).$mount('#app')
 
 async function getDBTables(table) {
   let values = [];
@@ -50,3 +37,28 @@ async function getDBTables(table) {
 
   return values;
 }
+let dbPagesConfig , dbMainConfig;
+var pagesPromise = new Promise(async (resolve, reject) => {
+  resolve(await getDBTables('pages'));
+}); 
+
+var configPromise = new Promise(async (resolve, reject) => {
+ resolve(await getDBTables('config'));
+}); 
+
+Promise.all([pagesPromise, configPromise]).then(values => { 
+  dbPagesConfig = values[0];
+  dbMainConfig = values[1];
+
+  new Vue({
+    data: {
+      dbConfig: dbMainConfig,
+      dbPages: dbPagesConfig,
+      loginStatus: false
+    },
+    async created(){
+    },
+    router,
+    render: h => h(App)
+  }).$mount('#app')
+});

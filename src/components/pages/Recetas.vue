@@ -1,9 +1,7 @@
 <template>
   <div class="container">
-    <h2 class="alert alert-light d-inline-flex">Recetas</h2>
     <div class="row bg-dark rounded text-center" id="appContainer">
-      <div class="col">
-        <div class="card">
+        <div class="card" style="width: 100%">
           <div class="card-body">
             <table
               class="table table-striped table-bordered tabler-hover"
@@ -11,14 +9,15 @@
               :key="index"
             >
               <tr>
-                <th>{{CapitalizeFirstLetter(index)}}</th>
+                <!--  Categoria -->
+                <th data-toggle="collapse" :data-target="`#${index}`" aria-expanded="false" :aria-controls="index">{{CapitalizeFirstLetter(index)}}</th>
               </tr>
-              <tbody v-for="categoryItem in category" :key="categoryItem.nombre">
+              <tbody v-for="categoryItem in category" :key="categoryItem.nombre" :id="index" class="collapse">
                 <tr>
-                  <th>{{categoryItem.nombre}}</th>
-                  
+                  <!-- Nombre de receta -->
+                  <th data-toggle="collapse" :data-target="`#${categoryItem.nombre}`" aria-expanded="false" :aria-controls="categoryItem.nombre">{{categoryItem.nombre}}</th>
                 </tr>
-                <tr>
+                <tr :id="categoryItem.nombre" class="collapse">
                   <td>
                     <tr>
                         <th>Ingrediente</th>
@@ -26,14 +25,16 @@
                     </tr>
                     <tr v-for="ing in categoryItem.ingredientes" :key="ing.nombre">
                         <th>{{ing.nombre}}</th>
-                        <th>{{ing.cantidad}}</th>
+                        <th>{{ing.cantidad}} {{ing.unidad}}</th>
                     </tr>
                     <tr>
                         <th colspan="2">Proceso</th>
                     </tr>
                     <tr>
-                        <td colspan="2">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa dolorum velit nesciunt modi consequatur aut sed a, unde impedit perferendis ex fugit ut facilis sapiente, consequuntur optio odio quas iste.
+                        <td colspan="2" style="text-align:left">
+                          <ul v-for="(step, index) in categoryItem.proceso" :key="index">
+                            <li style="list-style-type:none;">{{index + 1 }} - {{step}}</li>
+                          </ul>
                         </td>
                     </tr>
                   </td>
@@ -42,7 +43,6 @@
             </table>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </template>
@@ -73,4 +73,9 @@ export default {
 </script>
 
 <style scoped>
+#appContainer {
+      border: 1px solid;
+    border-color: rgba(133, 133, 133, 0.459);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 </style>

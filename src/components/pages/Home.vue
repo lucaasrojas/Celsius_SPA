@@ -21,8 +21,8 @@ export default {
 	data() {
 		return {
 			sectionsList: this.$root.dbConfig.menuItems,
-			mainTitle: "Home",
-			mainDescription: "Welcome"
+			mainTitle: "Welcome to TakeACoffee",
+			mainDescription: ""
 		}
 	},
 	created() {

@@ -87,7 +87,7 @@
         {
           "title": "Lista con contador",
           "url": "/listaContador",
-          "visible": false
+          "visible": true
         },
         {
           "title": "ToDo List",

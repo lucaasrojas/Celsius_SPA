@@ -5,13 +5,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <navbar class="navbarFixed"></navbar>
     <jumbotron style="margin-top: 55px" :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
-      <router-view v-on:receiveData="receiveData"></router-view>
+      <router-view v-on:receiveData="receiveData" class="content"></router-view>
+    <pageFooter></pageFooter>
   </div>
 </template>
 
 <script>
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
 import navbar from '@/components/Shared/Navbar.vue'
+import pageFooter from '@/components/Footer.vue'
+
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
@@ -20,7 +23,8 @@ export default {
   name: 'App',
   components: {
     jumbotron: Jumbotron,
-    navbar: navbar
+    navbar: navbar,
+    pageFooter: pageFooter
   },
   methods: {
     

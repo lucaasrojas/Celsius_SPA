@@ -3,8 +3,6 @@ import Home from './components/pages/Home.vue'
 import Musica from './components/pages/Musica.vue'
 import Peliculas from './components/pages/Peliculas.vue'
 import Galerias from './components/pages/Galerias.vue'
-import galeriaGifs from './components/Galerias/gifs.vue'
-import galeriaGTAIV from './components/Galerias/gtaiv.vue'
 import educativo from './components/pages/Educativo.vue'
 import listacontador from './components/Aplicaciones/ListaContador.vue'
 import todolist from './components/Aplicaciones/Todo-list.vue'
@@ -33,8 +31,6 @@ export default new VueRouter({
       {path: '/peliculas', component: Peliculas},
       {path: '/galerias', component: Galerias},
       {path: '/store', component: store},
-      {path: '/galeriaGifs', component: galeriaGifs},
-      {path: '/galeriaGTAIV', component: galeriaGTAIV},
       {path: '/educativo', component: educativo},
       {path: '/listacontador', component: listacontador},
       {path: '/todolist', component: todolist},

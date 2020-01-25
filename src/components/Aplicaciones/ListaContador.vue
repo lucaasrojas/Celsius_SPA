@@ -1,40 +1,38 @@
 <template>
     <div class="container">
-        <h2 class="alert alert-light  d-inline-flex">Listado con contador</h2>
         <div class="row bg-dark rounded" id="appContainer">
-            <div class="col">
+            <div class="col my-auto card">
                 <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control my-3" v-model="nuevoElemento" 
-                        id="inputElement" placeholder="Enter new element" v-on:keyup.enter="agregarElemento"  >
-                    </div>
+                    <input type="text" class="form-control m-3" v-model="nuevoElemento" maxlength="40"
+                    id="inputElement" placeholder="Enter new element" v-on:keyup.enter="agregarElemento"  >
                 </div>
-                <div class="row">
+                <div class="row my-2">
                     <div class="col">
                         <button type="submit" class="btn btn-primary" @click="agregarElemento">Submit</button>
                     </div>
                     <div class="col">
                         <button type="submit" class="btn btn-danger" @click="borrarTodo">Delete all</button>
                     </div>
+                    <div class="col">
+                        <button type="button" :class="['btn', 'btn-danger', elementos.length > 0 ? '' : 'disabled']"  @click="reiniciar">Reset</button>
+                    </div>
                 </div>
 
             </div>
             <div class="col">
-                <ul class="list-group d-inline-flex">
-                    <li v-for="(item, index) of elementos" :key="item.id" @click="aumentar(index)"
-                    class="list-group-item d-flex justify-content-between align-items-center">
-                        <div class="col-sm-auto">
-                            {{item.nombre}}
-                        </div>
-                        <div class="col-sm-2">
-                            <span class="badge badge-primary badge-pill text-right">{{item.cantidad}}</span>
-                        </div>
-                    </li>
-                </ul>
                 <div class="row">
-                    <div class="col">
-                        <button type="button" :class="['btn', 'btn-danger', elementos.length > 0 ? '' : 'disabled']"  @click="reiniciar">Reset</button>
-                    </div>
+                    <ul class="list-group d-inline-flex my-3 mx-auto">
+                        <li v-for="(item, index) of elementos" :key="item.id" @click="aumentar(index)"
+                        class="list-group-item d-flex justify-content-between align-items-center form-control"
+                        style="cursor:pointer">
+                            <div class="col-sm-auto">
+                                {{item.nombre}}
+                            </div>
+                            <div class="col-sm-2">
+                                <span class="badge badge-primary badge-pill text-right">{{item.cantidad}}</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -47,6 +45,8 @@ export default {
         return {
             elementos: [],
             nuevoElemento: '',
+            mainTitle: 'Counter List',
+            description: ''
         }
     },
     methods:{
@@ -71,7 +71,10 @@ export default {
             borrarTodo: function(){
                 this.elementos = [];
             }
-    }
+    },
+    created() {
+		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+	}
 }
 </script>
 

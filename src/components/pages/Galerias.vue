@@ -16,7 +16,9 @@
         <div class="gallery" id="gallery">
             <div v-for="(img, index) in imgList" :key="index">
                 <div :class="`mb-3 pics animation all`">
-                    <img class="img-fluid" :src="require(`@/${img.url}`)">
+                    <!-- <img class="img-fluid" :src="require(`@/${img.url}`)"> -->
+                    <img class="img-fluid" :src="`${img.url}`">
+
                 </div>
             </div>
         </div>
@@ -38,8 +40,6 @@ export default {
     },
     methods: {
         dropdownClick(gallery){
-            console.log("Button", gallery)
-            console.log(galleries.images[gallery])
             this.imgList = this.galleries.images[gallery]
             this.galleryTitle = this.galleries.sections[gallery].title
         }

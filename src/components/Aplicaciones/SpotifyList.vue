@@ -3,24 +3,28 @@
         <loading :active.sync="isLoading" 
         :can-cancel="false"
         :is-full-page="true"></loading>
-        <h1>Get tracks from Spotify's list</h1>
         <span>{{error}}</span>
         <div class="row my-4 ">
             <div class="col-md-6 ml-auto">
-                <input class="form-control" v-model="playlistID" placeholder="Tracklist ID" ref="tracklistId" />
+                <input class="form-control" v-model="playlistUrl" placeholder="Pega aca el ID de la lista" ref="tracklistId" />
             </div>
             <div class="col-md-5 mr-auto">
-                <button class="btn btn-primary col-sm-5" @click="alreadyToken()">Get Tracklist</button>
-                <button v-if="this.trackList.length > 0" class="btn btn-primary col-sm-5 ml-1" @click="exportList()">Download List</button>
+                <button class="btn btn-primary col-sm-5" @click="alreadyToken()">Obtener Lista</button>
+                <button v-if="this.trackList.length > 0" class="btn btn-primary col-sm-5 ml-1" @click="exportList()">Descargar Lista</button>
+            </div>
+        </div>
+        <div class="row my-4">
+            <div class="col-md-12">
+                <span><h2>{{tracklistName}}</h2></span>
             </div>
         </div>
         <table class="table">
             <thead>
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">Title</th>
-                <th scope="col">Artist</th>
-                <th scope="col">Options</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,7 +32,7 @@
                     <th scope="row">{{index+1}}</th>
                     <td>{{track.title}}</td>
                     <td>{{track.artist}}</td>
-                    <td><font-awesome-icon fas :icon="'search'" style="font-size: 1rem" @click="searchTrack(track)"></font-awesome-icon></td>
+                    <td><font-awesome-icon fas :icon="'search'" style="font-size: 1rem; cursor:pointer" @click="searchTrack(track)"></font-awesome-icon></td>
                 </tr>
                 
             </tbody>
@@ -51,9 +55,13 @@ data () {
     return  {
         listResult:"",
         trackList: [],
+        tracklistName: '',
+        playlistUrl: '',
         playlistID: '',
         error: '',
-        isLoading: false
+        isLoading: false,
+        mainTitle: 'Spotify',
+        mainDescription: 'Descarga la lista de canciones desde Spotify'
     }
 },
 components: {
@@ -68,8 +76,31 @@ components: {
       '&redirect_uri=' + encodeURIComponent(params.redirect)
       window.location.replace(redirectTo)
     },
-    getList(token, tokenType, urlNext = undefined) {
-        this.isLoading =true;
+    getListInfo(token, tokenType) {
+        this.isLoading = true;
+        let playlistID = this.$data.playlistUrl.split('/');
+        let index = playlistID.indexOf("playlist");
+        this.$data.playlistID = playlistID[index+1];
+        const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/`
+        request({
+        "method":"GET", 
+        "uri": url,
+        "json": true,
+        "headers": {
+            "User-Agent": "My little demo app",
+            "Authorization": `${tokenType} ${token}`,
+        }
+        }).then(r => {
+            this.tracklistName = r.name
+            this.getTracks(token, tokenType);
+        })
+        .catch(err => {
+            this.isLoading = false;
+        });
+
+    },
+    getTracks(token, tokenType, urlNext = undefined) {
+        this.isLoading = true;
         const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/tracks?offset=0`
         request({
         "method":"GET", 
@@ -79,8 +110,8 @@ components: {
             "User-Agent": "My little demo app",
             "Authorization": `${tokenType} ${token}`,
         }
-        }).then(r => {
-            r.items.forEach(element => {
+        }).then(tracks => {
+            tracks.items.forEach(element => {
                 let artists = ""; 
                 element.track.artists.forEach(ar => {
                     artists += ar.name+" ";
@@ -88,8 +119,8 @@ components: {
                 this.trackList.push({artist: artists, title:element.track.name})
             });
 
-            if (r.next) {
-                this.getList(token, tokenType, r.next)
+            if (tracks.next) {
+                this.getTracks(token, tokenType, tracks.next)
                 return;
             }
             this.isLoading = false;
@@ -97,14 +128,13 @@ components: {
         .catch(err => {
             this.isLoading = false;
         });
-
     },
     alreadyToken() {
         this.error = '';
         if (window.location.href.includes('access_token') && window.location.href.includes('token_type')) {
 
             const parameters = createObjectFromURL(window.location.href);
-            this.getList(parameters.access_token, parameters.token_type);
+            this.getListInfo(parameters.access_token, parameters.token_type);
             
         } else {
             this.login();
@@ -112,9 +142,7 @@ components: {
     },
     searchTrack(track) {
         let queryOptions = `${track.title} ${track.artist}`
-        console.log("queryOptions", queryOptions)
         queryOptions = queryOptions.replace(/ /g,'+');
-        console.log("queryOptions 2", queryOptions)
 
         window.open(
         `https://www.youtube.com/results?search_query=${queryOptions}`,
@@ -128,13 +156,14 @@ components: {
         })
         var date = new Date();
         var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-        FileSaver.saveAs(blob, `tracklist-${this.playlistID}-${date.toDateString()}.txt`);
+        FileSaver.saveAs(blob, `${this.tracklistName}.txt`);
     
     }
 
   },
 mounted() {
     this.alreadyToken();
+    this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
 }
 };
 

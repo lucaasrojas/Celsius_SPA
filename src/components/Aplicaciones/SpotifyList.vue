@@ -81,7 +81,7 @@ components: {
         let playlistID = this.$data.playlistUrl.split('/');
         let index = playlistID.indexOf("playlist");
         this.$data.playlistID = playlistID[index+1];
-        const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}/`
+        const url =`https://api.spotify.com/v1/playlists/${this.$data.playlistID}`
         request({
         "method":"GET", 
         "uri": url,
@@ -134,7 +134,9 @@ components: {
         if (window.location.href.includes('access_token') && window.location.href.includes('token_type')) {
 
             const parameters = createObjectFromURL(window.location.href);
-            this.getListInfo(parameters.access_token, parameters.token_type);
+            if(this.playlistUrl != '') {
+                this.getListInfo(parameters.access_token, parameters.token_type);
+            }
             
         } else {
             this.login();

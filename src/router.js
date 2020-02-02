@@ -36,7 +36,16 @@ export default new VueRouter({
       {path: '/todolist', component: todolist},
       {path: '/usuarios', component: usuarios},
       {path: '/login', name: "Login" ,component: login},
-      {path: '/spotifyList', name: "spotifyList" ,component: spotifylist},
+      {
+        path: '/spotifyList', 
+        name: "spotifyList",
+        component: spotifylist,
+        beforeEnter(to, from, next) {
+          console.log("TO", to);
+          console.log("FROM", from);
+          next();
+        }
+      },
       {path: '/recetas', component: recetas},
       {path: '/admin', component: administrator, meta: {admin: true}},
       {path: '/product', name:'product', component: product, props: true},

@@ -8,7 +8,6 @@ var app = express();
 // app.use('/',serveStatic(path.join(__dirname, "/dist")));
 app.use(history({
     rewrites: [
-        { from: /\//, to: '/home'},
         { from: /\/home/, to: '/home'},
         { from: /\/musica/, to: '/musica'},
         { from: /\/peliculas/, to: '/peliculas'},

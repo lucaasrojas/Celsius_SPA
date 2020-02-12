@@ -7,6 +7,7 @@ var app = express();
 
 app.use('/', express.static(path.join(__dirname, "/dist")));
 app.use(history({
+    index: 'index.html',
     rewrites: [
         { from: /\//, to: '/home'},
         { from: /\/home/, to: '/home'},

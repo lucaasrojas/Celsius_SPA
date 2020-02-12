@@ -5,7 +5,7 @@ var history = require('connect-history-api-fallback');
 
 var app = express();
 
-app.use('/',serveStatic(path.join(__dirname, "/dist")));
+// app.use('/',serveStatic(path.join(__dirname, "/dist")));
 app.use(history({
     rewrites: [
         { from: /\//, to: '/home'},

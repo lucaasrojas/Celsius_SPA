@@ -5,20 +5,20 @@ var history = require('connect-history-api-fallback');
 
 var app = express();
 
-// app.use('/', serveStatic(path.join(__dirname, "/dist")));
+app.use('/', express.static(path.join(__dirname, "/dist")));
 app.use(history({
     rewrites: [
-        { from: /\//, to: path.join(__dirname, '/dist/home')},
-        { from: /\/home/, to: path.join(__dirname, '/dist/home')},
+        { from: /\//, to: '/home'},
+        { from: /\/home/, to: '/home'},
         { from: /\/musica/, to: '/musica'},
         { from: /\/peliculas/, to: '/peliculas'},
         { from: /\/galerias/, to: '/galerias'},
-        { from: /\/store/, to: path.join(__dirname, '/dist/store')},
-        { from: /\/educativo/, to: path.join(__dirname, '/dist/educativo')},
+        { from: /\/store/, to: 'store'},
+        { from: /\/educativo/, to: 'educativo'},
         { from: /\/listacontador/, to: '/listacontador'},
         { from: /\/todolist/, to: '/todolist'},
         { from: /\/usuarios/, to: '/usuarios'},
-        { from: /\/spotifyList/, to: path.join(__dirname, '/dist/spotifyList')},
+        { from: /\/spotifyList/, to: 'spotifyList'},
         { from: /\/recetas/, to: '/recetas'},
         { from: /\/admin/, to: '/admin'},
         { from: /\/product/, to: '/product'},
@@ -26,6 +26,7 @@ app.use(history({
         { from: /\/adminPanel/, to: '/adminPanel'},
       ]
 }));
+app.use('/', express.static(path.join(__dirname, "/dist")));
 
 app.listen(process.env.PORT || 8080, function(){
     console.log("Listening on: ", this.address().port)

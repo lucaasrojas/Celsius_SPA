@@ -5,19 +5,20 @@ var history = require('connect-history-api-fallback');
 
 var app = express();
 
-// app.use('/',serveStatic(path.join(__dirname, "/dist")));
+// app.use('/', serveStatic(path.join(__dirname, "/dist")));
 app.use(history({
     rewrites: [
-        { from: /\/home/, to: '/home'},
+        { from: /\//, to: path.join(__dirname, '/dist/home')},
+        { from: /\/home/, to: path.join(__dirname, '/dist/home')},
         { from: /\/musica/, to: '/musica'},
         { from: /\/peliculas/, to: '/peliculas'},
         { from: /\/galerias/, to: '/galerias'},
-        { from: /\/store/, to: '/store'},
-        { from: /\/educativo/, to: '/educativo'},
+        { from: /\/store/, to: path.join(__dirname, '/dist/store')},
+        { from: /\/educativo/, to: path.join(__dirname, '/dist/educativo')},
         { from: /\/listacontador/, to: '/listacontador'},
         { from: /\/todolist/, to: '/todolist'},
         { from: /\/usuarios/, to: '/usuarios'},
-        { from: /\/spotifyList/, to: '/spotifyList'},
+        { from: /\/spotifyList/, to: path.join(__dirname, '/dist/spotifyList')},
         { from: /\/recetas/, to: '/recetas'},
         { from: /\/admin/, to: '/admin'},
         { from: /\/product/, to: '/product'},

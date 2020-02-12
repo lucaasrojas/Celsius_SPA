@@ -5,7 +5,7 @@ var history = require('connect-history-api-fallback');
 
 var app = express();
 
-app.use('/', express.static(path.join(__dirname, "/dist")));
+app.use('/', serveStatic(path.join(__dirname, "/dist")));
 app.use(history({
     index: 'index.html',
     rewrites: [
@@ -27,7 +27,7 @@ app.use(history({
         { from: /\/adminPanel/, to: '/adminPanel'},
       ]
 }));
-app.use('/', express.static(path.join(__dirname, "/dist")));
+app.use('/', serveStatic(path.join(__dirname, "/dist")));
 
 app.listen(process.env.PORT || 8080, function(){
     console.log("Listening on: ", this.address().port)

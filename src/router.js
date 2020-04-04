@@ -14,6 +14,7 @@ import store from './components/pages/Store.vue'
 import videoCard from './components/Shared/videoCard.vue'
 import adminPanel from './components/pages/adminPanel.vue'
 import spotifylist from './components/Aplicaciones/SpotifyList.vue'
+import responsiveLoginFormComponent from './components/sitesComponents/responsiveLoginForm.vue'
 
 // SHARED
 
@@ -49,7 +50,8 @@ export default new VueRouter({
         path: '/adminPanel', 
         name:'adminPanel', 
         component: adminPanel
-      }
+      },
+      {path: '/sites/responsiveLoginForm', name:'responsiveLoginFormComponent', component: responsiveLoginFormComponent, props: true},
     ]
   })
   

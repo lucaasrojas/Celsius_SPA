@@ -54,7 +54,8 @@ Promise.all([pagesPromise, configPromise]).then(values => {
     data: {
       dbConfig: dbMainConfig,
       dbPages: dbPagesConfig,
-      loginStatus: false
+      loginStatus: false,
+      lang: "es"
     },
     async created(){
     },

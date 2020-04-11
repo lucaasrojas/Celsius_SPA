@@ -31,6 +31,7 @@
     "request-promise": "^4.2.5",
     "serve-static": "^1.14.1",
     "vue": "^2.6.11",
+    "vue-i18n": "^8.16.0",
     "vue-loading-overlay": "^3.2.0",
     "vue-router": "^3.1.2",
     "vuefire": "^1.4.5",

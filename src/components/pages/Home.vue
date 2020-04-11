@@ -11,6 +11,7 @@
 import ImageCard from '@/components/Shared/ImageCard.vue';
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
 import SectionCard from '@/components/Shared/sectionCard.vue';
+import Vue from 'vue'
 
 export default {
 	components: {
@@ -21,14 +22,19 @@ export default {
 	data() {
 		return {
 			sectionsList: this.$root.dbConfig.menuItems,
-			mainTitle: "Welcome to TakeACoffee",
-			mainDescription: ""
 		}
 	},
 	created() {
+		const langData = this.$i18n.messages[this.$i18n.locale].home;
+		this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+
+		this.bus.$on('locale-changed', () => {
+			const langData = this.$i18n.messages[this.$i18n.locale].home;
+			this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+		})
 	},
 	mounted() {
-		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+
 	}
 }
 </script>

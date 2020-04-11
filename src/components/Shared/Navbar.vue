@@ -1,6 +1,6 @@
 <template>
     <div>
-      <nav v-if="lang" class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark">
         <router-link  class="navbar-brand navbar-element-padding" style="position: relative" to="/"><strong>TakeACoffee</strong></router-link>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,21 +12,21 @@
             <div v-for="(item, index) in navbarConfig" :key="index" >
               <div v-if="!item.subItems">
                 <li class="nav-item active navbar-element-padding">
-                  <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ item.title[lang] }}</strong></router-link>
+                  <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ $t(`navbar.${item.title}`) }}</strong></router-link>
                 </li>
               </div>
               <div v-if="item.subItems">
                 <li class="nav-item dropdown navbar-element-padding active">  
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <strong>{{item.title[lang]}}</strong>
+                    <strong>{{ $t(`navbar.${item.title}.title`) }}</strong>
                   </a> 
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
                     <div v-for="(sItem, index) in item.subItems" :key="index">
-                      <div v-if="sItem.value">
-                        <button class="dropdown-item text-center" @click="changeLanguage(sItem.value)"><strong>{{ sItem.title[lang] }}</strong></button>
+                      <div v-if="item.title === 'language'">
+                        <button class="dropdown-item text-center" @click="$root.changeLanguage(sItem)"><strong>{{ $t(`navbar.${item.title}.elements.${sItem}`) }}</strong></button>
                       </div>
                       <div v-if="!sItem.value">
-                        <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong>{{ sItem.title[lang] }}</strong></router-link>
+                        <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong> {{ $t(`navbar.${item.title}.elements.${sItem.title}`) }}</strong></router-link>
                       </div>
                     </div>
                   </div>
@@ -56,19 +56,13 @@ export default {
   data() {
     return {
       sideNav: false,
-      navbarConfig: this.$root.dbConfig.menuItems,
-      lang: this.$root.lang
+      navbarConfig: this.$root.dbConfig.menuItems
     }
   },
   methods: {
     logout(){
       console.log("Logout");
-      this.$root.loginStatus = false;
       router.push({name: "home"});
-    },
-    changeLanguage(lang){
-      this.$root.lang = lang;
-      this.lang = lang
     }
   }
 }

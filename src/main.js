@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import router from '@/router.js'
 import firebase from 'firebase';
 import config from '../config/firebase_config';
+import VueI18n from 'vue-i18n';
 Vue.config.productionTip = false
 
 // Init firebase
@@ -16,6 +17,7 @@ import Vuetify from 'vuetify'
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);
+Vue.use(VueI18n);
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -27,6 +29,26 @@ library.add(fas, fab)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
  
 Vue.config.productionTip = false
+
+function getLocaleMessages () {
+  const locales = require.context('./locales', true, /[A-Za-z0-9-_,\s]+\.json$/i)
+  const messages = {}
+  locales.keys().forEach(key => {
+      const matched = key.match(/([A-Za-z0-9-_]+)\./i)
+      if (matched && matched.length > 1) {
+          const locale = matched[1];
+          messages[locale] = locales(key)
+      }
+  })
+
+  return messages;
+}
+
+const i18n = new VueI18n({
+  locale: 'en',
+  fallbackLocale: 'en',
+  messages: getLocaleMessages(),
+})
 
 
 async function getDBTables(table) {
@@ -54,12 +76,18 @@ Promise.all([pagesPromise, configPromise]).then(values => {
     data: {
       dbConfig: dbMainConfig,
       dbPages: dbPagesConfig,
-      loginStatus: false,
-      lang: "es"
+      loginStatus: false
     },
-    async created(){
+    methods: {
+      changeLanguage(locale) {
+      this.$i18n.locale = locale
+      this.bus.$emit('locale-changed');
+      }
     },
     router,
+    i18n,
     render: h => h(App)
   }).$mount('#app')
 });
+
+Vue.prototype.bus = new Vue();

@@ -57,9 +57,15 @@ export default {
       router.push({name: "product", params: {img: product[0]}});
     }
   },
-  mounted() {
-		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
-	}
+	created() {
+		const langData = this.$i18n.messages[this.$i18n.locale].store;
+		this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+
+		this.bus.$on('locale-changed', () => {
+			const langData = this.$i18n.messages[this.$i18n.locale].store;
+			this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+		})
+	},
 }
 </script>
 

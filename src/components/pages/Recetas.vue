@@ -52,18 +52,17 @@ export default {
   data() {
     return {
       listaRecetas: this.$root.dbPages.recetas,
-      mainTitle: "Recetas",
-      mainDescription: "Cocinar es facil!"
     };
   },
-  created() {
-  },
-  mounted() {
-    this.$emit("receiveData", {
-      mainTitle: this.mainTitle,
-      mainDescription: this.mainDescription
-    });
-  },
+	created() {
+		const langData = this.$i18n.messages[this.$i18n.locale].recetas;
+		this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+
+		this.bus.$on('locale-changed', () => {
+			const langData = this.$i18n.messages[this.$i18n.locale].recetas;
+			this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+		})
+	},
   methods: {
     CapitalizeFirstLetter: function(word) {
       return word.charAt(0).toUpperCase() + word.slice(1);

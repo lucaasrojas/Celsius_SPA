@@ -49,8 +49,14 @@ export default {
             return url;
         }
     },
-    mounted() {
-		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
+    created() {
+		const langData = this.$i18n.messages[this.$i18n.locale].galerias;
+		this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+
+		this.bus.$on('locale-changed', () => {
+			const langData = this.$i18n.messages[this.$i18n.locale].galerias;
+			this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+		})
 	}
 }
 </script>

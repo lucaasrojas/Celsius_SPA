@@ -1,0 +1,55 @@
+{
+    "home": {
+        "mainTitle": "Bienvenido a TakeACoffee",
+        "mainDescription": ""
+    },
+    "educativo":{
+        "mainTitle": "Educacion",
+        "mainDescription": ""
+    },
+    "galerias":{
+        "mainTitle": "Galerias",
+        "mainDescription": ""
+    },
+    "recetas": {
+        "mainTitle": "Recetas",
+        "mainDescription": "Cocinar es facil!"
+    },
+    "store": {
+        "mainTitle": "Tienda",
+        "mainDescription": "La tienda donde vas a encontrar lo que estas buscando"
+    },
+    "navbar": {
+        "music": "Musica",
+        "recepies": "Recetas",
+        "movies": "Peliculas",
+        "3dprinting": "Impresiones 3D",
+        "educative": "Educativo",
+        "login": "Iniciar Sesion",
+        "admin": "Administrador",
+        "store": "Tienda",
+        "gallery": "Galeria",
+        "exampleSites": { 
+            "title": "Sitios de Muestra",
+            "elements": {
+                "responsiveLoginForm": "Inicio de Sesion Responsive"
+            }
+        },
+        "language": { 
+            "title": "Idioma",
+            "elements": {
+                "es": "Español",
+                "en": "Ingles"
+            }
+        },
+        "apps": { 
+            "title": "Aplicaciones",
+            "elements": {
+                "todoList": "Lista de Tareas",
+                "countList": "Lista con Contador",
+                "users": "Usuarios",
+                "getSpotifyList": "Obtener lista de Spotify"
+            }
+        }
+    }
+}

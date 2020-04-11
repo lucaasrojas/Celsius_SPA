@@ -20,30 +20,37 @@ import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 export default {
+  el: 'app',
   name: 'App',
+    data() {
+      return {
+        pagesConfiguration: this.$root.dbPages,
+        mainTitle: '',
+        mainDescription: ''
+      }
+    },
   components: {
     jumbotron: Jumbotron,
     navbar: navbar,
-    pageFooter: pageFooter
+    pageFooter: pageFooter,
+    
   },
   methods: {
-    
     jumbotronData(data) {
       this.mainTitle = data.mainTitle;
       this.mainDescription = data.mainDescription;
     }
   },
-  data() {
-    return {
-      pagesConfiguration: this.$root.dbPages,
-      mainTitle: '',
-      mainDescription: ''
-    }
-}
+  mounted() {
+    this.$el.style.setProperty('--bg-color', this.$root.dbConfig.backgroundColor)
+  }
 }
 </script>
 
 <style>
+:root {
+  --bg-color: black
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,7 +58,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
-  background-color:white;
+  background-color: var(--bg-color);
   min-height: 100vh;
 }
 

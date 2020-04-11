@@ -64,12 +64,17 @@ export default {
       console.log("Logout");
       router.push({name: "home"});
     }
+  },
+    mounted() {
+    this.$el.style.setProperty('--navbar-bg', this.$root.dbConfig.navbarColor)
   }
 }
 </script>
 
 <style>
-
+:root {
+  --navbar-bg: white;
+}
 .menuLink {
   color: white;
   text-align: center;
@@ -102,7 +107,7 @@ export default {
 }
 
 .navbar {
-  background-color: rgb(78, 78, 78);
+  background-color: var(--navbar-bg);
 }
 
 

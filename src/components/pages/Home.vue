@@ -1,9 +1,11 @@
 <template>
 	<div class="col-md-12">
-			<span class="title-back">{{ backgroundHoverSection }}</span>
-		<div class="row justify-content-center mx-auto">
+		<div class="row background-text">
+			<span class="title-back" style="margin-left:auto">{{ backgroundHoverSection }}</span>
+		</div>
+		<div class="row justify-content-center mx-auto sections-row">
 			<div v-for="(section, index) in sectionsList" :key="index" @mouseover="hoverOption(section)" @mouseleave="hoverOption({title: ''})">
-				<sectionCard class="" v-if="section.visible"  :section="section" />
+				<sectionCard class="sectionCard" v-if="section.visible"  :section="section" />
 			</div>
 		</div>
 	</div>
@@ -52,5 +54,14 @@ export default {
 	opacity: 0.1;
 	color: black;
 	position: absolute;
+	transition: 2s;
+}
+
+.sections-row {
+position: absolute; width:100%
+}
+
+.background-text {
+	position: absolute
 }
 </style>

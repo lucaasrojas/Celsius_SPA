@@ -1,8 +1,9 @@
 <template>
 	<div class="col-md-12">
+			<span class="title-back">{{ backgroundHoverSection }}</span>
 		<div class="row justify-content-center mx-auto">
-			<div v-for="(section, index) in sectionsList" :key="index">
-				<sectionCard class="" v-if="section.visible" :section="section" />
+			<div v-for="(section, index) in sectionsList" :key="index" @mouseover="hoverOption(section)" @mouseleave="hoverOption({title: ''})">
+				<sectionCard class="" v-if="section.visible"  :section="section" />
 			</div>
 		</div>
 	</div>
@@ -22,6 +23,12 @@ export default {
 	data() {
 		return {
 			sectionsList: this.$root.dbConfig.menuItems,
+			backgroundHoverSection: ''
+		}
+	},
+	methods: {
+		hoverOption(section) {
+			this.backgroundHoverSection = section.title;
 		}
 	},
 	created() {
@@ -40,5 +47,10 @@ export default {
 </script>
 
 <style scoped>
-
+.title-back {
+	font-size: 10rem;
+	opacity: 0.1;
+	color: black;
+	position: absolute;
+}
 </style>

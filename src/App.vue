@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <navbar class="navbarFixed"></navbar>
-    <jumbotron style="margin-top: 55px" :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
+    <jumbotron  :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
       <router-view v-on:jumbotronData="jumbotronData" class="content"></router-view>
     <pageFooter></pageFooter>
   </div>
@@ -68,6 +68,7 @@ export default {
 
 .header {
   background-color: rgba(0 , 0, 0, 0.5);
+  margin-top: 49px;
 }
 
 .navbarFixed{
@@ -75,6 +76,7 @@ export default {
   top:0;
   left:0;
   width:100%;
-  z-index:9989;
+  height: 49px;
+  z-index:10;
 }
 </style>

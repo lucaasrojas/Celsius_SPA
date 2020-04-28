@@ -29,7 +29,7 @@ props: ['section'],
 	font-size: 7em;
 	margin: 2rem;
 	max-width: 100px;
-    color:white;
+    color:var(--bg-color);
 }
 
 .sectionCircle {

@@ -66,15 +66,11 @@ export default {
     }
   },
     mounted() {
-    this.$el.style.setProperty('--navbar-bg', this.$root.dbConfig.navbarColor)
   }
 }
 </script>
 
 <style>
-:root {
-  --navbar-bg: white;
-}
 .menuLink {
   color: white;
   text-align: center;

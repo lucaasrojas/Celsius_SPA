@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <navbar class="navbarFixed"></navbar>
     <jumbotron  :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
       <router-view v-on:jumbotronData="jumbotronData" class="content"></router-view>
@@ -43,23 +44,28 @@ export default {
   },
   mounted() {
     this.$el.style.setProperty('--bg-color', this.$root.dbConfig.backgroundColor)
+    this.$el.style.setProperty('--sectionCard-color', this.$root.dbConfig.sectionCardsColor)
+    this.$el.style.setProperty('--navbar-bg', this.$root.dbConfig.navbarColor)
+
   }
 }
 </script>
 
 <style>
 :root {
-  --bg-color: black
+  --bg-color: black;
+  --sectionCard-color: black;
+  --navbar-bg: black;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   box-sizing: content-box;
   background-color: var(--bg-color);
-  min-height: 100vh;
+  min-height: 150vh;
 }
 
 .container {

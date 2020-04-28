@@ -1,0 +1,55 @@
+{
+    "home": {
+        "mainTitle": "Welcome to TakeACoffee",
+        "mainDescription": ""
+    },
+    "educativo":{
+        "mainTitle": "Educational",
+        "mainDescription": ""
+    },
+    "galerias":{
+        "mainTitle": "Gallery",
+        "mainDescription": ""
+    },
+    "recetas": {
+        "mainTitle": "Recepies",
+        "mainDescription": ""
+    },
+    "store": {
+        "mainTitle": "Store",
+        "mainDescription": ""
+    },
+    "navbar": {
+        "music": "Music",
+        "recepies": "Recepies",
+        "movies": "Movies",
+        "3dprinting": "3D Printing",
+        "educative": "Educative",
+        "login": "Login",
+        "admin": "Admin",
+        "store": "Store",
+        "gallery": "Gallery",
+        "exampleSites": { 
+            "title": "Example Sites",
+            "elements": {
+                "responsiveLoginForm": "Responsive Login Form"
+            }
+        },
+        "language": { 
+            "title": "Language",
+            "elements": {
+                "es": "Spanish",
+                "en": "English"
+            }
+        },
+        "apps": { 
+            "title": "Apps",
+            "elements": {
+                "todoList": "To Do List",
+                "countList": "List with Counter",
+                "users": "Users",
+                "getSpotifyList": "Get Spotify playlist"
+            }
+        }
+    }
+}

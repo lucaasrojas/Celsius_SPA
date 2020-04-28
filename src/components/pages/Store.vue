@@ -1,17 +1,13 @@
 <template>
-<div>
+<div class="store-container mx-auto">
 <div class="row">
 
   <div class="col-md-6 d-flex justify-content-center mx-auto mb-5">
     <div class="row">
       <div class="col-md">
-        <button type="button" class="btn btn-secondary waves-effect filter text-white" @click="btnClicked($event)" data-rel="all">All</button>
-      </div>
-      <div class="col-md">
-        <button type="button" id="btnMountains" class="btn btn-secondary waves-effect filter text-white" @click="btnClicked($event)" data-rel="deco">Deco</button>
-      </div>
-      <div class="col-md">
-        <button type="button" class="btn btn-secondary waves-effect filter text-white" @click="btnClicked($event)" data-rel="geek">Geek</button>
+        <button type="button" class="btn btn-secondary waves-effect filter text-white store-btn" @click="btnClicked($event)" data-rel="all">All</button>
+        <button type="button" id="btnMountains" class="btn btn-secondary waves-effect filter text-white store-btn" @click="btnClicked($event)" data-rel="deco">Deco</button>
+        <button type="button" class="btn btn-secondary waves-effect filter text-white store-btn" @click="btnClicked($event)" data-rel="geek">Geek</button>
       </div>
     </div>
 
@@ -61,9 +57,15 @@ export default {
       router.push({name: "product", params: {img: product[0]}});
     }
   },
-  mounted() {
-		this.$emit('receiveData', {mainTitle: this.mainTitle, mainDescription: this.mainDescription});
-	}
+	created() {
+		const langData = this.$i18n.messages[this.$i18n.locale].store;
+		this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+
+		this.bus.$on('locale-changed', () => {
+			const langData = this.$i18n.messages[this.$i18n.locale].store;
+			this.$emit('jumbotronData', {mainTitle: langData.mainTitle, mainDescription: langData.mainDescription});
+		})
+	},
 }
 </script>
 
@@ -100,6 +102,15 @@ column-width: 100%;
 padding-left: 1.1rem;
 padding-right: 1.1rem;
 }
+}
+
+.store-container {
+  max-width: 75%
+}
+
+.store-btn {
+  margin-left: 30px; 
+  font-size: 1.5em !important
 }
 
 </style>

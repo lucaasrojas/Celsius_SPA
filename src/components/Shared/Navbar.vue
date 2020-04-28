@@ -12,23 +12,27 @@
             <div v-for="(item, index) in navbarConfig" :key="index" >
               <div v-if="!item.subItems">
                 <li class="nav-item active navbar-element-padding">
-                  <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ item.title }}</strong></router-link>
+                  <router-link  class="nav-link active" v-if="item.visible" v-bind="{ to: item.url}"><strong>{{ $t(`navbar.${item.title}`) }}</strong></router-link>
                 </li>
               </div>
               <div v-if="item.subItems">
                 <li class="nav-item dropdown navbar-element-padding active">  
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <strong>{{item.title}}</strong>
+                    <strong>{{ $t(`navbar.${item.title}.title`) }}</strong>
                   </a> 
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
                     <div v-for="(sItem, index) in item.subItems" :key="index">
-                      <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong>{{ sItem.title }}</strong></router-link>
+                      <div v-if="item.title === 'language'">
+                        <button class="dropdown-item text-center" @click="$root.changeLanguage(sItem)"><strong>{{ $t(`navbar.${item.title}.elements.${sItem}`) }}</strong></button>
+                      </div>
+                      <div v-if="!sItem.value">
+                        <router-link class="dropdown-item text-center" v-if="sItem.visible" v-bind="{ to: sItem.url}"><strong> {{ $t(`navbar.${item.title}.elements.${sItem.title}`) }}</strong></router-link>
+                      </div>
                     </div>
                   </div>
                 </li>
               </div>
             </div>
-              
           </ul>
           <!--
           <ul class="navbar-nav">
@@ -58,15 +62,15 @@ export default {
   methods: {
     logout(){
       console.log("Logout");
-      this.$root.loginStatus = false;
       router.push({name: "home"});
     }
+  },
+    mounted() {
   }
 }
 </script>
 
 <style>
-
 .menuLink {
   color: white;
   text-align: center;
@@ -99,7 +103,7 @@ export default {
 }
 
 .navbar {
-  background-color: rgb(78, 78, 78);
+  background-color: var(--navbar-bg);
 }
 
 

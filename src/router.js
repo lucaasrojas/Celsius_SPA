@@ -14,6 +14,7 @@ import store from './components/pages/Store.vue'
 import videoCard from './components/Shared/videoCard.vue'
 import adminPanel from './components/pages/adminPanel.vue'
 import spotifylist from './components/Aplicaciones/SpotifyList.vue'
+import responsiveLoginFormComponent from './components/sitesComponents/responsiveLoginForm.vue'
 
 // SHARED
 
@@ -27,17 +28,21 @@ export default new VueRouter({
     routes: [
       {path: '/', component: Home},
       {path: '/home', name: 'home', component: Home},
-      {path: '/musica', component: Musica},
-      {path: '/peliculas', component: Peliculas},
-      {path: '/galerias', component: Galerias},
-      {path: '/store', component: store},
-      {path: '/educativo', component: educativo},
-      {path: '/listacontador', component: listacontador},
-      {path: '/todolist', component: todolist},
-      {path: '/usuarios', component: usuarios},
+      {path: '/musica', name: 'musica', component: Musica},
+      {path: '/peliculas', name: 'peliculas', component: Peliculas},
+      {path: '/galerias', name: 'galerias', component: Galerias},
+      {path: '/store', name: 'store', component: store},
+      {path: '/educativo', name: 'educativo', component: educativo},
+      {path: '/listacontador', name: 'listacontador', component: listacontador},
+      {path: '/todolist', name: 'todolist', component: todolist},
+      {path: '/usuarios', name: 'usuarios', component: usuarios},
       {path: '/login', name: "Login" ,component: login},
-      {path: '/spotifyList', name: "spotifyList" ,component: spotifylist},
-      {path: '/recetas', component: recetas},
+      {
+        path: '/spotifyList', 
+        name: "spotifyList",
+        component: spotifylist
+      },
+      {path: '/recetas', name: 'recetas', component: recetas},
       {path: '/admin', component: administrator, meta: {admin: true}},
       {path: '/product', name:'product', component: product, props: true},
       {path: '/videoCard', name:'videoCard', component: videoCard, props: true},
@@ -45,10 +50,8 @@ export default new VueRouter({
         path: '/adminPanel', 
         name:'adminPanel', 
         component: adminPanel
-      }
-
-
-  
+      },
+      {path: '/sites/responsiveLoginForm', name:'responsiveLoginFormComponent', component: responsiveLoginFormComponent, props: true},
     ]
   })
   

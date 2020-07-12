@@ -19,6 +19,10 @@
         "mainTitle": "Tienda",
         "mainDescription": "La tienda donde vas a encontrar lo que estas buscando"
     },
+    "ecommerce": {
+        "mainTitle": "E-Commerce",
+        "mainDescription": ""
+    },
     "navbar": {
         "music": "Musica",
         "recepies": "Recetas",
@@ -28,6 +32,7 @@
         "login": "Iniciar Sesion",
         "admin": "Administrador",
         "store": "Tienda",
+        "ecommerce": "E-Commerce",
         "gallery": "Galeria",
         "exampleSites": { 
             "title": "Sitios de Muestra",

@@ -15,6 +15,7 @@ import videoCard from './components/Shared/videoCard.vue'
 import adminPanel from './components/pages/adminPanel.vue'
 import spotifylist from './components/Aplicaciones/SpotifyList.vue'
 import responsiveLoginFormComponent from './components/sitesComponents/responsiveLoginForm.vue'
+import mercadoLibre from '@/components/pages/mercadoLibre.vue'
 
 // SHARED
 
@@ -52,6 +53,8 @@ export default new VueRouter({
         component: adminPanel
       },
       {path: '/sites/responsiveLoginForm', name:'responsiveLoginFormComponent', component: responsiveLoginFormComponent, props: true},
+      {path: '/ecommerce', name:'ecommerce', component: mercadoLibre, props: true},
+
     ]
   })
   

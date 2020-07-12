@@ -19,6 +19,10 @@
         "mainTitle": "Store",
         "mainDescription": ""
     },
+    "ecommerce": {
+        "mainTitle": "E-Commerce",
+        "mainDescription": ""
+    },
     "navbar": {
         "music": "Music",
         "recepies": "Recepies",
@@ -28,6 +32,7 @@
         "login": "Login",
         "admin": "Admin",
         "store": "Store",
+        "ecommerce": "E-Commerce",
         "gallery": "Gallery",
         "exampleSites": { 
             "title": "Example Sites",

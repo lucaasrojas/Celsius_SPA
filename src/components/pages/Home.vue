@@ -29,7 +29,6 @@ import ImageCard from '@/components/Shared/ImageCard.vue';
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
 import SectionCard from '@/components/Shared/sectionCard.vue';
 import Instagram from '@/components/Shared/instagram.vue';
-import Dolar from '@/components/Shared/dolar.vue'
 import Vue from 'vue'
 
 export default {
@@ -37,8 +36,7 @@ export default {
 		imgCard: ImageCard,
 		jumbotron: Jumbotron,
 		sectionCard: SectionCard,
-		instagram: Instagram,
-		dolar: Dolar
+		instagram: Instagram
 	},
 	data() {
 		return {

@@ -19,6 +19,12 @@
         "mainTitle": "Store",
         "mainDescription": ""
     },
+    "cotizacionDolar": {
+        "mainTitle": "Dollar Exchange Value",
+        "mainDescription": "",
+        "venta": "ARS to USD",
+        "compra": "USD to ARS"
+    },
     "navbar": {
         "music": "Music",
         "recepies": "Recepies",
@@ -48,7 +54,8 @@
                 "todoList": "To Do List",
                 "countList": "List with Counter",
                 "users": "Users",
-                "getSpotifyList": "Get Spotify playlist"
+                "getSpotifyList": "Get Spotify playlist",
+                "cotizacionDolar": "Dollar Exchange Value"
             }
         }
     }

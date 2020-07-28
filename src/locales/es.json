@@ -19,6 +19,12 @@
         "mainTitle": "Tienda",
         "mainDescription": "La tienda donde vas a encontrar lo que estas buscando"
     },
+    "cotizacionDolar": {
+        "mainTitle": "Cotización Dolar",
+        "mainDescription": "",
+        "venta": "Venta",
+        "compra": "Compra"
+    },
     "navbar": {
         "music": "Musica",
         "recepies": "Recetas",
@@ -48,7 +54,8 @@
                 "todoList": "Lista de Tareas",
                 "countList": "Lista con Contador",
                 "users": "Usuarios",
-                "getSpotifyList": "Obtener lista de Spotify"
+                "getSpotifyList": "Obtener lista de Spotify",
+                "cotizacionDolar": "Cotizacion de Dolar"
             }
         }
     }

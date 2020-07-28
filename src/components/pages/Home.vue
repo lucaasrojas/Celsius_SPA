@@ -8,30 +8,35 @@
 			</div>
 		</div>
 	</div>
-		<div class="row home-news">
-			<div class="col image">
-				<img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2017/05/Chemex-Coffee-Brewing-11.jpg" alt="">
-			</div>
-			<div class="col-8 text my-auto">
-				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, enim.</p>
-			</div>
+	<div class="row home-news home-padding">
+		<div class="col image">
+			<img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2017/05/Chemex-Coffee-Brewing-11.jpg" alt="">
 		</div>
-		<div class="row">
-			
+		<div class="col-8 text my-auto">
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, enim.</p>
 		</div>
+	</div>
+	<div class="row home-padding">
+		<div class="col">
+			<dolar></dolar>
+		</div>
+	</div>
+	<instagram style="padding:3rem"/>
 </div>
 </template>
 <script>
 import ImageCard from '@/components/Shared/ImageCard.vue';
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
 import SectionCard from '@/components/Shared/sectionCard.vue';
+import Instagram from '@/components/Shared/instagram.vue';
 import Vue from 'vue'
 
 export default {
 	components: {
 		imgCard: ImageCard,
 		jumbotron: Jumbotron,
-		sectionCard: SectionCard
+		sectionCard: SectionCard,
+		instagram: Instagram
 	},
 	data() {
 		return {
@@ -51,6 +56,13 @@ export default {
 		})
 	},
 	mounted() {
+		fetch('http://www.instagram.com/boywithtools')
+		.then(async res => {
+			const response = await res.text();
+			var parser = new DOMParser();
+			var doc = parser.parseFromString(response, "text/html");
+			console.log("instagram", doc.childNodes)
+		})
 	}
 }
 </script>
@@ -63,10 +75,7 @@ export default {
 .home-news {
 	background-color: var(--navbar-bg); 
 	color: var(--bg-color);
-	padding: 3vh;
 	font-size: 2rem;
-	margin-top: 3vh;
-	margin-bottom: 3vh;
 }
 
 .home-news > div > img {
@@ -78,6 +87,12 @@ export default {
 .home-news > div > .image {
 	text-align: left;
 	height: 100%	;
+}
+
+.home-padding{
+	padding: 3vh;
+	margin-top: 3vh;
+	margin-bottom: 3vh;
 }
 
 </style>

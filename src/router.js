@@ -16,6 +16,10 @@ import adminPanel from './components/pages/adminPanel.vue'
 import spotifylist from './components/Aplicaciones/SpotifyList.vue'
 import responsiveLoginFormComponent from './components/sitesComponents/responsiveLoginForm.vue'
 
+// APPS
+
+import cotizacionDolar from './components/Aplicaciones/cotizacionDolar.vue'
+
 // SHARED
 
 import product from './components/Shared/product.vue'
@@ -43,15 +47,42 @@ export default new VueRouter({
         component: spotifylist
       },
       {path: '/recetas', name: 'recetas', component: recetas},
-      {path: '/admin', component: administrator, meta: {admin: true}},
-      {path: '/product', name:'product', component: product, props: true},
-      {path: '/videoCard', name:'videoCard', component: videoCard, props: true},
+      {
+        path: '/admin', 
+        component: administrator, 
+        meta: { 
+          admin: true
+        }
+      },
+      {
+        path: '/product', 
+        name:'product', 
+        component: product, 
+        props: true
+      },
+      {
+        path: '/videoCard', 
+        name:'videoCard', 
+        component: videoCard, 
+        props: true
+      },
       { 
         path: '/adminPanel', 
         name:'adminPanel', 
         component: adminPanel
       },
-      {path: '/sites/responsiveLoginForm', name:'responsiveLoginFormComponent', component: responsiveLoginFormComponent, props: true},
+      { 
+        path: '/sites/responsiveLoginForm', 
+        name:'responsiveLoginFormComponent', 
+        component: responsiveLoginFormComponent, 
+        props: true
+      },
+      { 
+        path: '/apps/cotizacionDolar', 
+        name:'cotizacionDolar', 
+        component: cotizacionDolar, 
+        props: true
+      },
     ]
   })
   

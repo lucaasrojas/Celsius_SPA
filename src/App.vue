@@ -46,6 +46,8 @@ export default {
     this.$el.style.setProperty('--bg-color', this.$root.dbConfig.backgroundColor)
     this.$el.style.setProperty('--sectionCard-color', this.$root.dbConfig.sectionCardsColor)
     this.$el.style.setProperty('--navbar-bg', this.$root.dbConfig.navbarColor)
+    this.$el.style.setProperty('--mainColor', this.$root.dbConfig.navbarColor)
+    this.$el.style.setProperty('--secondaryColor', this.$root.dbConfig.backgroundColor)
 
   }
 }
@@ -56,6 +58,8 @@ export default {
   --bg-color: black;
   --sectionCard-color: black;
   --navbar-bg: black;
+  --mainColor: transparent;
+  --secondaryColor: transparent;
 }
 #app {
   font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;

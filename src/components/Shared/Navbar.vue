@@ -96,5 +96,12 @@ export default {
   background-color: var(--navbar-bg);
 }
 
+.navbar-nav {
+  margin-left: auto;
+}
+
+.dropdown-menu {
+  min-width: fit-content !important;
+}
 
 </style>

@@ -25,6 +25,12 @@
         "venta": "ARS to USD",
         "compra": "USD to ARS"
     },
+    "countList": "List with Counter",
+    "getSpotifyList": "Get Spotify playlist",
+    "aboutMe":{
+        "title": "About me",
+        "description": "Hi stranger! My name is Lucas and I'm a software developer who lives in Argentina. I am studying Bachelor of Information Technology Management at UADE. So far, I developed websites from scratch hosting in S3 Buckets and maintaining a streaming platform"
+    },
     "navbar": {
         "music": "Music",
         "recepies": "Recepies",

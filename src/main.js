@@ -59,6 +59,7 @@ async function getDBTables(table) {
 
   return values;
 }
+
 let dbPagesConfig , dbMainConfig;
 var pagesPromise = new Promise(async (resolve, reject) => {
   resolve(await getDBTables('pages'));

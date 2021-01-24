@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <navbar class="navbarFixed"></navbar>
     <jumbotron  :mainTitle="mainTitle" :mainDescription="mainDescription" class="header"></jumbotron>
-      <router-view v-on:jumbotronData="jumbotronData" class="content"></router-view>
+      <router-view :dbData="{pages: this.$root.dbPages, config: this.$root.dbConfig}" v-on:jumbotronData="jumbotronData" class="content"></router-view>
     <pageFooter></pageFooter>
   </div>
 </template>
@@ -15,7 +15,7 @@
 import Jumbotron from '@/components/Shared/Jumbotron.vue';
 import navbar from '@/components/Shared/Navbar.vue'
 import pageFooter from '@/components/Footer.vue'
-
+import axios from 'axios'
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
@@ -40,7 +40,8 @@ export default {
     jumbotronData(data) {
       this.mainTitle = data.mainTitle;
       this.mainDescription = data.mainDescription;
-    }
+    },
+
   },
   mounted() {
     this.$el.style.setProperty('--bg-color', this.$root.dbConfig.backgroundColor)

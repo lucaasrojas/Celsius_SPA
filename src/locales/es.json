@@ -1,6 +1,6 @@
 {
     "home": {
-        "mainTitle": "Bienvenido a TakeACoffee",
+        "mainTitle": "TakeACoffee conmigo",
         "mainDescription": ""
     },
     "educativo":{
@@ -24,6 +24,12 @@
         "mainDescription": "",
         "venta": "Venta",
         "compra": "Compra"
+    },
+    "countList": "Lista con Contador",
+    "getSpotifyList": "Obtener lista de Spotify",
+    "aboutMe":{
+        "title": "Un poco sobre mi",
+        "description": "Hola, como va todo? Soy Lucas y soy desarrollador full-stack que reside en Argentina, estudiante de Licenciatura en Gestion de la Tecnologia de la Informacion en UADE. En lo que va de mi carrera laboral contribui en el armado de sistemas de gestion, en el mantenimiento de sistemas de streaming y creacion de sitios web."
     },
     "navbar": {
         "music": "Musica",

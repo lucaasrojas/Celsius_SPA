@@ -1,8 +1,8 @@
 <template>
     <div class="box_wrapper">
 		<div class="boxes_wrapper row justify-content-center mx-auto sections-row">
-            <div class="techBox column" v-for="(langImg, index) in techs" :key="index">
-                <font-awesome-icon :icon="['fab', langImg]" class="icon"></font-awesome-icon>
+            <div class="techBox column" v-for="({icon, redirect}, index) in techs" :key="index">
+                <font-awesome-icon :icon="['fab', icon]" @click="iconClick(redirect)" class="icon"></font-awesome-icon>
             </div>
 		</div>
 	</div>
@@ -10,20 +10,21 @@
 </template>
 <script>
 
-import Jumbotron from '@/components/Shared/Jumbotron.vue';
-import SectionCard from '@/components/Shared/sectionCard.vue';
-import Vue from 'vue'
-
 export default {
-    props: ['techs']
-
+    props: ['techs'],
+    methods: {
+        iconClick: (item) => {
+            window.open(item, "_blank")
+        }
+    }
 }
 </script>
 
 <style scoped>
 .icon{
-    color: #2c3e50;
+    color: var(--bg-color);
 }
+
 .banner_title {
     display: flex;
     align-items: center;
@@ -43,6 +44,17 @@ export default {
     margin: 0.75rem;
     width: fit-content;
     
+}
+
+.techBox:hover  {
+    box-shadow: 0 0 30px white;
+    transition: 0.5s;
+    transform: scale(1.2);
+
+}
+.techBox:hover > .icon {
+    transition: 0.5s;
+    color: white
 }
 .box_wrapper {
     display: grid;

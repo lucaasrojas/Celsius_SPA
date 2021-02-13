@@ -33,6 +33,8 @@
       </div>
       <div class="hobbies_container"></div>
     </div>
+
+    <instagram />
     <!-- Banner dummy -->
     <div v-if="false" class="row home-news">
       <div class="col image">
@@ -50,12 +52,13 @@
   </div>
 </template>
 <script>
+import Vue from "vue";
+var axios = require("axios");
 import ImageCard from "@/components/Shared/ImageCard.vue";
 import Jumbotron from "@/components/Shared/Jumbotron.vue";
 import SectionCard from "@/components/Shared/sectionCard.vue";
 import BannerTechs from "@/components/Shared/bannerTecnologias.vue";
-import Vue from "vue";
-var axios = require("axios");
+import Instagram from "@/components/Shared/instagram.vue";
 export default {
   props: ["dbData"],
   components: {
@@ -63,6 +66,7 @@ export default {
     jumbotron: Jumbotron,
     sectionCard: SectionCard,
     bannerTechs: BannerTechs,
+    instagram: Instagram
   },
   data() {
     return {
